@@ -7,8 +7,8 @@ repository-code: "https://github.com/1714065/surangama-formalization"
 license: Apache-2.0
 license-url: "https://www.apache.org/licenses/LICENSE-2.0"
 version: "0.1.0"
-# date-released: fill in on the release day (YYYY-MM-DD)
-# doi: fill in with the Zenodo version DOI after the first archived release
+date-released: "2026-09-25"
+# doi: filled with the Zenodo version DOI after the first archived release
 abstract: >-
   Machine-checked formalizations of arguments in the Śūraṅgama Sūtra
   (Taishō T19 no. 945) in Lean 4. Premises are structure fields rather than
