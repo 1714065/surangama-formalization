@@ -113,6 +113,10 @@ audit records, and source metadata: CC0-1.0. The ancient Chinese text is in the
 public domain; the project does not redistribute any modern edition,
 commentary, or CBETA file. See `REUSE.toml` and `CITATION.cff`.
 
+## Contact
+
+Jason Wu · 1714065@qq.com · issues and pull requests on this repository are welcome.
+
 ## How this was made
 
 AI-assisted drafting was used during development, including Claude

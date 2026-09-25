@@ -7,7 +7,8 @@
 | File | Field | Status |
 | --- | --- | --- |
 | `CITATION.cff` | author name | filled: Wu, Jason (2026-09-25) |
-| `CITATION.cff` | `orcid` | **pending** — register at https://orcid.org, then uncomment and fill the line |
+| `CITATION.cff`, `README.md` | contact email | filled: 1714065@qq.com |
+| `CITATION.cff` | `orcid` | **pending** — register at <https://orcid.org>, then uncomment and fill the line |
 | `CITATION.cff` | `repository-code` | `https://github.com/1714065/surangama-formalization` (confirmed) |
 | `REUSE.toml` | copyright holder (two places) | filled: 2026 Jason Wu |
 | `README.md`, `CITATION.cff` | AI-assistance notice | present (Claude, Anthropic; kernel-checked proofs; human responsibility for readings and claims) |

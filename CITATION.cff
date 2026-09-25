@@ -23,7 +23,12 @@ abstract: >-
 authors:
   - family-names: "Wu"
     given-names: "Jason"
+    email: "1714065@qq.com"
     # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"  (fill in when available)
+contact:
+  - family-names: "Wu"
+    given-names: "Jason"
+    email: "1714065@qq.com"
 keywords:
   - Lean 4
   - formalization
