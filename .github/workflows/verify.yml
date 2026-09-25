@@ -16,11 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install the pinned Lean toolchain
+      - name: Install the pinned Lean toolchain and audit axioms
         uses: leanprover/lean-action@v1
         with:
           auto-config: false
           use-github-cache: false
+          build: true
+          # Fail if any declaration depends on an axiom outside Lean's three standard ones.
+          axiom-audit: true
+          axiom-audit-allow: propext,Classical.choice,Quot.sound
 
       - name: Sorry gate, build, and axiom record
         run: sh verify.sh
