@@ -8,6 +8,11 @@ countermodels, and axiom-dependency reports.
 
 Lifecycle: `active` · Version: `0.1.0` (unreleased) · Lean: `v4.35.0-rc2`, no Mathlib.
 
+> **Note on authorship.** This repository was developed with AI assistance
+> (Claude, Anthropic) under human direction. Every proof is accepted by the
+> Lean kernel; the choice of sources, the readings, and the claim boundaries
+> are the author's responsibility, not the model's. See "How this was made".
+
 ## What every claim can be traced to
 
 Each formal claim in this repository is traceable to five things:

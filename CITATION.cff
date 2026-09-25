@@ -16,11 +16,14 @@ abstract: >-
   that shows which premise carries it; axiom-dependency reports are recorded.
   Version 0.1.0 covers the seven-location argument (七處徵心) under an
   explicitly named reading. The project does not assert the truth of a
-  doctrine or a uniquely correct reading.
+  doctrine or a uniquely correct reading. Development was AI-assisted
+  (Claude, Anthropic) under human direction; proof acceptance is determined
+  by the Lean kernel, and source selection, readings, and claim boundaries
+  are the author's responsibility.
 authors:
-  - family-names: "<FAMILY NAME>"
-    given-names: "<GIVEN NAME>"
-    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+  - family-names: "Wu"
+    given-names: "Jason"
+    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"  (fill in when available)
 keywords:
   - Lean 4
   - formalization

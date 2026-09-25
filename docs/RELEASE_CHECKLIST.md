@@ -2,14 +2,15 @@
 
 # Release checklist (v0.1.0)
 
-## Placeholders to fill before the first push
+## Identity fields
 
-| File | Placeholder | Fill with |
+| File | Field | Status |
 | --- | --- | --- |
-| `CITATION.cff` | `<FAMILY NAME>`, `<GIVEN NAME>` | the author name as it should be cited |
-| `CITATION.cff` | `# orcid:` (commented) | an ORCID iD (free at https://orcid.org); uncomment the line |
-| `CITATION.cff` | `repository-code` | keep if the repository is `github.com/1714065/surangama-formalization`; otherwise edit |
-| `REUSE.toml` | `2026 <AUTHOR NAME>` (two places) | the copyright holder name |
+| `CITATION.cff` | author name | filled: Wu, Jason (2026-09-25) |
+| `CITATION.cff` | `orcid` | **pending** — register at https://orcid.org, then uncomment and fill the line |
+| `CITATION.cff` | `repository-code` | `https://github.com/1714065/surangama-formalization` (confirmed) |
+| `REUSE.toml` | copyright holder (two places) | filled: 2026 Jason Wu |
+| `README.md`, `CITATION.cff` | AI-assistance notice | present (Claude, Anthropic; kernel-checked proofs; human responsibility for readings and claims) |
 
 ## Before tagging `v0.1.0`
 

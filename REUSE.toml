@@ -14,7 +14,7 @@ path = [
   "REUSE.toml",
 ]
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2026 <AUTHOR NAME>"
+SPDX-FileCopyrightText = "2026 Jason Wu"
 SPDX-License-Identifier = "Apache-2.0"
 
 [[annotations]]
@@ -28,5 +28,5 @@ path = [
   "LICENSE-CC0",
 ]
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2026 <AUTHOR NAME>"
+SPDX-FileCopyrightText = "2026 Jason Wu"
 SPDX-License-Identifier = "CC0-1.0"
