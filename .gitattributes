@@ -1,0 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
+# Keep LF in the repository so shell scripts and CI behave the same on every platform.
+* text=auto eol=lf
+*.ps1 text eol=crlf

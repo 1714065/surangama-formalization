@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: Apache-2.0
+
+name = "surangama-formalization"
+version = "0.1.0"
+defaultTargets = ["Surangama"]
+
+# No Mathlib.  The library is pure logic so that anyone with the pinned Lean
+# toolchain can check it in seconds.
+
+[[lean_lib]]
+name = "Surangama"
+srcDir = "lean"
+roots = ["Surangama", "Surangama.SevenLocations.Audit"]

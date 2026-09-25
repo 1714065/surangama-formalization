@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: CC0-1.0
+cff-version: 1.2.0
+message: "If you use this formalization corpus, please cite it as below."
+title: "Śūraṅgama Sūtra Argument Formalizations (Lean 4)"
+type: software
+repository-code: "https://github.com/1714065/surangama-formalization"
+license: Apache-2.0
+license-url: "https://www.apache.org/licenses/LICENSE-2.0"
+version: "0.1.0"
+# date-released: fill in on the release day (YYYY-MM-DD)
+# doi: fill in with the Zenodo version DOI after the first archived release
+abstract: >-
+  Machine-checked formalizations of arguments in the Śūraṅgama Sūtra
+  (Taishō T19 no. 945) in Lean 4. Premises are structure fields rather than
+  global axioms; every positive result is paired with a finite countermodel
+  that shows which premise carries it; axiom-dependency reports are recorded.
+  Version 0.1.0 covers the seven-location argument (七處徵心) under an
+  explicitly named reading. The project does not assert the truth of a
+  doctrine or a uniquely correct reading.
+authors:
+  - family-names: "<FAMILY NAME>"
+    given-names: "<GIVEN NAME>"
+    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+keywords:
+  - Lean 4
+  - formalization
+  - Śūraṅgama Sūtra
+  - Chinese Buddhism
+  - computational hermeneutics
+  - philosophy of mind
+  - countermodels

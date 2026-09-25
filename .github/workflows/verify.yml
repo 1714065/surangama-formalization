@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: Apache-2.0
+name: verify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install the pinned Lean toolchain
+        uses: leanprover/lean-action@v1
+        with:
+          auto-config: false
+          use-github-cache: false
+
+      - name: Sorry gate, build, and axiom record
+        run: sh verify.sh
+
+      - name: Audit record must be up to date
+        run: |
+          # Ignore the date-stamped header; the reports themselves must not have drifted.
+          tail -n +3 audit/lean-axioms.txt > /tmp/new.txt
+          git show HEAD:audit/lean-axioms.txt | tail -n +3 > /tmp/old.txt
+          diff /tmp/old.txt /tmp/new.txt

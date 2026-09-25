@@ -1,0 +1,63 @@
+{
+  "schema": "surangama-formalization/sources/1",
+  "note": "Locators are recorded only when verified. 'unverified' is never filled from a search snippet or from memory.",
+  "sources": [
+    {
+      "id": "t19n0945",
+      "kind": "primary",
+      "title": "大佛頂首楞嚴經 (Śūraṅgama Sūtra)",
+      "edition": "Taishō shinshū daizōkyō vol. 19, no. 945; CBETA electronic edition",
+      "url": "https://cbetaonline.dila.edu.tw/zh/T0945",
+      "public_domain": true,
+      "redistributed": false,
+      "locators": {
+        "seven_locations": {
+          "fascicle": 1,
+          "columns": "unverified",
+          "status": "work_level"
+        }
+      }
+    },
+    {
+      "id": "yuanying-jiangyi",
+      "kind": "commentary",
+      "title": "圓瑛《大佛頂首楞嚴經講義》",
+      "role": "adopted working locator (project extraction line numbers L…); reading R1 follows its outline",
+      "redistributed": false,
+      "extraction": {
+        "date": "2026-09-22",
+        "format": "plain text from a DOCX copy held by the project",
+        "status": "passage_aligned (to the extraction, not to an edition)"
+      }
+    },
+    {
+      "id": "chengguan-yiguan",
+      "kind": "commentary",
+      "title": "成觀《大佛頂首楞嚴經義貫》",
+      "role": "consulted for readings",
+      "redistributed": false
+    },
+    {
+      "id": "xuanhua-qianshi",
+      "kind": "commentary",
+      "title": "宣化《大佛頂首楞嚴經淺釋》",
+      "role": "consulted for readings",
+      "redistributed": false
+    },
+    {
+      "id": "ariake-2026-bcl",
+      "kind": "formal",
+      "title": "Ariake, N. Buddhist and Comparative Asian Logic Formalizations, v0.1.0 (2026-09-20)",
+      "doi": "10.5281/zenodo.22851717",
+      "url": "https://github.com/takuya50/buddhist-comparative-logic",
+      "role": "conventions adopted (source-status vocabulary, wording discipline, structure-field premises, countermodels); does not cover the Śūraṅgama Sūtra"
+    },
+    {
+      "id": "fuenmayor-benzmueller-2019",
+      "kind": "formal",
+      "title": "Fuenmayor, D. & Benzmüller, C. Computational Hermeneutics: An Integrated Approach for the Logical Analysis of Natural-Language Arguments (2019)",
+      "doi": "10.1007/978-981-13-7791-4_9",
+      "role": "method"
+    }
+  ]
+}

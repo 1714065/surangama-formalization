@@ -1,0 +1,19 @@
+# Axiom-dependency report - leanprover/lean4:v4.35.0-rc2 - 2026-09-25
+# Regenerate: tools\print-axioms.ps1 (Windows) or sh tools/print-axioms.sh
+
+'Surangama.SevenLocations.L1' does not depend on any axioms
+'Surangama.SevenLocations.L2' does not depend on any axioms
+'Surangama.SevenLocations.L3' does not depend on any axioms
+'Surangama.SevenLocations.L4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Surangama.SevenLocations.L4_of_forward' does not depend on any axioms
+'Surangama.SevenLocations.L5' does not depend on any axioms
+'Surangama.SevenLocations.L6' does not depend on any axioms
+'Surangama.SevenLocations.L6_shortcut' does not depend on any axioms
+'Surangama.SevenLocations.L7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Surangama.SevenLocations.seven_refutations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Surangama.SevenLocations.no_candidate_place' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Surangama.SevenLocations.sutra_premises_satisfiable' does not depend on any axioms
+'Surangama.SevenLocations.H1_not_refuted_by_modern' does not depend on any axioms
+'Surangama.SevenLocations.brainWorld_violates_A01' does not depend on any axioms
+'Surangama.SevenLocations.key_difference' does not depend on any axioms
+'Surangama.SevenLocations.sutra_and_field_compatible' does not depend on any axioms
