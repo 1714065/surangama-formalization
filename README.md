@@ -115,7 +115,7 @@ commentary, or CBETA file. See `REUSE.toml` and `CITATION.cff`.
 
 ## Contact
 
-Jason Wu · 1714065@qq.com · issues and pull requests on this repository are welcome.
+Jason Wu · ORCID [0009-0003-1682-6165](https://orcid.org/0009-0003-1682-6165) · <1714065@qq.com> · issues and pull requests on this repository are welcome.
 
 ## How this was made
 
