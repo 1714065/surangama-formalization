@@ -12,6 +12,7 @@
 | `CITATION.cff` | `repository-code` | `https://github.com/1714065/surangama-formalization` (confirmed) |
 | `REUSE.toml` | copyright holder (two places) | filled: 2026 Jason Wu |
 | `README.md`, `CITATION.cff` | AI-assistance notice | present (Claude, Anthropic; kernel-checked proofs; human responsibility for readings and claims) |
+| `CITATION.cff`, `README.md` | Zenodo DOI | filled: version 10.5281/zenodo.22950553, concept 10.5281/zenodo.22950552 (release v0.1.0 archived 2026-09-25, record appeared 2026-09-26) |
 
 ## Before tagging `v0.1.0`
 

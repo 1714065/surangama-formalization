@@ -6,7 +6,10 @@ Machine-checked formalizations of arguments in the Śūraṅgama Sūtra
 (大佛頂首楞嚴經, Taishō T19 no. 945) in Lean 4: premise inventories, finite
 countermodels, and axiom-dependency reports.
 
-Lifecycle: `active` · Version: `0.1.0` (unreleased) · Lean: `v4.35.0-rc2`, no Mathlib.
+Lifecycle: `active` · Version: `0.1.0` · Lean: `v4.35.0-rc2`, no Mathlib.
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22950553.svg)](https://doi.org/10.5281/zenodo.22950553)
+Version DOI `10.5281/zenodo.22950553` (v0.1.0, released 2026-09-25) · concept DOI for all versions `10.5281/zenodo.22950552` · GitHub release [`v0.1.0`](https://github.com/1714065/surangama-formalization/releases/tag/v0.1.0).
 
 > **Note on authorship.** This repository was developed with AI assistance
 > (Claude, Anthropic) under human direction. Every proof is accepted by the

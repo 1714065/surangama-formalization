@@ -8,7 +8,8 @@ license: Apache-2.0
 license-url: "https://www.apache.org/licenses/LICENSE-2.0"
 version: "0.1.0"
 date-released: "2026-09-25"
-# doi: filled with the Zenodo version DOI after the first archived release
+doi: "10.5281/zenodo.22950553"
+# Concept DOI (all versions): 10.5281/zenodo.22950552
 abstract: >-
   Machine-checked formalizations of arguments in the Śūraṅgama Sūtra
   (Taishō T19 no. 945) in Lean 4. Premises are structure fields rather than
