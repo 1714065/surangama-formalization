@@ -52,4 +52,4 @@ Author: Jason Wu. Development used Claude (Anthropic) and Codex (OpenAI) under
 human direction; interpretive responsibility remains with the author.
 Concept DOI for the version family: `10.5281/zenodo.22950552`.
 The v0.1.0 DOI `10.5281/zenodo.22950553` identifies the initial release only.
-The new version DOI is assigned when Zenodo archives this GitHub release.
+The version DOI is [10.5281/zenodo.23107913](https://doi.org/10.5281/zenodo.23107913). See [the verified publication record](RELEASE_RECORD_v0.2.0.md).
