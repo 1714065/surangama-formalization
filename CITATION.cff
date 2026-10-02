@@ -6,21 +6,23 @@ type: software
 repository-code: "https://github.com/1714065/surangama-formalization"
 license: Apache-2.0
 license-url: "https://www.apache.org/licenses/LICENSE-2.0"
-version: "0.1.0"
-date-released: "2026-09-25"
-doi: "10.5281/zenodo.22950553"
+version: "0.2.0"
+date-released: "2026-10-03"
+# Version DOI is assigned after the GitHub release is archived by Zenodo.
 # Concept DOI (all versions): 10.5281/zenodo.22950552
 abstract: >-
-  Machine-checked formalizations of arguments in the Śūraṅgama Sūtra
-  (Taishō T19 no. 945) in Lean 4. Premises are structure fields rather than
-  global axioms; every positive result is paired with a finite countermodel
-  that shows which premise carries it; axiom-dependency reports are recorded.
-  Version 0.1.0 covers the seven-location argument (七處徵心) under an
-  explicitly named reading. The project does not assert the truth of a
-  doctrine or a uniquely correct reading. Development was AI-assisted
-  (Claude, Anthropic) under human direction; proof acceptance is determined
-  by the Lean kernel, and source selection, readings, and claim boundaries
-  are the author's responsibility.
+  Machine-checked conditional reconstructions of arguments in the Surangama
+  Sutra (Taisho T19 no. 945) in Lean 4. Version 0.2.0 adds seven standalone
+  C1-C7 modules with 49 theorem declarations, including branch lemmas and
+  premise-scope witnesses, alongside the preserved v0.1.0 Core models.
+  Premises are explicit theorem parameters or structure fields, not global
+  doctrinal axioms. The release includes axiom-dependency reports and
+  reproducible Boolean consistency and single-premise-omission checks.
+  Selected routes, not every sentence or commentary reading, are formalized.
+  Kernel checking does not establish premise truth, unique interpretation,
+  empirical consciousness claims or an ontology of Buddha/Tathagatagarbha.
+  Development was AI-assisted (Claude, Anthropic; Codex, OpenAI) under human
+  direction; the author remains responsible for readings and claim boundaries.
 authors:
   - family-names: "Wu"
     given-names: "Jason"

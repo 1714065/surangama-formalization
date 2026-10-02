@@ -2,11 +2,19 @@
 
 # Open problems and next steps
 
+<!-- project-principle:2026-09-29 -->
+> **项目共同原则（2026-09-29）**
+>
+> 经文提供指引，论证检查误认，Lean 核对明确前提下的推导；这些工作的完成，不等于修证的完成。
+>
+> 可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
+<!-- /project-principle -->
+
 Recorded so that the repository does not overstate what it settles.
 
 ## Text and mapping
 
-- **CBETA column locators** for the seven-location passage are unverified. Add them from a pinned CBETA XML commit, with the checksum recorded, as Ariake's library does for the Heart Sutra.
+- **Public text provenance.** C1–C7 now record passage-aligned CBETA column/line locators from the working snapshot; the historical Core source registry retains its original work-level status. A publicly pinned XML witness with a checksum remains to be supplied. Add them from a pinned CBETA XML commit, with the checksum recorded, as Ariake's library does for the Heart Sutra.
 - **Three-commentary alignment.** Premises A01–A11c follow 圓瑛's outline. Where 成觀 or 宣化 read a move differently, record the divergence as a second premise set rather than choosing silently.
 - **Project restatements.** A07a (the content of H4) and A11c (having a form entails being at one of the six places) are the project's formalizations, not quotations. Both should be tested against the commentaries and, if contested, given an alternative field.
 

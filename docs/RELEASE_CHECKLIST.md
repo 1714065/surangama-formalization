@@ -1,8 +1,26 @@
 <!-- SPDX-License-Identifier: CC0-1.0 -->
 
-# Release checklist (v0.1.0)
+# Release checklist (v0.2.0; initial-release history retained)
 
-## Identity fields
+<!-- project-principle:2026-09-29 -->
+> **项目共同原则（2026-09-29）**
+>
+> 经文提供指引，论证检查误认，Lean 核对明确前提下的推导；这些工作的完成，不等于修证的完成。
+>
+> 可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
+<!-- /project-principle -->
+
+## v0.2.0 publication checks
+
+- Full Lean build, no proof placeholders, regenerated axiom report.
+- `python tools/check_scope.py` regenerates `audit/propositional-scope.json`; selected formulas are consistent and each substantive omission admits the target.
+- Seven current modules: 49 declarations; historical Core is separately described.
+- Research guide, module notes and all public links operate without the private workspace.
+- `lakefile.toml` and `CITATION.cff` identify 0.2.0; the old version DOI is not reused.
+- Verify GitHub CI on the exact release commit before tagging/publishing.
+- Publish the GitHub release; verify the resulting Zenodo record has v0.2.0, the same concept DOI, and the correct archived files.
+
+## Initial v0.1.0 identity fields
 
 | File | Field | Status |
 | --- | --- | --- |

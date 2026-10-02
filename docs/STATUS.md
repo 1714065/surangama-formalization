@@ -2,6 +2,14 @@
 
 # Status: wording rules and claim table
 
+<!-- project-principle:2026-09-29 -->
+> **项目共同原则（2026-09-29）**
+>
+> 经文提供指引，论证检查误认，Lean 核对明确前提下的推导；这些工作的完成，不等于修证的完成。
+>
+> 可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
+<!-- /project-principle -->
+
 Role: `record` · Lifecycle: `active` · Lean check: see `audit/lean-axioms.txt` (date stamped).
 
 ## Wording rules
@@ -49,6 +57,13 @@ Locators: `L…` = line numbers in the project's extraction of 圓瑛《大佛�
 
 ## Model results
 
+Local teaching addition (2026-09-29): [`InsideConditional.not_inside`](INSIDE_CONDITIONAL.md)
+isolates H1's two premises as explicit parameters. The lamp analogy is Ānanda's
+response after the first refutation (T19 p107b06–11), not an initial verbatim
+premise. Three propositional witnesses establish premise satisfiability and
+show that neither premise alone excludes `Inside`. This does not change the
+claim boundary of `L1` or adjudicate brain-based theories of consciousness.
+
 | Result | Theorem | What it shows | What it does not show |
 | --- | --- | --- | --- |
 | Premise set satisfiable | `sutra_premises_satisfiable` | The nineteen premises have a model | that the premises are true |
@@ -61,3 +76,42 @@ Locators: `L…` = line numbers in the project's extraction of 圓瑛《大佛�
 - No `sorry` (checked by `verify.sh` / `tools/check-lean.ps1`).
 - Every theorem named in this file or in `README.md` exists (manual check in v0.1.0; a name guard is listed in `docs/OPEN_PROBLEMS.md`).
 - `audit/lean-axioms.txt` is regenerated from `Surangama.SevenLocations.Audit` and committed with a date stamp.
+
+## C2 local addition (2026-09-30)
+
+[`C2.not_outside`](C2_OUTSIDE_CONDITIONAL.md) isolates the two premises of L2 as theorem parameters.
+The bridge `Outside → ¬ BodyMindKnowTogether` is a `project-restatement`; the positive knowing example
+is `dialogue-accepted` (T19 p107b18–19), with subsequent acceptance evidence at p107b22–24.
+Three logical valuations check premise satisfiability and the insufficiency of either premise alone.
+The build and axiom report pass for all four C2 theorems. Empty axiom lists do not remove the premises.
+
+## C3 local addition (2026-09-30)
+
+[`C3.not_in_root_two_branches`](C3_IN_ROOT_CONDITIONAL.md) combines the reconstructed branches under three explicit premises:
+in-root implies seeing-eye; in-root requires following-seeing; seeing-eye prevents following-seeing.
+The new `not_in_root_of_seeing` handles the seeing branch. The original `not_in_root` retains the not-seeing branch.
+The combined proof does not require an additional not-seeing premise or excluded middle.
+The root/object distinction is an explicit interpretive bridge, not a theorem about organs losing function when observed.
+C3 contains ten theorems: three refutations and seven propositional scope witnesses, all without axiom dependencies.
+
+## C4 local addition (2026-09-30)
+
+[`C4.not_darkness_is_inner_sight`](C4_DARKNESS_CONDITIONAL.md) refutes the two specified readings of darkness-as-inner-sight under seven explicit parameters. Root/object roles are distinct from bodily spatial location. The main proof combines the ordinary-darkness branch and the inward-viewing location conflict; it does not require excluded middle.
+
+Ownership, two independent knowers, and the dark-room counterexample have separate conditional proofs. `not_inward_via_knower_rescue` connects inward viewing to the external-knower and two-knowers consequences as an alternative extended route. The doctrinal terminal conditions are explicit, not definitions of Buddha.
+
+C4 contains 17 theorems: 11 conditional derivations and six propositional scope witnesses. The latter check three premise sets and three selected premise omissions, not the independent necessity of every parameter. All 17 build and have empty axiom dependency lists, without removing their explicit assumptions. This is a local addition, not part of published v0.1.0; existing L4 keeps its scope.
+
+## C6 local addition (2026-10-02)
+
+[`C6.not_in_middle_four_cases`](C6_MIDDLE_CONDITIONAL.md) refutes the specified root/object-middle claim under eight substantive premises and two explicit logical case splits. It covers both affiliations, root only, object only, and neither. The single-side arguments are approved project reconstructions; causal dependence is not automatically identity or complete affiliation.
+
+Six theorems (classification, four refutations, summary) passed the full build and have empty axiom dependency lists. The external Boolean scope audit checks 256 valuations: 33 satisfy all substantive premises, every branch has a compatible valuation, and removing each single substantive premise permits Claim. These are not empirical models. Body-center and marker-direction preliminaries are not included in the main theorem. Existing L6 and the separate historical change-of-basis model remain unchanged. This is a local addition, included in v0.2.0.
+
+## C7 local addition (2026-10-03)
+
+[`C7.not_unlocated_all_cases`](C7_UNLOCATED_CONDITIONAL.md) refutes the specified wholly-unlocated cognizing-mind claim under four substantive premises and one explicit body/no-body case split. The form-to-location bridge is a hypothesis, not a universal theorem about existence. The three theorems passed direct compilation, full build and axiom audit; all have empty dependency lists while retaining their parameters. The Boolean scope audit checks 32 assignments, 5 compatible, both branches represented; each single substantive omission permits Claim. Existing L7 is unchanged. No ontology or empirical mind-brain claim is established.
+
+## C5 integration and C1–C7 review · 2026-10-03
+
+[C5 contact conditional proof](C5_CONTACT_CONDITIONAL.md) is now included in the aggregate build and axiom audit. The current C1–C7 modules contain 49 theorem declarations (including branch lemmas and scope witnesses), all with empty axiom dependencies; explicit premises remain. This does not replace the historical Core L1–L7 models.

@@ -2,6 +2,14 @@
 
 # v0.1.0 — the seven-location argument
 
+<!-- project-principle:2026-09-29 -->
+> **项目共同原则（2026-09-29）**
+>
+> 经文提供指引，论证检查误认，Lean 核对明确前提下的推导；这些工作的完成，不等于修证的完成。
+>
+> 可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
+<!-- /project-principle -->
+
 First release. One argument unit of the Śūraṅgama Sūtra (大佛頂首楞嚴經,
 Taishō T19 no. 945, fascicle 1), formalized in Lean 4 (`v4.35.0-rc2`, no
 Mathlib). CI: build, no-`sorry` gate, axiom audit restricted to Lean's three

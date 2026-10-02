@@ -1,0 +1,877 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>七处征心 C1—C7 · v0.2.0</title><style>body{font:17px/1.8 system-ui,"Microsoft YaHei",sans-serif;margin:0;background:#fbfaf7;color:#172033}main{max-width:1040px;margin:auto;padding:36px 20px}h1,h2{line-height:1.3}h2{margin-top:2.5em}a{color:#2859a6}blockquote{border-left:4px solid #2859a6;padding:8px 20px;background:#f0f4fc}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #ddd;padding:10px;text-align:left}code{overflow-wrap:anywhere}pre{overflow:auto;background:#152035;color:#eef2ff;padding:20px}pre code{overflow-wrap:normal}details{margin:24px 0}summary{cursor:pointer;font-weight:bold}.table-wrap{overflow:auto}</style></head><body><main><!-- SPDX-License-Identifier: CC0-1.0 -->
+
+<h1>七处征心 C1—C7：公开研究说明与条件证明</h1>
+<blockquote>
+<p>经文提供指引，论证检查误认，Lean 核对明确前提下的推导；这些工作的完成，不等于修证的完成。</p>
+<p>可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。</p>
+</blockquote>
+<p>版本：v0.2.0，2026-10-03。本文件从研究工作区已确认的论证整理而来，供公开读者独立审查。解释属于项目重建；经文、注家解释、模型假设和机器验证不能互相替代。</p>
+<p><a href="../README.md">返回项目</a> · <a href="RESEARCH_GUIDE_zh.html">HTML 阅读版</a> · <a href="RELEASE_NOTES_v0.2.0.md">英文发布说明</a></p>
+<h2>原文、注疏与证明各承担什么？</h2>
+<p>经文提出主张与反诘；注疏帮助说明名词和连接；本项目把采用的连接明列为参数；Lean 检查这些参数能否推出否定结论。并未先把“真心是什么”写成定义，再据此否定其余解释。</p>
+<p>原文为《大佛頂首楞嚴經》卷一，T19n0945。<a href="https://cbetaonline.dila.edu.tw/zh/T0945">CBETA 公开入口</a>。下列页栏行来自研究工作区的核对快照，不代表另做了版本校勘。各节链接的说明列出圆瑛、宣化、成观注疏的采用位置及解释差异；P、X 是本地抽取本的段落号，不能当作通行版页码。原典快照和现代注疏不随软件再分发。</p>
+<h2>总览</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>段落</th>
+<th>主题</th>
+<th style="text-align: right;">定理声明数</th>
+<th>主汇总的实质条件／逻辑分类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td><a href="INSIDE_CONDITIONAL.md">心在内</a></td>
+<td style="text-align: right;">4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>C2</td>
+<td><a href="C2_OUTSIDE_CONDITIONAL.md">心在外</a></td>
+<td style="text-align: right;">4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>C3</td>
+<td><a href="C3_IN_ROOT_CONDITIONAL.md">潜伏根里</a></td>
+<td style="text-align: right;">10</td>
+<td>3</td>
+</tr>
+<tr>
+<td>C4</td>
+<td><a href="C4_DARKNESS_CONDITIONAL.md">见暗名见内</a></td>
+<td style="text-align: right;">17</td>
+<td>7</td>
+</tr>
+<tr>
+<td>C5</td>
+<td><a href="C5_CONTACT_CONDITIONAL.md">随所合处心则随有</a></td>
+<td style="text-align: right;">5</td>
+<td>7＋1项分类</td>
+</tr>
+<tr>
+<td>C6</td>
+<td><a href="C6_MIDDLE_CONDITIONAL.md">心在中间</a></td>
+<td style="text-align: right;">6</td>
+<td>8＋2项分类</td>
+</tr>
+<tr>
+<td>C7</td>
+<td><a href="C7_UNLOCATED_CONDITIONAL.md">一切无著名之为心</a></td>
+<td style="text-align: right;">3</td>
+<td>4＋1项分类</td>
+</tr>
+</tbody>
+</table></div>
+<p>49 个声明包含主证明、分支引理与范围见证，不是 49 条独立经学发现。各段的相反分支假设不同时当事实；各段独立，不将 C5 的暂许有体当作 C7 已证前提。</p>
+<h2>C1 · 心在内</h2>
+<p><strong>大白话：</strong>在内应知内；实际不知内。因此，按这两个条件，身内定位不能成立。</p>
+<p><strong>适用边界：</strong>“在内应知内”是本段明确保留的连接，不是所有认知理论的普遍规律。“知内”指这里要求的直接明了，不包含解剖、仪器或一般痛觉。</p>
+<p>原文定位：卷一 p107a12–b11；b24–29。详见<a href="INSIDE_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/InsideConditional.lean">实际 Lean 源码</a>。</p>
+<h2>C2 · 心在外</h2>
+<p><strong>大白话：</strong>按此模型，在外则身心不相知；对话却采用身心相知的事例，因此不能维持这种身外解释。</p>
+<p><strong>适用边界：</strong>不能把“身外”普遍等同于“不能交互”；这里仅反驳带有所列连接条件的解释。</p>
+<p>原文定位：卷一 p107b06–24。详见<a href="C2_OUTSIDE_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C2.lean">实际 Lean 源码</a>。</p>
+<h2>C3 · 潜伏根里</h2>
+<p><strong>大白话：</strong>按琉璃比喻，潜根应见眼；原模型又要求随见随分别；接受见眼不成随的连接，便得到冲突。原不见眼路线也独立保留。</p>
+<p><strong>适用边界：</strong>琉璃对应眼根，比喻中的眼对应心。根境的角色区分限于同一认识关系，不是说眼睛一被观察就丧失生理功能。</p>
+<p>原文定位：卷一 p107b22–c08。详见<a href="C3_IN_ROOT_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C3.lean">实际 Lean 源码</a>。</p>
+<h2>C4 · 见暗名见内</h2>
+<p><strong>大白话：</strong>你确实见暗，但凭什么把暗认作自身内部？若补说能返观自身，就检查能否见面；按直接相对观看模型，见面又把心眼安排在身外，与所要挽回的身内定位冲突。</p>
+<p><strong>适用边界：</strong>与眼相对不等于解剖位置必在体外；“相对所见暗不确证内身”“返观应见面”“见面须在外”分别保留为条件。自身归属、二知、暗室另立分支；暗室不是正文主线。</p>
+<p>原文定位：卷一 p107c09–23。详见<a href="C4_DARKNESS_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C4.lean">实际 Lean 源码</a>。</p>
+<h2>C5 · 随所合处心则随有</h2>
+<p><strong>大白话：</strong>主张要求能合。全无相应所指，按条件不能合；暂许有体，才按接触到达模型分成内出或外入。内出应见身中，外入应见面，与本段采用的不见条件冲突。</p>
+<p><strong>适用边界：</strong>出入二分、知见连接均为明确前提，不是从“接触”一词自然推出的定律。未把一多、遍不遍全部形式化；没有否定一般认识活动依条件产生。</p>
+<p>原文定位：卷一 p107c23–108a14。详见<a href="C5_CONTACT_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C5.lean">实际 Lean 源码</a>。</p>
+<h2>C6 · 心在中间</h2>
+<p><strong>大白话：</strong>同一兼属关系分四类：兼两边、只兼根、只兼尘、全不兼。兼二按条件两立而不成中；只兼一经完全归属该边而不成中；全不兼则无此模型所要求的体性。</p>
+<p><strong>适用边界：</strong>两个只兼一分支是项目补全，不冒称经文另有两段原话。因果依赖不等于完全归属；不同部分有不同性质也不自动构成矛盾。身体中央与标杆方位未纳入。</p>
+<p>原文定位：卷一 p108a15–b03。详见<a href="C6_MIDDLE_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C6.lean">实际 Lean 源码</a>。</p>
+<h2>C7 · 一切无著名之为心</h2>
+<p><strong>大白话：</strong>此处按阿难把无著理解为全无所在来重建。全无所指，不能担当原主张声称的觉知者；暂许有体，再接受有体相则有所在，便与全无所在冲突。</p>
+<p><strong>适用边界：</strong>无著在此不指修行中的不贪染。“有体相则有所在”是关键连接，不是存在者必占空间的普遍定律；不知道具体位置也不等于没有任何所在。</p>
+<p>原文定位：卷一 p108b04–14。详见<a href="C7_UNLOCATED_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C7.lean">实际 Lean 源码</a>。</p>
+<h2>不混用“体”</h2>
+<p>C5、C7 的无体指候选者全无相应所指，不等于分别活动依条件发生、离尘无自体。C6 的体性是所立中间模型要求的体性；C7 的体相到所在也是该定位模型的条件。不能把这些谓词直接代入后文真心体性，也不能用这些否定证明指认真心是什么。</p>
+<h2>怎样复现？</h2>
+<ol>
+<li>安装项目固定的 Lean 工具链，运行 <code>lake build</code>，检查实际证明。</li>
+<li>运行 <code>sh verify.sh</code>（需要 Python 3），重建公理依赖和有限取值报告；Windows 也可分别运行 <code>tools/check-lean.ps1</code>、<code>tools/print-axioms.ps1</code>、<code>python tools/check_scope.py</code>。</li>
+<li>对照 <a href="../audit/lean-axioms.txt">Lean 审计</a>及<a href="../audit/propositional-scope.json">有限取值报告</a>。后者检查公式前提可相容，且删除任一所列实质条件都允许目标主张成立。布尔语义的排中分类与 Lean 明列的分类参数应分别理解。</li>
+</ol>
+<p>空公理依赖不等于没有定理前提。机器接受证明，不意味着条件真实、解释唯一、心理或物理假说成立，更不等于修证完成。</p>
+<h2>版本与研究材料的边界</h2>
+<p>本版本保留初稿的 <code>Core.L1–L7</code> 等历史模型；其条件组合不与当前独立模块混为一套。详见<a href="RELEASE_NOTES_v0.2.0.md">版本说明</a>。完整讨论过程、个人学习记录及原始资料保留在研究工作区；公开仓库提供必要的模型、参数、出处说明、代码和可复现审计。</p><h2>完整 Lean 源码（逐段展开）</h2><p>以下源码保留 Apache-2.0 许可；说明文字为 CC0-1.0。</p><details id="C1"><summary>C1 · 心在内</summary><pre><code>/- SPDX-License-Identifier: Apache-2.0 -/
+
+/-!
+# 心不在内：两个明确前提下的条件推导
+
+经文提供指引，论证检查误认，Lean 核对明确前提下的推导；
+这些工作的完成，不等于修证的完成。
+可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
+
+This is a teaching version of the implication pattern used by `L1`.
+It does not import the seven-location premise bundle or define a mind object.
+
+Working interpretation (not definitions of an ultimate reality):
+* `Inside`: 阿难本段所执的识心住在身内。
+* `KnowsInside`: 具备本段要求的对身内的直接明了。
+  This does not mean any bodily sensation or learned anatomical knowledge.
+* `inside_requires_inner_knowing`: 在内应知内，作为本次重建的明确条件。
+* `no_inner_knowing`: 不具备上述身内明了，作为对话中的经验前提。
+
+Sources: T19n0945, fascicle 1, p107a19–b11; see
+`docs/INSIDE_CONDITIONAL.md`. The lamp analogy is spoken by Ānanda after
+the first refutation, when he proposes an outside location. It supports
+attributing acceptance of the analogy at that stage, not an original
+explicit premise or a universal theory of cognition.
+
+The proof abstracts away temporal order in “先”, the detailed concession
+“纵不能见…”, and the later objection “见是其眼，心知非眼” (p108a04).
+It neither establishes its textual interpretation nor adjudicates brain-based
+accounts of consciousness. All assumptions below are theorem parameters.
+-/
+
+namespace Surangama.SevenLocations.InsideConditional
+
+/-- 接受“在内应知内”和“不知内”这两个条件，就不能同时坚持“在内”。 -/
+theorem not_inside
+    (Inside KnowsInside : Prop)
+    (inside_requires_inner_knowing : Inside → KnowsInside)
+    (no_inner_knowing : ¬ KnowsInside) :
+    ¬ Inside := by
+  -- 暂时假设阿难的身内定位成立。
+  intro inside
+  -- 使用第一个前提，得到“知内”的证明。
+  have knows_inside : KnowsInside := inside_requires_inner_knowing inside
+  -- 与第二个前提“不知内”相冲突，排除刚才的临时假设。
+  exact no_inner_knowing knows_inside
+
+/-! ## Scope witnesses: logical valuations, not empirical models of minds -/
+
+/-- 两个前提可以同时满足；没有用互相矛盾的前提推出任意结论。 -/
+theorem premises_have_model :
+    ∃ (Inside KnowsInside : Prop),
+      (Inside → KnowsInside) ∧ ¬ KnowsInside := by
+  exact ⟨False, False, (fun h =&gt; h), (fun h =&gt; h)⟩
+
+/-- 只留下“不知内”，仍容许“在内”为真：连接前提不可直接省去。 -/
+theorem without_bridge_allows_inside :
+    ∃ (Inside KnowsInside : Prop), (¬ KnowsInside) ∧ Inside := by
+  exact ⟨True, False, (fun h =&gt; h), True.intro⟩
+
+/-- 只留下“在内应知内”，仍容许“在内”为真：经验前提也不可省去。 -/
+theorem without_no_inner_knowing_allows_inside :
+    ∃ (Inside KnowsInside : Prop), (Inside → KnowsInside) ∧ Inside := by
+  exact ⟨True, True, (fun h =&gt; h), True.intro⟩
+
+end Surangama.SevenLocations.InsideConditional
+</code></pre></details><details id="C2"><summary>C2 · 心在外</summary><pre><code>/- SPDX-License-Identifier: Apache-2.0 -/
+
+/-!
+# C2 · 七处征心第二处：“心在外”的条件反驳
+
+经文提供指引，论证检查误认，Lean 核对明确前提下的推导；
+这些工作的完成，不等于修证的完成。
+可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
+
+依据：项目《研究札记_心在外_逻辑与论据_20260930》。
+原文：T19n0945 卷一 p107b06–24。见 docs/C2_OUTSIDE_CONDITIONAL.md。
+本例将既有 L2 使用的两个条件单独列出，不导入全部 SutraPremises。
+
+命题的工作解释（不是对心或如来藏作本体定义）：
+* Outside：阿难本段所执的觉了知见之心住在身外。
+* BodyMindKnowTogether：本段眼见佛手时，心有相应的分别了知。
+  “相知”仅指这一具体关联，不表示身心知晓彼此的一切状态。
+
+两个明确前提：
+* outside_prevents_knowing：在外则不相知。
+  对应 p107b16–18“若……实在身外，身心相外，自不相干……”。
+  这是本次重建保留的连接条件，不是由空间距离本身证明的普遍规律，
+  也没有偷偷加入 Outside 的定义。
+* body_mind_know_together：实际相知。
+  对应 p107b18–19“汝眼见时，心分别不？”以及阿难回答“如是”。
+  p107b22–24 阿难复述“身心相知，不相离故，不在身外”，
+  是其承接该推理方向的后续证据。
+
+“一人食不能令众饱”（p107b12–16）是连接条件的比喻背景，
+不另作一个已经证明“不同个体绝无认知联系”的定理。
+本文件核对条件推导，不验证经验前提或类比迁移本身；
+不由非在外推出在内、本体同一或一切空间范畴都不适用。
+意识与大脑作用的争论留待后续，不在本定理的结论中。
+-/
+
+namespace Surangama.SevenLocations.C2
+
+/-- 在外则不相知；而实际相知；所以在这些条件下，非在外。 -/
+theorem not_outside
+    (Outside BodyMindKnowTogether : Prop)
+    (outside_prevents_knowing : Outside → ¬ BodyMindKnowTogether)
+    (body_mind_know_together : BodyMindKnowTogether) :
+    ¬ Outside := by
+  -- 暂时假设阿难所说的识心在身外。
+  intro outside
+  -- 用第一个前提，得到“不相知”。
+  have not_knowing : ¬ BodyMindKnowTogether := outside_prevents_knowing outside
+  -- 把第二个前提“相知”交给“不相知”，得到矛盾，排除临时假设。
+  exact not_knowing body_mind_know_together
+
+/-! ## 范围核对：以下仅为逻辑真假取值，不是现实心或大脑的模型 -/
+
+/-- “在外”为假、“相知”为真，可以同时满足两个前提。 -/
+theorem premises_have_model :
+    ∃ (Outside BodyMindKnowTogether : Prop),
+      (Outside → ¬ BodyMindKnowTogether) ∧ BodyMindKnowTogether := by
+  exact ⟨False, True, (fun outside =&gt; False.elim outside), True.intro⟩
+
+/-- 只留下“实际相知”，仍容许“在外”为真：不能省去连接条件。 -/
+theorem without_bridge_allows_outside :
+    ∃ (Outside BodyMindKnowTogether : Prop), BodyMindKnowTogether ∧ Outside := by
+  exact ⟨True, True, True.intro, True.intro⟩
+
+/-- 只留下“在外则不相知”，仍容许“在外”为真：不能省去经验前提。 -/
+theorem without_knowing_allows_outside :
+    ∃ (Outside BodyMindKnowTogether : Prop),
+      (Outside → ¬ BodyMindKnowTogether) ∧ Outside := by
+  exact ⟨True, False, (fun _ not_knowing =&gt; not_knowing), True.intro⟩
+
+end Surangama.SevenLocations.C2
+</code></pre></details><details id="C3"><summary>C3 · 潜伏根里</summary><pre><code>/- SPDX-License-Identifier: Apache-2.0 -/
+
+/-!
+# C3 · 七处征心第三处：“潜伏根里，如琉璃合”的条件反驳
+
+经文提供指引，论证检查误认，Lean 核对明确前提下的推导；
+这些工作的完成，不等于修证的完成。
+可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
+
+依据：《研究札记_潜伏根里_逻辑与论据_20260930》；
+T19n0945 卷一 p107b22–c08。见 docs/C3_IN_ROOT_CONDITIONAL.md。
+保留既有 L3 的简化分支，并补上“若见眼，不得成随”的分支及汇总。
+所有连接条件单列为参数，不导入整套 SutraPremises。
+
+命题的工作解释（不是对心或如来藏作本体定义）：
+* InRoot：阿难本段的“了知心潜伏眼根里，如琉璃合”解释成立。
+* SeesEye：在本段向外观看的方式下，心直接见到自己的眼根。
+  不将照镜子、照片或医学影像混作同一种“见眼”。
+  新分支将其限定为：像见山河一样，把所称的眼当作可见色境。
+* FollowsSeeing：保持阿难原说的“根见而心随即分别”的所依关系。
+  不是说心能产生任意一种分别，也不是给眼识的全部功能下定义。
+
+两个明确前提：
+* in_root_requires_seeing_eye：若上述潜根解释成立，就应见眼。
+  比喻中的眼对应心，琉璃对应眼根。阿难承认“實見瑠璃”，
+  佛陀追问“何不見眼”。这一类比迁移作为连接条件列出，
+  不是 Lean 已经证明的光学规律，也没有写进 InRoot 的定义。
+* no_seeing_eye：本段上述观看方式下不见眼。
+  由“何不見眼”的反诘采用，不冒充阿难另答“我不见眼”。
+
+新增两个明确前提：
+* in_root_requires_following：潜根解释若成立，须保持随见随分别。
+  对应 p107b27“彼根隨見隨即分別”。
+* seeing_eye_prevents_following：若如此见眼，则不能保持上述关系。
+  对应 p107c05“若見眼者，眼即同境，不得成隨”。
+  这是按所依根与所缘色境有别而重建的连接条件，显式保留；
+  不是“器官被观察后失去功能”，也不禁止意识认识眼根。
+
+not_in_root_two_branches 使用“潜根则见眼”“潜根须成随”“见眼不成随”
+三个条件，不再需要额外传入事实前提“不见眼”。
+不见眼时由原简化定理反驳；见眼时由新增分支反驳。
+汇总通过潜根假设自身要求的见眼进入见眼分支，无需排中律。
+本文件核对条件推导，不证明类比或根境区分本身；
+不据此否定所有眼根相关认知理论。
+本 C3 不是旧项目的绳蛇推断模型。
+-/
+
+namespace Surangama.SevenLocations.C3
+
+/-- 依此潜根解释应见眼；实际不见眼；故在这两个条件下该解释不成立。 -/
+theorem not_in_root
+    (InRoot SeesEye : Prop)
+    (in_root_requires_seeing_eye : InRoot → SeesEye)
+    (no_seeing_eye : ¬ SeesEye) :
+    ¬ InRoot := by
+  -- 暂时接下“潜根解释成立”的假设。
+  intro in_root
+  -- 把这一假设交给前提一，得到“见眼”的依据。
+  have sees_eye : SeesEye := in_root_requires_seeing_eye in_root
+  -- 前提二已是不见眼；把见眼的依据交给它，得到矛盾。
+  exact no_seeing_eye sees_eye
+
+/-! ## 新增分支与双分支汇总 -/
+
+/-- 若承认见眼而眼同色境，则不成随；但潜根解释须成随，故该解释不成立。 -/
+theorem not_in_root_of_seeing
+    (InRoot SeesEye FollowsSeeing : Prop)
+    (in_root_requires_following : InRoot → FollowsSeeing)
+    (seeing_eye_prevents_following : SeesEye → ¬ FollowsSeeing)
+    (sees_eye : SeesEye) :
+    ¬ InRoot := by
+  intro in_root
+  -- 原模型要求保留根见、心随即分别。
+  have follows : FollowsSeeing := in_root_requires_following in_root
+  -- 见眼而眼同境，则不能保持同一所依关系。
+  have not_follows : ¬ FollowsSeeing := seeing_eye_prevents_following sees_eye
+  exact not_follows follows
+
+/-- 不见眼违背类比；见眼不能成随。汇总不额外假定实际不见眼。 -/
+theorem not_in_root_two_branches
+    (InRoot SeesEye FollowsSeeing : Prop)
+    (in_root_requires_seeing_eye : InRoot → SeesEye)
+    (in_root_requires_following : InRoot → FollowsSeeing)
+    (seeing_eye_prevents_following : SeesEye → ¬ FollowsSeeing) :
+    ¬ InRoot := by
+  intro in_root
+  -- 若不见眼，前一个 not_in_root 已说明不能成立。
+  -- 现在暂时接受潜根模型，它自己就要求见眼，无需另作二分假设。
+  have sees_eye : SeesEye := in_root_requires_seeing_eye in_root
+  -- 进入见眼分支：模型同时要求成随，而见眼又推出不成随。
+  exact (not_in_root_of_seeing InRoot SeesEye FollowsSeeing
+    in_root_requires_following seeing_eye_prevents_following sees_eye) in_root
+
+/-! ## 原简化分支的范围核对：仅为逻辑真假取值 -/
+
+/-- 潜根解释为假、见眼为假，两个前提可以同时成立。 -/
+theorem premises_have_model :
+    ∃ (InRoot SeesEye : Prop), (InRoot → SeesEye) ∧ ¬ SeesEye := by
+  exact ⟨False, False, (fun h =&gt; h), (fun h =&gt; h)⟩
+
+/-- 只保留不见眼，仍容许潜根解释为真，故连接条件不能省去。 -/
+theorem without_bridge_allows_in_root :
+    ∃ (InRoot SeesEye : Prop), (¬ SeesEye) ∧ InRoot := by
+  exact ⟨True, False, (fun h =&gt; h), True.intro⟩
+
+/-- 只保留潜根则见眼，仍容许潜根解释为真，故不见眼条件不能省去。 -/
+theorem without_no_seeing_eye_allows_in_root :
+    ∃ (InRoot SeesEye : Prop), (InRoot → SeesEye) ∧ InRoot := by
+  exact ⟨True, True, (fun h =&gt; h), True.intro⟩
+
+/-! ## 双分支汇总的范围核对：不把三条前提本身设为互相矛盾 -/
+
+/-- 潜根为假、见眼为假、成随为真，可以同时满足三个条件。 -/
+theorem two_branch_premises_have_model :
+    ∃ (InRoot SeesEye FollowsSeeing : Prop),
+      (InRoot → SeesEye) ∧ (InRoot → FollowsSeeing) ∧
+      (SeesEye → ¬ FollowsSeeing) := by
+  exact ⟨False, False, True, (fun h =&gt; h),
+    (fun h =&gt; False.elim h), (fun h =&gt; False.elim h)⟩
+
+/-- 去掉潜根则见眼，潜根为真、见眼为假、成随为真仍满足其余条件。 -/
+theorem two_branch_without_bridge_allows_in_root :
+    ∃ (InRoot SeesEye FollowsSeeing : Prop),
+      (InRoot → FollowsSeeing) ∧ (SeesEye → ¬ FollowsSeeing) ∧ InRoot := by
+  exact ⟨True, False, True, (fun h =&gt; h), (fun h =&gt; False.elim h), True.intro⟩
+
+/-- 去掉潜根须成随，潜根为真、见眼为真、成随为假仍满足其余条件。 -/
+theorem two_branch_without_following_allows_in_root :
+    ∃ (InRoot SeesEye FollowsSeeing : Prop),
+      (InRoot → SeesEye) ∧ (SeesEye → ¬ FollowsSeeing) ∧ InRoot := by
+  exact ⟨True, True, False, (fun h =&gt; h), (fun _ h =&gt; h), True.intro⟩
+
+/-- 去掉见眼不成随，三个命题都为真仍满足其余条件。 -/
+theorem two_branch_without_incompatibility_allows_in_root :
+    ∃ (InRoot SeesEye FollowsSeeing : Prop),
+      (InRoot → SeesEye) ∧ (InRoot → FollowsSeeing) ∧ InRoot := by
+  exact ⟨True, True, True, (fun h =&gt; h), (fun h =&gt; h), True.intro⟩
+
+end Surangama.SevenLocations.C3
+</code></pre></details><details id="C4"><summary>C4 · 见暗名见内</summary><pre><code>/- SPDX-License-Identifier: Apache-2.0 -/
+
+/-!
+# C4 · 见暗名见内：分支与连续追问的条件重建
+
+经文提供指引，论证检查误认，Lean 核对明确前提下的推导；
+这些工作的完成，不等于修证的完成。
+可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
+
+依据：T19n0945 卷一 p107c09–23，及 docs/C4_DARKNESS_CONDITIONAL.md。
+本文件不导入整套 SutraPremises，不改既有 Core.L4 的范围。
+
+命题是本段的工作解释，不是对心的本体定义：
+* Claim：以“见暗名见内”补救身内定位的本次解释成立。
+* Ordinary：把通常根尘相对所见的暗直接认作见内的解释成立。
+* SeesDark：见到本段的暗境；不是无见。
+* FacesEye：暗境与眼根构成本段成见的根尘相对关系。
+* InnerEvidence：仅凭这里的暗境，就已确证见到自身内部。
+* Inward：以直接返观自身内部解释闭眼见暗的补救成立。
+* SeesFace：按同一返观能力直接见到自己的脸，不指镜像或影像。
+* Outside：在本段直接相对观看模型中，心眼被安置于身体外部。
+
+重要连接条件都显式列出：
+seeing_requires_facing 是根尘相对之必要条件的正向写法。
+facing_excludes_inner_evidence 限于本段“所见暗即内身”的认定；
+它不是“外尘一律位于皮肤之外”，也不否定一切内身认识。
+inward_requires_face 采用注疏的开合返观一致性解释。
+face_requires_outside 采用本段直接相对观看模型，不是普遍光学定律。
+inward_requires_inside 保留阿难要补救的身内定位要求。
+
+主汇总只涵盖 claim_routes 明列的普通见暗解释与返观解释。
+它在见面导致位置冲突处已足够反驳；后续自身归属、二知及暗室反例
+各有独立条件推导，不冒称它们都是主汇总的必要依赖。
+TwoKnowers 指两个分别独立的能知主体，不是两种感官或认知功能。
+TwoBuddhas 只命名经文反诘的后果；不定义佛是什么。
+-/
+
+namespace Surangama.SevenLocations.C4
+
+/-- 不与眼对则不成见：由成见所需的根尘关系得到。 -/
+theorem not_seeing_without_facing
+    (SeesDark FacesEye : Prop)
+    (seeing_requires_facing : SeesDark → FacesEye)
+    (not_facing : ¬ FacesEye) : ¬ SeesDark := by
+  intro sees_dark
+  exact not_facing (seeing_requires_facing sees_dark)
+
+/-- 见暗须对眼；对眼之暗不足以构成本段所声称的见内确证。 -/
+theorem not_ordinary_darkness_explanation
+    (Ordinary SeesDark FacesEye InnerEvidence : Prop)
+    (ordinary_content : Ordinary → SeesDark ∧ InnerEvidence)
+    (seeing_requires_facing : SeesDark → FacesEye)
+    (facing_excludes_inner_evidence : FacesEye → ¬ InnerEvidence) :
+    ¬ Ordinary := by
+  intro ordinary
+  obtain ⟨sees_dark, inner_evidence⟩ := ordinary_content ordinary
+  have faces_eye : FacesEye := seeing_requires_facing sees_dark
+  exact facing_excludes_inner_evidence faces_eye inner_evidence
+
+/-- 若不见面，且所主张的返观须能见面，则返观解释不成立。 -/
+theorem not_inward_when_no_face
+    (Inward SeesFace : Prop)
+    (inward_requires_face : Inward → SeesFace)
+    (no_face : ¬ SeesFace) : ¬ Inward := by
+  intro inward
+  exact no_face (inward_requires_face inward)
+
+/-- 暂许见面后，身外位置与该模型保留的身内定位相冲突。 -/
+theorem not_inward_when_face
+    (Inward SeesFace Outside : Prop)
+    (face_requires_outside : SeesFace → Outside)
+    (inward_requires_inside : Inward → ¬ Outside)
+    (sees_face : SeesFace) : ¬ Inward := by
+  intro inward
+  exact inward_requires_inside inward (face_requires_outside sees_face)
+
+/-- 返观须见面，见面须在外，而本模型须保持在内。 -/
+theorem not_inward_explanation
+    (Inward SeesFace Outside : Prop)
+    (inward_requires_face : Inward → SeesFace)
+    (face_requires_outside : SeesFace → Outside)
+    (inward_requires_inside : Inward → ¬ Outside) : ¬ Inward := by
+  intro inward
+  have sees_face : SeesFace := inward_requires_face inward
+  exact (not_inward_when_face Inward SeesFace Outside
+    face_requires_outside inward_requires_inside sees_face) inward
+
+/-- 主汇总：在明列的两类解释与各连接条件下，见暗认内的补救不成立。 -/
+theorem not_darkness_is_inner_sight
+    (Claim Ordinary Inward SeesDark FacesEye InnerEvidence SeesFace Outside : Prop)
+    (claim_routes : Claim → Ordinary ∨ Inward)
+    (ordinary_content : Ordinary → SeesDark ∧ InnerEvidence)
+    (seeing_requires_facing : SeesDark → FacesEye)
+    (facing_excludes_inner_evidence : FacesEye → ¬ InnerEvidence)
+    (inward_requires_face : Inward → SeesFace)
+    (face_requires_outside : SeesFace → Outside)
+    (inward_requires_inside : Inward → ¬ Outside) : ¬ Claim := by
+  intro claim
+  -- 这里分类的是已列出的解释方式，不是对所有认知理论作穷尽断言。
+  rcases claim_routes claim with ordinary | inward
+  · exact (not_ordinary_darkness_explanation Ordinary SeesDark FacesEye InnerEvidence
+      ordinary_content seeing_requires_facing facing_excludes_inner_evidence) ordinary
+  · exact (not_inward_explanation Inward SeesFace Outside
+      inward_requires_face face_requires_outside inward_requires_inside) inward
+
+/-! ## 继续暂许后的追问：以下三类条件没有进入上面的主汇总 -/
+
+/-- 若离体观看仍算自身的判据也把他人算作自身，则该判据不成立。 -/
+theorem not_external_ownership_by_face
+    (OwnershipClaim OtherIsSelf : Prop)
+    (criterion_transfers_to_other : OwnershipClaim → OtherIsSelf)
+    (other_is_not_self : ¬ OtherIsSelf) : ¬ OwnershipClaim := by
+  intro ownership
+  exact other_is_not_self (criterion_transfers_to_other ownership)
+
+/-- 二知到两佛的反诘：两个连接条件保留为参数，不定义佛的本体。 -/
+theorem not_two_knowers
+    (TwoKnowers TwoBuddhas : Prop)
+    (two_knowers_entail_two_buddhas : TwoKnowers → TwoBuddhas)
+    (not_two_buddhas : ¬ TwoBuddhas) : ¬ TwoKnowers := by
+  intro two_knowers
+  exact not_two_buddhas (two_knowers_entail_two_buddhas two_knowers)
+
+/-- 将独立能知者安置在外后，检查身非觉或二知这两种后果。 -/
+theorem not_external_knower_rescue
+    (ExternalRescue BodyAware TwoKnowers TwoBuddhas : Prop)
+    (external_consequences : ExternalRescue → (¬ BodyAware) ∨ TwoKnowers)
+    (body_aware : BodyAware)
+    (two_knowers_entail_two_buddhas : TwoKnowers → TwoBuddhas)
+    (not_two_buddhas : ¬ TwoBuddhas) : ¬ ExternalRescue := by
+  intro external_rescue
+  -- 这是所列补救模型的后果分类，不是对任何身外认识关系的断言。
+  rcases external_consequences external_rescue with no_body_awareness | two_knowers
+  · exact no_body_awareness body_aware
+  · exact (not_two_knowers TwoKnowers TwoBuddhas
+      two_knowers_entail_two_buddhas not_two_buddhas) two_knowers
+
+/-- 即使继续允许离体能知的补救，也可沿见面、身外、身觉与二知链反驳。 -/
+theorem not_inward_via_knower_rescue
+    (Inward SeesFace Outside ExternalRescue BodyAware TwoKnowers TwoBuddhas : Prop)
+    (inward_requires_face : Inward → SeesFace)
+    (face_requires_outside : SeesFace → Outside)
+    (inward_outside_requires_rescue : Inward → Outside → ExternalRescue)
+    (external_consequences : ExternalRescue → (¬ BodyAware) ∨ TwoKnowers)
+    (body_aware : BodyAware)
+    (two_knowers_entail_two_buddhas : TwoKnowers → TwoBuddhas)
+    (not_two_buddhas : ¬ TwoBuddhas) : ¬ Inward := by
+  intro inward
+  have outside : Outside := face_requires_outside (inward_requires_face inward)
+  have rescue : ExternalRescue := inward_outside_requires_rescue inward outside
+  exact (not_external_knower_rescue ExternalRescue BodyAware TwoKnowers TwoBuddhas
+    external_consequences body_aware two_knowers_entail_two_buddhas not_two_buddhas) rescue
+
+/-- 暗室焦腑是独立补充：检验把暗直接当作内身的同一判据。 -/
+theorem not_darkness_criterion
+    (DarknessCriterion RoomIsViscera : Prop)
+    (criterion_applies_to_room : DarknessCriterion → RoomIsViscera)
+    (room_is_not_viscera : ¬ RoomIsViscera) : ¬ DarknessCriterion := by
+  intro criterion
+  exact room_is_not_viscera (criterion_applies_to_room criterion)
+
+/-! ## 范围核对：真假取值只是逻辑见证，不是现实心的模型 -/
+
+/-- 可见暗且根尘相对，同时满足普通分支前提，而不认定其为见内确证。 -/
+theorem ordinary_premises_have_model :
+    ∃ (Ordinary SeesDark FacesEye InnerEvidence : Prop),
+      (Ordinary → SeesDark ∧ InnerEvidence) ∧ (SeesDark → FacesEye) ∧
+      (FacesEye → ¬ InnerEvidence) ∧ SeesDark := by
+  exact ⟨False, True, True, False, (fun h =&gt; False.elim h),
+    (fun h =&gt; h), (fun _ h =&gt; h), True.intro⟩
+
+/-- 去掉对眼与见内确证之间的连接，角色分类本身不足以排除原主张。 -/
+theorem ordinary_without_evidence_bridge_allows_claim :
+    ∃ (Ordinary SeesDark FacesEye InnerEvidence : Prop),
+      (Ordinary → SeesDark ∧ InnerEvidence) ∧ (SeesDark → FacesEye) ∧ Ordinary := by
+  exact ⟨True, True, True, True, (fun h =&gt; ⟨h, h⟩), (fun h =&gt; h), True.intro⟩
+
+/-- 返观分支的三个前提并非自身矛盾。 -/
+theorem inward_premises_have_model :
+    ∃ (Inward SeesFace Outside : Prop),
+      (Inward → SeesFace) ∧ (SeesFace → Outside) ∧ (Inward → ¬ Outside) := by
+  exact ⟨False, False, False, (fun h =&gt; h), (fun h =&gt; h), (fun _ h =&gt; h)⟩
+
+/-- 去掉开合返观的一致性连接，其余位置条件仍容许返观主张为真。 -/
+theorem inward_without_face_bridge_allows_claim :
+    ∃ (Inward SeesFace Outside : Prop),
+      (SeesFace → Outside) ∧ (Inward → ¬ Outside) ∧ Inward := by
+  exact ⟨True, False, False, (fun h =&gt; h), (fun _ h =&gt; h), True.intro⟩
+
+/-- 身觉与二知分支的条件可以同时成立，并不预先断言矛盾。 -/
+theorem knower_premises_have_model :
+    ∃ (ExternalRescue BodyAware TwoKnowers TwoBuddhas : Prop),
+      (ExternalRescue → (¬ BodyAware) ∨ TwoKnowers) ∧ BodyAware ∧
+      (TwoKnowers → TwoBuddhas) ∧ ¬ TwoBuddhas := by
+  exact ⟨False, True, False, False, (fun h =&gt; False.elim h), True.intro,
+    (fun h =&gt; h), (fun h =&gt; h)⟩
+
+/-- 若没有一身不成两佛这一限制，后果链自身不排除外置能知补救。 -/
+theorem knower_without_terminal_limit_allows_rescue :
+    ∃ (ExternalRescue BodyAware TwoKnowers TwoBuddhas : Prop),
+      (ExternalRescue → (¬ BodyAware) ∨ TwoKnowers) ∧ BodyAware ∧
+      (TwoKnowers → TwoBuddhas) ∧ ExternalRescue := by
+  exact ⟨True, True, True, True, (fun h =&gt; Or.inr h), True.intro,
+    (fun h =&gt; h), True.intro⟩
+
+end Surangama.SevenLocations.C4
+</code></pre></details><details id="C5"><summary>C5 · 随所合处心则随有</summary><pre><code>/- SPDX-License-Identifier: Apache-2.0 -/
+
+/-!
+# C5: the contact-and-arrival interpretation, conditional proof
+
+经文提供指引，论证检查误认，Lean 核对明确前提下的推导；
+这些工作的完成，不等于修证的完成。
+可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
+
+本文件核验 C5 的无体／有体两分支；有体分支才进入内出外入。
+不冒称逐句覆盖一多、遍不遍等全部经文。
+Claim: 阿难本次“随所合处，心则随有”的解释成立。
+HasBody: 所执心体有体，即本轮讨论中的有所指，并非无所指空名。
+“无体”在此指候选者全无相应所指，不等于“分别性离尘无自体”。
+后者不否认依条件发生的分别活动，不能直接代入本文件的 ¬ HasBody。
+CanContact: 所说的心能够与境相合。
+FromInside / FromOutside: 所执能知心体从身内出／从身外入，到达相合处。
+SeesInside / SeesFace: 在本段直接了知、观看的模型下见到身中／自己的脸。
+不是借助镜像、影像或其他工具的观看。
+
+原 not_at_contact 的五个显式条件（保留为有体路线工具）：
+1. contact_requires_arrival：按本次有体、接触、到达的解释，若主张成立，
+   则心体须内出或外入。依据 p108a01-03；圆瑛 P00700；正脉疏“因挃始来”。
+   它不是从“接触”一词抽出的普遍规律，也不由结论的否定来定义 Claim。
+2-3. 内出应见身中／外入应先见面：经文的条件反诘与注疏解释。
+4-5. 本段所采用的不见身中／不直接见面：圆瑛 P00700“今二俱不见”。
+
+这里把“心体的知如何连接见”的解释保留在条件 2-3 中，未独立证明它。
+新主汇总 not_at_contact_all_cases 显式加入有体／无体分类、主张要求能合、
+无体不能合；原到达条件改为 Claim → HasBody → 内出或外入。
+无体分支不使用内外条件。分类命题作为参数，不暗中导入经典逻辑公理。
+十九界／七尘作为无体虚名相合的反诘，由独立引理说明怎样提供无体不能合条件；
+FictitiousCombination 只是命名其后果，不将该后果直接定义为 False。
+一多、遍不遍、门眼比喻不增加主汇总依赖。
+不检验现代神经模型，不否定认识活动依条件发生，不证明真心的本体属性。
+-/
+
+namespace Surangama.SevenLocations.C5ContactConditional
+
+theorem not_at_contact
+    (Claim FromInside FromOutside SeesInside SeesFace : Prop)
+    (contact_requires_arrival : Claim → FromInside ∨ FromOutside)
+    (inside_requires_sight : FromInside → SeesInside)
+    (outside_requires_face : FromOutside → SeesFace)
+    (no_inside_sight : ¬ SeesInside)
+    (no_direct_face : ¬ SeesFace) : ¬ Claim := by
+  intro claim
+  rcases contact_requires_arrival claim with from_inside | from_outside
+  · exact no_inside_sight (inside_requires_sight from_inside)
+  · exact no_direct_face (outside_requires_face from_outside)
+
+/-- 十九界／七尘反诘：虚名相合的迁移与不可接受性都作为显式条件。 -/
+theorem no_body_no_contact_from_empty_example
+    (HasBody CanContact FictitiousCombination : Prop)
+    (empty_transfer : ¬ HasBody → CanContact → FictitiousCombination)
+    (no_fictitious_combination : ¬ FictitiousCombination) :
+    ¬ HasBody → ¬ CanContact := by
+  intro no_body contact
+  exact no_fictitious_combination (empty_transfer no_body contact)
+
+/-- 无体分支：主张仍要求能合，而无体条件不允许能合。 -/
+theorem not_at_contact_without_body
+    (Claim HasBody CanContact : Prop)
+    (claim_requires_contact : Claim → CanContact)
+    (no_body_no_contact : ¬ HasBody → ¬ CanContact)
+    (no_body : ¬ HasBody) : ¬ Claim := by
+  intro claim
+  exact no_body_no_contact no_body (claim_requires_contact claim)
+
+/-- 有体分支：明确获得有体假设，才准许使用内出／外入条件。 -/
+theorem not_at_contact_with_body
+    (Claim HasBody FromInside FromOutside SeesInside SeesFace : Prop)
+    (body : HasBody)
+    (embodied_contact_requires_arrival : Claim → HasBody → FromInside ∨ FromOutside)
+    (inside_requires_sight : FromInside → SeesInside)
+    (outside_requires_face : FromOutside → SeesFace)
+    (no_inside_sight : ¬ SeesInside)
+    (no_direct_face : ¬ SeesFace) : ¬ Claim := by
+  exact not_at_contact Claim FromInside FromOutside SeesInside SeesFace
+    (fun claim =&gt; embodied_contact_requires_arrival claim body)
+    inside_requires_sight outside_requires_face no_inside_sight no_direct_face
+
+/-- 主汇总：无体不能合；有体才检查内出外入，分别得到矛盾。 -/
+theorem not_at_contact_all_cases
+    (Claim HasBody CanContact FromInside FromOutside SeesInside SeesFace : Prop)
+    (body_cases : HasBody ∨ ¬ HasBody)
+    (claim_requires_contact : Claim → CanContact)
+    (no_body_no_contact : ¬ HasBody → ¬ CanContact)
+    (embodied_contact_requires_arrival : Claim → HasBody → FromInside ∨ FromOutside)
+    (inside_requires_sight : FromInside → SeesInside)
+    (outside_requires_face : FromOutside → SeesFace)
+    (no_inside_sight : ¬ SeesInside)
+    (no_direct_face : ¬ SeesFace) : ¬ Claim := by
+  rcases body_cases with body | no_body
+  · exact not_at_contact_with_body Claim HasBody FromInside FromOutside SeesInside SeesFace
+      body embodied_contact_requires_arrival inside_requires_sight
+      outside_requires_face no_inside_sight no_direct_face
+  · exact not_at_contact_without_body Claim HasBody CanContact
+      claim_requires_contact no_body_no_contact no_body
+
+end Surangama.SevenLocations.C5ContactConditional
+</code></pre></details><details id="C6"><summary>C6 · 心在中间</summary><pre><code>/- SPDX-License-Identifier: Apache-2.0 -/
+
+/-!
+# C6 · 心在中间：四类关系的条件反驳
+
+经文提供指引，论证检查误认，Lean 核对明确前提下的推导；
+这些工作的完成，不等于修证的完成。
+可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
+
+依据：T19n0945 卷一 p108a15–b03；docs/C6_MIDDLE_CONDITIONAL.md。
+主证明覆盖根尘中间之计的四种关系；身体中央、标杆方位不纳入此汇总。
+不导入整套 SutraPremises，不改变既有 Core.L6。
+
+命题是工作解释，不是心的本体定义：
+* Claim：本段“识生其中，则为心在”的根尘中间心体解释成立。
+* Root / Dust：该候选心体分别兼属根方／尘方；全篇使用同一关系。
+* Middle：所主张的区别于单独两边的中间地位成立。
+* HasNature：此模型所立心体具有相应体性。
+* Opposed：兼两边后，根之有知与尘之无知仍对立两立。
+* RootSide / DustSide：心体完全归属根一边／尘一边。
+
+八个实质条件均显式传入：主张须成立中间地位及体性；兼二导致两立；
+两立不成中；只兼根则完全归根；归根不成中；只兼尘则完全归尘；
+归尘不成中；全不兼则无此模型所立体性。
+两条“只兼一”是用户确认的项目补全，并非原文另列的两段。
+因果依赖不自动等于完全归属；不同部分有不同性质不自动是逻辑矛盾。
+
+两个逻辑分类条件 Root ∨ ¬ Root、Dust ∨ ¬ Dust 显式传入。
+无隐藏的经典排中律调用；空公理依赖仍不等于无上述条件。
+旧项目“C-6 六根互用／换基”与本模块无关。
+-/
+
+namespace Surangama.SevenLocations.C6
+
+/-- 对同一兼属关系逐项分类，得到互斥的四种组合。 -/
+theorem four_cases (Root Dust : Prop)
+    (root_cases : Root ∨ ¬ Root) (dust_cases : Dust ∨ ¬ Dust) :
+    (Root ∧ Dust) ∨ (Root ∧ ¬ Dust) ∨
+      (¬ Root ∧ Dust) ∨ (¬ Root ∧ ¬ Dust) := by
+  rcases root_cases with root | no_root
+  · rcases dust_cases with dust | no_dust
+    · exact Or.inl ⟨root, dust⟩
+    · exact Or.inr (Or.inl ⟨root, no_dust⟩)
+  · rcases dust_cases with dust | no_dust
+    · exact Or.inr (Or.inr (Or.inl ⟨no_root, dust⟩))
+    · exact Or.inr (Or.inr (Or.inr ⟨no_root, no_dust⟩))
+
+/-- 兼两边：按给定解释形成两立，与主张所需的中间地位冲突。 -/
+theorem not_middle_of_both (Claim Root Dust Middle Opposed : Prop)
+    (claim_requires_middle : Claim → Middle)
+    (both_opposed : Root → Dust → Opposed)
+    (opposed_not_middle : Opposed → ¬ Middle)
+    (root : Root) (dust : Dust) : ¬ Claim := by
+  intro claim
+  have middle : Middle := claim_requires_middle claim
+  have opposed : Opposed := both_opposed root dust
+  exact opposed_not_middle opposed middle
+
+/-- 只兼根：经完全归属根方的连接，不成所主张的中间。 -/
+theorem not_middle_of_root_only (Claim Root Dust Middle RootSide : Prop)
+    (claim_requires_middle : Claim → Middle)
+    (root_only_at_side : Root → ¬ Dust → RootSide)
+    (root_side_not_middle : RootSide → ¬ Middle)
+    (root : Root) (no_dust : ¬ Dust) : ¬ Claim := by
+  intro claim
+  have middle : Middle := claim_requires_middle claim
+  have root_side : RootSide := root_only_at_side root no_dust
+  exact root_side_not_middle root_side middle
+
+/-- 只兼尘：经完全归属尘方的连接，不成所主张的中间。 -/
+theorem not_middle_of_dust_only (Claim Root Dust Middle DustSide : Prop)
+    (claim_requires_middle : Claim → Middle)
+    (dust_only_at_side : ¬ Root → Dust → DustSide)
+    (dust_side_not_middle : DustSide → ¬ Middle)
+    (no_root : ¬ Root) (dust : Dust) : ¬ Claim := by
+  intro claim
+  have middle : Middle := claim_requires_middle claim
+  have dust_side : DustSide := dust_only_at_side no_root dust
+  exact dust_side_not_middle dust_side middle
+
+/-- 全不兼：按此模型无所立体性，与主张须有该体性冲突。 -/
+theorem not_middle_of_neither (Claim Root Dust HasNature : Prop)
+    (claim_requires_nature : Claim → HasNature)
+    (neither_no_nature : ¬ Root → ¬ Dust → ¬ HasNature)
+    (no_root : ¬ Root) (no_dust : ¬ Dust) : ¬ Claim := by
+  intro claim
+  have nature : HasNature := claim_requires_nature claim
+  exact neither_no_nature no_root no_dust nature
+
+/-- 主汇总：两项逻辑分类、八项实质条件，排除四种关系下的中间主张。 -/
+theorem not_in_middle_four_cases
+    (Claim Root Dust Middle HasNature Opposed RootSide DustSide : Prop)
+    (root_cases : Root ∨ ¬ Root)
+    (dust_cases : Dust ∨ ¬ Dust)
+    (claim_content : Claim → Middle ∧ HasNature)
+    (both_opposed : Root → Dust → Opposed)
+    (opposed_not_middle : Opposed → ¬ Middle)
+    (root_only_at_side : Root → ¬ Dust → RootSide)
+    (root_side_not_middle : RootSide → ¬ Middle)
+    (dust_only_at_side : ¬ Root → Dust → DustSide)
+    (dust_side_not_middle : DustSide → ¬ Middle)
+    (neither_no_nature : ¬ Root → ¬ Dust → ¬ HasNature) : ¬ Claim := by
+  -- 从主张取得两项要求，不把要求藏入 Claim 的定义。
+  have requires_middle : Claim → Middle := fun claim =&gt; (claim_content claim).1
+  have requires_nature : Claim → HasNature := fun claim =&gt; (claim_content claim).2
+  -- “不兼二”展开为只兼根、只兼尘、全不兼，没有漏掉只兼一。
+  rcases four_cases Root Dust root_cases dust_cases with both | only_root | only_dust | neither
+  · exact not_middle_of_both Claim Root Dust Middle Opposed
+      requires_middle both_opposed opposed_not_middle both.1 both.2
+  · exact not_middle_of_root_only Claim Root Dust Middle RootSide
+      requires_middle root_only_at_side root_side_not_middle only_root.1 only_root.2
+  · exact not_middle_of_dust_only Claim Root Dust Middle DustSide
+      requires_middle dust_only_at_side dust_side_not_middle only_dust.1 only_dust.2
+  · exact not_middle_of_neither Claim Root Dust HasNature
+      requires_nature neither_no_nature neither.1 neither.2
+
+end Surangama.SevenLocations.C6
+</code></pre></details><details id="C7"><summary>C7 · 一切无著名之为心</summary><pre><code>/- SPDX-License-Identifier: Apache-2.0 -/
+
+/-!
+# C7 · 一切无著：有体／无体两路的条件反驳
+
+经文提供指引，论证检查误认，Lean 核对明确前提下的推导；
+这些工作的完成，不等于修证的完成。
+可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
+
+依据：T19n0945 卷一 p108b04–14；docs/C7_UNLOCATED_CONDITIONAL.md。
+采用用户确认的心体有无路线，不合并《正脉疏》所不著之物有无的另一读法。
+本段“无著”限定为全无所在，不指修行中的不贪染。
+不导入整套 SutraPremises，不改变既有 Core.L7。
+
+命题的工作解释：
+* Claim：阿难认定的觉知分别心可以“一切无著＝全无所在”成立。
+* HasBody：本次被指认的候选心体确有所指；不是物质身体或肉身。
+* HasForm：该候选心体具有此模型的体相，不专指可见形状。
+* Knower：该候选者能担当此解释所声称的觉知者。
+* Located：该候选心体有某个所在；全篇使用同一意义。
+
+四项实质条件：
+1. claim_content：主张要求能担当觉知者，并且全无所在。
+2. no_body_no_knower：全无心体的空名不能担当所声称的觉知者。
+3. body_has_form：本段模型中，若有心体则有体相。
+4. form_has_location：本段模型中，有体相则有所在（关键连接）。
+另有显式逻辑分类 HasBody ∨ ¬ HasBody；不隐藏调用经典排中律。
+
+这是对指定解释的反驳，不独立裁定真心有体或无体。
+无体支不禁止对虚构对象说否定句；有体支不确立万物存在必占空间。
+“找不到具体位置”不等于“没有任何所在”；本定理针对后者。
+-/
+
+namespace Surangama.SevenLocations.C7
+
+/-- 无体支：空名不能担当觉知者，与原主张要求冲突。 -/
+theorem not_unlocated_without_body (Claim HasBody Knower : Prop)
+    (claim_requires_knower : Claim → Knower)
+    (no_body_no_knower : ¬ HasBody → ¬ Knower)
+    (no_body : ¬ HasBody) : ¬ Claim := by
+  intro claim
+  have knower : Knower := claim_requires_knower claim
+  exact no_body_no_knower no_body knower
+
+/-- 有体支：有体 → 有体相 → 有所在，与原主张的全无所在冲突。 -/
+theorem not_unlocated_with_body (Claim HasBody HasForm Located : Prop)
+    (claim_requires_no_location : Claim → ¬ Located)
+    (body_has_form : HasBody → HasForm)
+    (form_has_location : HasForm → Located)
+    (body : HasBody) : ¬ Claim := by
+  intro claim
+  have form : HasForm := body_has_form body
+  have located : Located := form_has_location form
+  -- 有所在的依据交给无所在的否定，得到矛盾。
+  exact claim_requires_no_location claim located
+
+/-- 主汇总：一项逻辑分类、四项实质条件，反驳此“无所在之觉知心”解释。 -/
+theorem not_unlocated_all_cases (Claim HasBody HasForm Knower Located : Prop)
+    (body_cases : HasBody ∨ ¬ HasBody)
+    (claim_content : Claim → Knower ∧ ¬ Located)
+    (no_body_no_knower : ¬ HasBody → ¬ Knower)
+    (body_has_form : HasBody → HasForm)
+    (form_has_location : HasForm → Located) : ¬ Claim := by
+  rcases body_cases with body | no_body
+  · exact not_unlocated_with_body Claim HasBody HasForm Located
+      (fun claim =&gt; (claim_content claim).2)
+      body_has_form form_has_location body
+  · exact not_unlocated_without_body Claim HasBody Knower
+      (fun claim =&gt; (claim_content claim).1)
+      no_body_no_knower no_body
+
+end Surangama.SevenLocations.C7
+</code></pre></details></main></body></html>

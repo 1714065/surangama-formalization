@@ -2,17 +2,28 @@
 
 # Śūraṅgama Sūtra Argument Formalizations (Lean 4)
 
+<!-- project-principle:2026-09-29 -->
+> **项目共同原则（2026-09-29）**
+>
+> 经文提供指引，论证检查误认，Lean 核对明确前提下的推导；这些工作的完成，不等于修证的完成。
+>
+> 可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
+<!-- /project-principle -->
+
 Machine-checked formalizations of arguments in the Śūraṅgama Sūtra
 (大佛頂首楞嚴經, Taishō T19 no. 945) in Lean 4: premise inventories, finite
 countermodels, and axiom-dependency reports.
 
-Lifecycle: `active` · Version: `0.1.0` · Lean: `v4.35.0-rc2`, no Mathlib.
+Lifecycle: `active` · Version: `0.2.0` · Lean: `v4.35.0-rc2`, no Mathlib.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22950553.svg)](https://doi.org/10.5281/zenodo.22950553)
-Version DOI `10.5281/zenodo.22950553` (v0.1.0, released 2026-09-25) · concept DOI for all versions `10.5281/zenodo.22950552` · GitHub release [`v0.1.0`](https://github.com/1714065/surangama-formalization/releases/tag/v0.1.0).
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22950552.svg)](https://doi.org/10.5281/zenodo.22950552)
+Concept DOI (all versions): `10.5281/zenodo.22950552`. Current release:
+[`v0.2.0`](https://github.com/1714065/surangama-formalization/releases/tag/v0.2.0),
+2026-10-03; its version DOI is assigned on Zenodo archival.
+Initial release v0.1.0 has DOI `10.5281/zenodo.22950553`; it does not identify v0.2.0.
 
 > **Note on authorship.** This repository was developed with AI assistance
-> (Claude, Anthropic) under human direction. Every proof is accepted by the
+> (Claude, Anthropic; Codex, OpenAI) under human direction. Every proof is accepted by the
 > Lean kernel; the choice of sources, the readings, and the claim boundaries
 > are the author's responsibility, not the model's. See "How this was made".
 
@@ -21,7 +32,7 @@ Version DOI `10.5281/zenodo.22950553` (v0.1.0, released 2026-09-25) · concept D
 Each formal claim in this repository is traceable to five things:
 
 1. its **definitions** (`lean/Surangama/…`);
-2. the **premises actually used**, as fields of a `…Premises` structure, never as global axioms;
+2. the **premises actually used**, as explicit theorem parameters or fields of a `…Premises` structure, never as global axioms;
 3. a **theorem or a finite countermodel**;
 4. a **source locator** (`docs/SOURCES.md`, `sources/registry.json`);
 5. a **rerun command** (`tools/`, `verify.sh`).
@@ -39,7 +50,27 @@ reading is the only one. The wording rules in [`docs/STATUS.md`](docs/STATUS.md)
 govern what may be claimed. The adopted text locators are not a critical
 edition.
 
-## Contents (v0.1.0)
+## New in v0.2.0: C1–C7
+
+[Research guide in Chinese](docs/RESEARCH_GUIDE_zh.md) · [HTML reading copy](docs/RESEARCH_GUIDE_zh.html) · [Release notes](docs/RELEASE_NOTES_v0.2.0.md)
+
+| Module | Selected route | Theorem declarations |
+| --- | --- | ---: |
+| `InsideConditional` (C1) | [心在内](docs/INSIDE_CONDITIONAL.md) | 4 |
+| `C2` (C2) | [心在外](docs/C2_OUTSIDE_CONDITIONAL.md) | 4 |
+| `C3` (C3) | [潜伏根里](docs/C3_IN_ROOT_CONDITIONAL.md) | 10 |
+| `C4` (C4) | [见暗名见内](docs/C4_DARKNESS_CONDITIONAL.md) | 17 |
+| `C5` (C5) | [随所合处心则随有](docs/C5_CONTACT_CONDITIONAL.md) | 5 |
+| `C6` (C6) | [心在中间](docs/C6_MIDDLE_CONDITIONAL.md) | 6 |
+| `C7` (C7) | [一切无著名之为心](docs/C7_UNLOCATED_CONDITIONAL.md) | 3 |
+
+The 49 declarations include main proofs, branch lemmas and scope witnesses.
+They do not import the historical `SutraPremises` bundle. All have empty axiom
+dependency lists; their explicit interpretive and logical premises remain.
+`python tools/check_scope.py` reproduces the finite scope audit in
+[`audit/propositional-scope.json`](audit/propositional-scope.json).
+
+## Preserved initial models (v0.1.0)
 
 | Module | Argument | Reading | Status |
 | --- | --- | --- | --- |
@@ -47,7 +78,7 @@ edition.
 | `Surangama.SevenLocations.Countermodels` | Three finite models | — | premise set satisfiable; H1 not refuted under a channel-principle theory of perception; two objects named "mind" coexist |
 | `Surangama.SevenLocations.Audit` | `#print axioms` for every theorem | — | recorded in `audit/lean-axioms.txt` |
 
-## Six results, if you read nothing else
+## Results of the preserved initial models
 
 - Under `SutraPremises` (reading `R1`), each of the seven candidate places is
   refuted; the main theorem is `seven_refutations`. The nineteen premises are
@@ -84,7 +115,8 @@ lake build                 # type-checks every module; the Audit module prints t
 sh verify.sh               # build + regenerate audit/lean-axioms.txt + sorry gate
 ```
 
-On Windows, `tools\check-lean.ps1` and `tools\print-axioms.ps1` do the same.
+On Windows, `tools\check-lean.ps1`, `tools\print-axioms.ps1`, and
+`python tools/check_scope.py` provide the same checks. Python 3 is needed for the Boolean audit.
 The pinned toolchain is installed by `elan` from `lean-toolchain`. No Mathlib
 is required; a clean check takes seconds.
 
@@ -92,6 +124,10 @@ is required; a clean check takes seconds.
 
 | Area | Entry point |
 | --- | --- |
+| C4 见暗名见内：分支与连续追问（v0.2.0） | [`docs/C4_DARKNESS_CONDITIONAL.md`](docs/C4_DARKNESS_CONDITIONAL.md) |
+| C3 潜伏根里：见眼与不见眼的条件反驳（v0.2.0） | [`docs/C3_IN_ROOT_CONDITIONAL.md`](docs/C3_IN_ROOT_CONDITIONAL.md) |
+| C2 心在外：两个前提下的中文条件反驳（v0.2.0） | [`docs/C2_OUTSIDE_CONDITIONAL.md`](docs/C2_OUTSIDE_CONDITIONAL.md) |
+| 心不在内：只列两个前提的中文教学例子（v0.2.0） | [`docs/INSIDE_CONDITIONAL.md`](docs/INSIDE_CONDITIONAL.md) |
 | Wording rules and the claim table | [`docs/STATUS.md`](docs/STATUS.md) |
 | Text witnesses, locators, commentaries | [`docs/SOURCES.md`](docs/SOURCES.md) |
 | Known limits and next steps | [`docs/OPEN_PROBLEMS.md`](docs/OPEN_PROBLEMS.md) |
@@ -123,6 +159,10 @@ Jason Wu · ORCID [0009-0003-1682-6165](https://orcid.org/0009-0003-1682-6165) �
 ## How this was made
 
 AI-assisted drafting was used during development, including Claude
-(Anthropic). Proof acceptance is determined by the Lean kernel. Source
+(Anthropic) and Codex (OpenAI). Proof acceptance is determined by the Lean kernel. Source
 selection, reading, interpretation, and the claim boundary are human scholarly
 responsibilities and are not certified by kernel checking.
+
+## C5 integration and C1–C7 review · 2026-10-03
+
+[C5 contact conditional proof](docs/C5_CONTACT_CONDITIONAL.md) is now included in the aggregate build and axiom audit. The current C1–C7 modules contain 49 theorem declarations (including branch lemmas and scope witnesses), all with empty axiom dependencies; explicit premises remain. This does not replace the historical Core L1–L7 models.

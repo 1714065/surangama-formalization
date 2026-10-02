@@ -1,0 +1,597 @@
+{
+  "scope": "Boolean models of transcribed premises, not empirical or ontological models.",
+  "logical_cases": "Boolean semantics satisfies excluded middle; C5-C7 supply case splits explicitly to Lean.",
+  "checks": {
+    "C1": {
+      "source_sha256_lf": "405c36fd305912548f6fc96799842262f897a18e233530268dbe808a709bfe3c",
+      "valuations_checked": 4,
+      "compatible_valuations": 1,
+      "all_models_refute_target": true,
+      "cases": [
+        {
+          "case": {},
+          "count": 1,
+          "witness": {
+            "Inside": false,
+            "KnowsInside": false
+          }
+        }
+      ],
+      "single_premise_omission_witnesses": {
+        "inside_requires_inner_knowing": {
+          "Inside": true,
+          "KnowsInside": false
+        },
+        "no_inner_knowing": {
+          "Inside": true,
+          "KnowsInside": true
+        }
+      }
+    },
+    "C2": {
+      "source_sha256_lf": "18370a0e539d922767691e00a5e4c0c9005b93d9172b6813de71ce99db6ccbdd",
+      "valuations_checked": 4,
+      "compatible_valuations": 1,
+      "all_models_refute_target": true,
+      "cases": [
+        {
+          "case": {},
+          "count": 1,
+          "witness": {
+            "Outside": false,
+            "BodyMindKnowTogether": true
+          }
+        }
+      ],
+      "single_premise_omission_witnesses": {
+        "outside_prevents_knowing": {
+          "Outside": true,
+          "BodyMindKnowTogether": true
+        },
+        "body_mind_know_together": {
+          "Outside": true,
+          "BodyMindKnowTogether": false
+        }
+      }
+    },
+    "C3": {
+      "source_sha256_lf": "532c2c37dfa19d273932d151a3154d54060b38c2441d856b8d00f3cbc91c2535",
+      "valuations_checked": 8,
+      "compatible_valuations": 3,
+      "all_models_refute_target": true,
+      "cases": [
+        {
+          "case": {},
+          "count": 3,
+          "witness": {
+            "InRoot": false,
+            "SeesEye": false,
+            "FollowsSeeing": false
+          }
+        }
+      ],
+      "single_premise_omission_witnesses": {
+        "in_root_requires_seeing_eye": {
+          "InRoot": true,
+          "SeesEye": false,
+          "FollowsSeeing": true
+        },
+        "in_root_requires_following": {
+          "InRoot": true,
+          "SeesEye": true,
+          "FollowsSeeing": false
+        },
+        "seeing_eye_prevents_following": {
+          "InRoot": true,
+          "SeesEye": true,
+          "FollowsSeeing": true
+        }
+      }
+    },
+    "C4": {
+      "source_sha256_lf": "caba80a2565562f33f494fadfb54fb8abb1fb5288ded6fa3267e71969641a07b",
+      "valuations_checked": 256,
+      "compatible_valuations": 12,
+      "all_models_refute_target": true,
+      "cases": [
+        {
+          "case": {},
+          "count": 12,
+          "witness": {
+            "Claim": false,
+            "Ordinary": false,
+            "Inward": false,
+            "SeesDark": false,
+            "FacesEye": false,
+            "InnerEvidence": false,
+            "SeesFace": false,
+            "Outside": false
+          }
+        }
+      ],
+      "single_premise_omission_witnesses": {
+        "claim_routes": {
+          "Claim": true,
+          "Ordinary": false,
+          "Inward": false,
+          "SeesDark": false,
+          "FacesEye": false,
+          "InnerEvidence": false,
+          "SeesFace": false,
+          "Outside": false
+        },
+        "ordinary_content": {
+          "Claim": true,
+          "Ordinary": true,
+          "Inward": false,
+          "SeesDark": false,
+          "FacesEye": false,
+          "InnerEvidence": false,
+          "SeesFace": false,
+          "Outside": false
+        },
+        "seeing_requires_facing": {
+          "Claim": true,
+          "Ordinary": true,
+          "Inward": false,
+          "SeesDark": true,
+          "FacesEye": false,
+          "InnerEvidence": true,
+          "SeesFace": false,
+          "Outside": false
+        },
+        "facing_excludes_inner_evidence": {
+          "Claim": true,
+          "Ordinary": true,
+          "Inward": false,
+          "SeesDark": true,
+          "FacesEye": true,
+          "InnerEvidence": true,
+          "SeesFace": false,
+          "Outside": false
+        },
+        "inward_requires_face": {
+          "Claim": true,
+          "Ordinary": false,
+          "Inward": true,
+          "SeesDark": false,
+          "FacesEye": false,
+          "InnerEvidence": false,
+          "SeesFace": false,
+          "Outside": false
+        },
+        "face_requires_outside": {
+          "Claim": true,
+          "Ordinary": false,
+          "Inward": true,
+          "SeesDark": false,
+          "FacesEye": false,
+          "InnerEvidence": false,
+          "SeesFace": true,
+          "Outside": false
+        },
+        "inward_requires_inside": {
+          "Claim": true,
+          "Ordinary": false,
+          "Inward": true,
+          "SeesDark": false,
+          "FacesEye": false,
+          "InnerEvidence": false,
+          "SeesFace": true,
+          "Outside": true
+        }
+      }
+    },
+    "C4_extended": {
+      "source_sha256_lf": "caba80a2565562f33f494fadfb54fb8abb1fb5288ded6fa3267e71969641a07b",
+      "valuations_checked": 128,
+      "compatible_valuations": 3,
+      "all_models_refute_target": true,
+      "cases": [
+        {
+          "case": {},
+          "count": 3,
+          "witness": {
+            "Inward": false,
+            "SeesFace": false,
+            "Outside": false,
+            "ExternalRescue": false,
+            "BodyAware": true,
+            "TwoKnowers": false,
+            "TwoBuddhas": false
+          }
+        }
+      ],
+      "single_premise_omission_witnesses": {
+        "inward_requires_face": {
+          "Inward": true,
+          "SeesFace": false,
+          "Outside": false,
+          "ExternalRescue": false,
+          "BodyAware": true,
+          "TwoKnowers": false,
+          "TwoBuddhas": false
+        },
+        "face_requires_outside": {
+          "Inward": true,
+          "SeesFace": true,
+          "Outside": false,
+          "ExternalRescue": false,
+          "BodyAware": true,
+          "TwoKnowers": false,
+          "TwoBuddhas": false
+        },
+        "inward_outside_requires_rescue": {
+          "Inward": true,
+          "SeesFace": true,
+          "Outside": true,
+          "ExternalRescue": false,
+          "BodyAware": true,
+          "TwoKnowers": false,
+          "TwoBuddhas": false
+        },
+        "external_consequences": {
+          "Inward": true,
+          "SeesFace": true,
+          "Outside": true,
+          "ExternalRescue": true,
+          "BodyAware": true,
+          "TwoKnowers": false,
+          "TwoBuddhas": false
+        },
+        "body_aware": {
+          "Inward": true,
+          "SeesFace": true,
+          "Outside": true,
+          "ExternalRescue": true,
+          "BodyAware": false,
+          "TwoKnowers": false,
+          "TwoBuddhas": false
+        },
+        "two_knowers_entail_two_buddhas": {
+          "Inward": true,
+          "SeesFace": true,
+          "Outside": true,
+          "ExternalRescue": true,
+          "BodyAware": true,
+          "TwoKnowers": true,
+          "TwoBuddhas": false
+        },
+        "not_two_buddhas": {
+          "Inward": true,
+          "SeesFace": true,
+          "Outside": true,
+          "ExternalRescue": true,
+          "BodyAware": true,
+          "TwoKnowers": true,
+          "TwoBuddhas": true
+        }
+      }
+    },
+    "C5": {
+      "source_sha256_lf": "151e40b8fcf7d984a5352b84acc93a88bf96613fe2cf74c69092748cf2779441",
+      "valuations_checked": 128,
+      "compatible_valuations": 3,
+      "all_models_refute_target": true,
+      "cases": [
+        {
+          "case": {
+            "HasBody": false
+          },
+          "count": 1,
+          "witness": {
+            "Claim": false,
+            "HasBody": false,
+            "CanContact": false,
+            "FromInside": false,
+            "FromOutside": false,
+            "SeesInside": false,
+            "SeesFace": false
+          }
+        },
+        {
+          "case": {
+            "HasBody": true
+          },
+          "count": 2,
+          "witness": {
+            "Claim": false,
+            "HasBody": true,
+            "CanContact": false,
+            "FromInside": false,
+            "FromOutside": false,
+            "SeesInside": false,
+            "SeesFace": false
+          }
+        }
+      ],
+      "single_premise_omission_witnesses": {
+        "claim_requires_contact": {
+          "Claim": true,
+          "HasBody": false,
+          "CanContact": false,
+          "FromInside": false,
+          "FromOutside": false,
+          "SeesInside": false,
+          "SeesFace": false
+        },
+        "no_body_no_contact": {
+          "Claim": true,
+          "HasBody": false,
+          "CanContact": true,
+          "FromInside": false,
+          "FromOutside": false,
+          "SeesInside": false,
+          "SeesFace": false
+        },
+        "embodied_contact_requires_arrival": {
+          "Claim": true,
+          "HasBody": true,
+          "CanContact": true,
+          "FromInside": false,
+          "FromOutside": false,
+          "SeesInside": false,
+          "SeesFace": false
+        },
+        "inside_requires_sight": {
+          "Claim": true,
+          "HasBody": true,
+          "CanContact": true,
+          "FromInside": true,
+          "FromOutside": false,
+          "SeesInside": false,
+          "SeesFace": false
+        },
+        "outside_requires_face": {
+          "Claim": true,
+          "HasBody": true,
+          "CanContact": true,
+          "FromInside": false,
+          "FromOutside": true,
+          "SeesInside": false,
+          "SeesFace": false
+        },
+        "no_inside_sight": {
+          "Claim": true,
+          "HasBody": true,
+          "CanContact": true,
+          "FromInside": true,
+          "FromOutside": false,
+          "SeesInside": true,
+          "SeesFace": false
+        },
+        "no_direct_face": {
+          "Claim": true,
+          "HasBody": true,
+          "CanContact": true,
+          "FromInside": false,
+          "FromOutside": true,
+          "SeesInside": false,
+          "SeesFace": true
+        }
+      }
+    },
+    "C6": {
+      "source_sha256_lf": "3123b72ea700196fd6776625e496f207708e364507496e0001475286ef9f460c",
+      "valuations_checked": 256,
+      "compatible_valuations": 33,
+      "all_models_refute_target": true,
+      "cases": [
+        {
+          "case": {
+            "Root": false,
+            "Dust": false
+          },
+          "count": 9,
+          "witness": {
+            "Claim": false,
+            "Root": false,
+            "Dust": false,
+            "Middle": false,
+            "HasNature": false,
+            "Opposed": false,
+            "RootSide": false,
+            "DustSide": false
+          }
+        },
+        {
+          "case": {
+            "Root": false,
+            "Dust": true
+          },
+          "count": 8,
+          "witness": {
+            "Claim": false,
+            "Root": false,
+            "Dust": true,
+            "Middle": false,
+            "HasNature": false,
+            "Opposed": false,
+            "RootSide": false,
+            "DustSide": true
+          }
+        },
+        {
+          "case": {
+            "Root": true,
+            "Dust": false
+          },
+          "count": 8,
+          "witness": {
+            "Claim": false,
+            "Root": true,
+            "Dust": false,
+            "Middle": false,
+            "HasNature": false,
+            "Opposed": false,
+            "RootSide": true,
+            "DustSide": false
+          }
+        },
+        {
+          "case": {
+            "Root": true,
+            "Dust": true
+          },
+          "count": 8,
+          "witness": {
+            "Claim": false,
+            "Root": true,
+            "Dust": true,
+            "Middle": false,
+            "HasNature": false,
+            "Opposed": true,
+            "RootSide": false,
+            "DustSide": false
+          }
+        }
+      ],
+      "single_premise_omission_witnesses": {
+        "claim_content": {
+          "Claim": true,
+          "Root": false,
+          "Dust": false,
+          "Middle": false,
+          "HasNature": false,
+          "Opposed": false,
+          "RootSide": false,
+          "DustSide": false
+        },
+        "both_opposed": {
+          "Claim": true,
+          "Root": true,
+          "Dust": true,
+          "Middle": true,
+          "HasNature": true,
+          "Opposed": false,
+          "RootSide": false,
+          "DustSide": false
+        },
+        "opposed_not_middle": {
+          "Claim": true,
+          "Root": true,
+          "Dust": true,
+          "Middle": true,
+          "HasNature": true,
+          "Opposed": true,
+          "RootSide": false,
+          "DustSide": false
+        },
+        "root_only_at_side": {
+          "Claim": true,
+          "Root": true,
+          "Dust": false,
+          "Middle": true,
+          "HasNature": true,
+          "Opposed": false,
+          "RootSide": false,
+          "DustSide": false
+        },
+        "root_side_not_middle": {
+          "Claim": true,
+          "Root": true,
+          "Dust": false,
+          "Middle": true,
+          "HasNature": true,
+          "Opposed": false,
+          "RootSide": true,
+          "DustSide": false
+        },
+        "dust_only_at_side": {
+          "Claim": true,
+          "Root": false,
+          "Dust": true,
+          "Middle": true,
+          "HasNature": true,
+          "Opposed": false,
+          "RootSide": false,
+          "DustSide": false
+        },
+        "dust_side_not_middle": {
+          "Claim": true,
+          "Root": false,
+          "Dust": true,
+          "Middle": true,
+          "HasNature": true,
+          "Opposed": false,
+          "RootSide": false,
+          "DustSide": true
+        },
+        "neither_no_nature": {
+          "Claim": true,
+          "Root": false,
+          "Dust": false,
+          "Middle": true,
+          "HasNature": true,
+          "Opposed": false,
+          "RootSide": false,
+          "DustSide": false
+        }
+      }
+    },
+    "C7": {
+      "source_sha256_lf": "32bc14bb67097999e334c148def59586d547816cd81426dda532f83b508e9713",
+      "valuations_checked": 32,
+      "compatible_valuations": 5,
+      "all_models_refute_target": true,
+      "cases": [
+        {
+          "case": {
+            "HasBody": false
+          },
+          "count": 3,
+          "witness": {
+            "Claim": false,
+            "HasBody": false,
+            "HasForm": false,
+            "Knower": false,
+            "Located": false
+          }
+        },
+        {
+          "case": {
+            "HasBody": true
+          },
+          "count": 2,
+          "witness": {
+            "Claim": false,
+            "HasBody": true,
+            "HasForm": true,
+            "Knower": false,
+            "Located": true
+          }
+        }
+      ],
+      "single_premise_omission_witnesses": {
+        "claim_content": {
+          "Claim": true,
+          "HasBody": false,
+          "HasForm": false,
+          "Knower": false,
+          "Located": false
+        },
+        "no_body_no_knower": {
+          "Claim": true,
+          "HasBody": false,
+          "HasForm": false,
+          "Knower": true,
+          "Located": false
+        },
+        "body_has_form": {
+          "Claim": true,
+          "HasBody": true,
+          "HasForm": false,
+          "Knower": true,
+          "Located": false
+        },
+        "form_has_location": {
+          "Claim": true,
+          "HasBody": true,
+          "HasForm": true,
+          "Knower": true,
+          "Located": false
+        }
+      }
+    }
+  }
+}

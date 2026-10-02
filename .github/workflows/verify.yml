@@ -35,3 +35,4 @@ jobs:
           tail -n +3 audit/lean-axioms.txt > /tmp/new.txt
           git show HEAD:audit/lean-axioms.txt | tail -n +3 > /tmp/old.txt
           diff /tmp/old.txt /tmp/new.txt
+          git diff --exit-code -- audit/propositional-scope.json
