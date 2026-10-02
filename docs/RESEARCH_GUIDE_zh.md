@@ -6,9 +6,9 @@
 >
 > 可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
 
-版本：v0.2.0，2026-10-03。本文件从研究工作区已确认的论证整理而来，供公开读者独立审查。解释属于项目重建；经文、注家解释、模型假设和机器验证不能互相替代。
+版本：v0.2.1，2026-10-03。本文件从研究工作区已确认的论证整理而来，供公开读者独立审查。解释属于项目重建；经文、注家解释、模型假设和机器验证不能互相替代。
 
-[返回项目](../README.md) · [HTML 阅读版](RESEARCH_GUIDE_zh.html) · [英文发布说明](RELEASE_NOTES_v0.2.0.md)
+[返回项目](../README.md) · [HTML 阅读版](RESEARCH_GUIDE_zh.html) · [英文发布说明](RELEASE_NOTES_v0.2.1.md)
 
 ## 原文、注疏与证明各承担什么？
 
@@ -36,7 +36,7 @@
 
 **适用边界：**“在内应知内”是本段明确保留的连接，不是所有认知理论的普遍规律。“知内”指这里要求的直接明了，不包含解剖、仪器或一般痛觉。
 
-原文定位：卷一 p107a12–b11；b24–29。详见[前提、注疏与范围说明](INSIDE_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/InsideConditional.lean)。
+原文定位：卷一 p107a12–b11；b24–29。详见[前提、注疏与范围说明](INSIDE_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C1_Inside.lean)。
 
 ## C2 · 心在外
 
@@ -44,7 +44,7 @@
 
 **适用边界：**不能把“身外”普遍等同于“不能交互”；这里仅反驳带有所列连接条件的解释。
 
-原文定位：卷一 p107b06–24。详见[前提、注疏与范围说明](C2_OUTSIDE_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C2.lean)。
+原文定位：卷一 p107b06–24。详见[前提、注疏与范围说明](C2_OUTSIDE_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C2_Outside.lean)。
 
 ## C3 · 潜伏根里
 
@@ -52,7 +52,7 @@
 
 **适用边界：**琉璃对应眼根，比喻中的眼对应心。根境的角色区分限于同一认识关系，不是说眼睛一被观察就丧失生理功能。
 
-原文定位：卷一 p107b22–c08。详见[前提、注疏与范围说明](C3_IN_ROOT_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C3.lean)。
+原文定位：卷一 p107b22–c08。详见[前提、注疏与范围说明](C3_IN_ROOT_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C3_InRoot.lean)。
 
 ## C4 · 见暗名见内
 
@@ -60,7 +60,7 @@
 
 **适用边界：**与眼相对不等于解剖位置必在体外；“相对所见暗不确证内身”“返观应见面”“见面须在外”分别保留为条件。自身归属、二知、暗室另立分支；暗室不是正文主线。
 
-原文定位：卷一 p107c09–23。详见[前提、注疏与范围说明](C4_DARKNESS_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C4.lean)。
+原文定位：卷一 p107c09–23。详见[前提、注疏与范围说明](C4_DARKNESS_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C4_LightAndDarkness.lean)。
 
 ## C5 · 随所合处心则随有
 
@@ -68,7 +68,7 @@
 
 **适用边界：**出入二分、知见连接均为明确前提，不是从“接触”一词自然推出的定律。未把一多、遍不遍全部形式化；没有否定一般认识活动依条件产生。
 
-原文定位：卷一 p107c23–108a14。详见[前提、注疏与范围说明](C5_CONTACT_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C5.lean)。
+原文定位：卷一 p107c23–108a14。详见[前提、注疏与范围说明](C5_CONTACT_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C5_AtContact.lean)。
 
 ## C6 · 心在中间
 
@@ -76,7 +76,7 @@
 
 **适用边界：**两个只兼一分支是项目补全，不冒称经文另有两段原话。因果依赖不等于完全归属；不同部分有不同性质也不自动构成矛盾。身体中央与标杆方位未纳入。
 
-原文定位：卷一 p108a15–b03。详见[前提、注疏与范围说明](C6_MIDDLE_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C6.lean)。
+原文定位：卷一 p108a15–b03。详见[前提、注疏与范围说明](C6_MIDDLE_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C6_Middle.lean)。
 
 ## C7 · 一切无著名之为心
 
@@ -84,7 +84,7 @@
 
 **适用边界：**无著在此不指修行中的不贪染。“有体相则有所在”是关键连接，不是存在者必占空间的普遍定律；不知道具体位置也不等于没有任何所在。
 
-原文定位：卷一 p108b04–14。详见[前提、注疏与范围说明](C7_UNLOCATED_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C7.lean)。
+原文定位：卷一 p108b04–14。详见[前提、注疏与范围说明](C7_UNLOCATED_CONDITIONAL.md)；[实际 Lean 源码](../lean/Surangama/SevenLocations/C7_Unlocated.lean)。
 
 ## 不混用“体”
 
@@ -100,4 +100,4 @@ C5、C7 的无体指候选者全无相应所指，不等于分别活动依条件
 
 ## 版本与研究材料的边界
 
-本版本保留初稿的 `Core.L1–L7` 等历史模型；其条件组合不与当前独立模块混为一套。详见[版本说明](RELEASE_NOTES_v0.2.0.md)。完整讨论过程、个人学习记录及原始资料保留在研究工作区；公开仓库提供必要的模型、参数、出处说明、代码和可复现审计。
+本版本保留初稿的 `Core.L1–L7` 等历史模型；其条件组合不与当前独立模块混为一套。详见[版本说明](RELEASE_NOTES_v0.2.1.md)。完整讨论过程、个人学习记录及原始资料保留在研究工作区；公开仓库提供必要的模型、参数、出处说明、代码和可复现审计。

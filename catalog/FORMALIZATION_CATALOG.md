@@ -1,6 +1,6 @@
 <!-- SPDX-License-Identifier: CC0-1.0 -->
 
-# Formalization catalogue (v0.2.0, hand-written)
+# Formalization catalogue (v0.2.1, hand-written)
 
 <!-- project-principle:2026-09-29 -->
 > **项目共同原则（2026-09-29）**
@@ -36,7 +36,9 @@ Every Lean module gets a public boundary: target, formal scope, premise policy, 
 - **Historical status:** `not_applicable`.
 - **Limit:** import and report convenience only.
 
-### `Surangama.SevenLocations.InsideConditional`
+### `Surangama.SevenLocations.C1_Inside`
+
+Declaration namespace retained: `Surangama.SevenLocations.InsideConditional`.
 
 Local teaching addition (2026-09-29); not part of the published v0.1.0 release.
 
@@ -47,7 +49,9 @@ Local teaching addition (2026-09-29); not part of the published v0.1.0 release.
 - **Historical status:** `passage_aligned`, T19n0945 p107a19–b11, b24–29; the later objection at p108a04 is recorded in [the explanation](../docs/INSIDE_CONDITIONAL.md).
 - **Limit:** conditional derivation only. No temporal model of “先”, ontology of Buddha/Tathāgatagarbha, or refutation of brain-based consciousness.
 
-### `Surangama.SevenLocations.C2`
+### `Surangama.SevenLocations.C2_Outside`
+
+Declaration namespace retained: `Surangama.SevenLocations.C2`.
 
 Local addition (2026-09-30); not part of the published v0.1.0 release.
 
@@ -58,7 +62,9 @@ Local addition (2026-09-30); not part of the published v0.1.0 release.
 - **Historical status:** `passage_aligned`, T19n0945 p107b06–24; [premise mapping and limits](../docs/C2_OUTSIDE_CONDITIONAL.md).
 - **Limit:** does not establish that spatial separation entails absence of cognitive relation, nor define Buddha/Tathāgatagarbha. Brain-based consciousness is outside this claim.
 
-### `Surangama.SevenLocations.C3`
+### `Surangama.SevenLocations.C3_InRoot`
+
+Declaration namespace retained: `Surangama.SevenLocations.C3`.
 
 Local addition (2026-09-30); not part of the published v0.1.0 release.
 
@@ -69,7 +75,9 @@ Local addition (2026-09-30); not part of the published v0.1.0 release.
 - **Historical status:** `passage_aligned`, T19n0945 p107b22–c08; [premise mapping and limits](../docs/C3_IN_ROOT_CONDITIONAL.md).
 - **Limit:** root/object incompatibility remains an interpretive premise; this is not a formalization of all cognitive semantics or a universal refutation of eye-related cognition theories.
 
-### `Surangama.SevenLocations.C4`
+### `Surangama.SevenLocations.C4_LightAndDarkness`
+
+Declaration namespace retained: `Surangama.SevenLocations.C4`.
 
 Local addition (2026-09-30); not part of the published v0.1.0 release.
 
@@ -80,7 +88,9 @@ Local addition (2026-09-30); not part of the published v0.1.0 release.
 - **Historical status:** `passage_aligned`, T19n0945 p107c09–23; [premise mapping and limits](../docs/C4_DARKNESS_CONDITIONAL.md).
 - **Limit:** the main theorem covers the two stated explanations, not all possible cognition theories. The later and supplementary branches are not dependencies of the main theorem. No ontology of Buddha/Tathāgatagarbha, universal optical law, or empirical mind-brain claim is established.
 
-### `Surangama.SevenLocations.C5ContactConditional` (file `C5.lean`)
+### `Surangama.SevenLocations.C5_AtContact`
+
+Declaration namespace retained: `Surangama.SevenLocations.C5ContactConditional`.
 
 - **Target:** the contact-location claim under the selected no-body/body and arrival model.
 - **Formal scope:** five theorems; `not_at_contact_all_cases` combines the two branches.
@@ -88,7 +98,9 @@ Local addition (2026-09-30); not part of the published v0.1.0 release.
 - **Historical status:** `passage_aligned`, T19n0945 p107c23–108a14; [mapping](../docs/C5_CONTACT_CONDITIONAL.md).
 - **Limit:** does not cover all one/many and pervasive/nonpervasive arguments, or refute cognition arising under conditions. Absence of a candidate is not absence of independent nature.
 
-### `Surangama.SevenLocations.C6`
+### `Surangama.SevenLocations.C6_Middle`
+
+Declaration namespace retained: `Surangama.SevenLocations.C6`.
 
 Local addition (2026-10-02); not part of the published v0.1.0 release.
 
@@ -99,7 +111,9 @@ Local addition (2026-10-02); not part of the published v0.1.0 release.
 - **Historical status:** `passage_aligned`, T19n0945 p108a15–b03; [premise mapping and limits](../docs/C6_MIDDLE_CONDITIONAL.md).
 - **Limit:** excludes the specified affiliation model, not every conditioned cognition theory; body-center and marker preliminaries are not formalized here. Existing L6 is preserved.
 
-### `Surangama.SevenLocations.C7`
+### `Surangama.SevenLocations.C7_Unlocated`
+
+Declaration namespace retained: `Surangama.SevenLocations.C7`.
 
 Local addition (2026-10-03); not part of published v0.1.0.
 

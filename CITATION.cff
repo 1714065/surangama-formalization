@@ -6,14 +6,15 @@ type: software
 repository-code: "https://github.com/1714065/surangama-formalization"
 license: Apache-2.0
 license-url: "https://www.apache.org/licenses/LICENSE-2.0"
-version: "0.2.0"
+version: "0.2.1"
 date-released: "2026-10-03"
-doi: "10.5281/zenodo.23107913"
+# Version DOI is assigned after the v0.2.1 GitHub release is archived.
 # Concept DOI (all versions): 10.5281/zenodo.22950552
 abstract: >-
   Machine-checked conditional reconstructions of arguments in the Surangama
-  Sutra (Taisho T19 no. 945) in Lean 4. Version 0.2.0 adds seven standalone
-  C1-C7 modules with 49 theorem declarations, including branch lemmas and
+  Sutra (Taisho T19 no. 945) in Lean 4. Version 0.2.1 provides seven standalone
+  C1-C7 modules with numbered descriptive filenames and 49 theorem declarations,
+  including branch lemmas and
   premise-scope witnesses, alongside the preserved v0.1.0 Core models.
   Premises are explicit theorem parameters or structure fields, not global
   doctrinal axioms. The release includes axiom-dependency reports and

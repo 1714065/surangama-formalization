@@ -13,7 +13,7 @@
 日期：2026-09-30。本地增补，不属于已发布的 v0.1.0 内容。
 编号为用户指定的 **C2**；不是旧版议题清单 C-2（识心离尘无体）。
 
-源文件：[C2.lean](../lean/Surangama/SevenLocations/C2.lean)。
+源文件：[C2_Outside.lean](../lean/Surangama/SevenLocations/C2_Outside.lean)。
 主定理：`Surangama.SevenLocations.C2.not_outside`。
 这是既有 `L2` 的两个前提单列版本，没有导入整套七处征心前提。
 

@@ -115,3 +115,7 @@ Six theorems (classification, four refutations, summary) passed the full build a
 ## C5 integration and C1–C7 review · 2026-10-03
 
 [C5 contact conditional proof](C5_CONTACT_CONDITIONAL.md) is now included in the aggregate build and axiom audit. The current C1–C7 modules contain 49 theorem declarations (including branch lemmas and scope witnesses), all with empty axiom dependencies; explicit premises remain. This does not replace the historical Core L1–L7 models.
+
+## v0.2.1 filename migration
+
+See [FILE_NAMING.md](FILE_NAMING.md). All seven current proof files are unchanged in content. Imports, path references and the scope checker follow the numbered descriptive filenames. Declaration namespaces remain stable.

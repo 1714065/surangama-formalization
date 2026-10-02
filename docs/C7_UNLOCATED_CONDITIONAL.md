@@ -6,7 +6,7 @@
 >
 > 可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
 
-Local addition, 2026-10-03, included in v0.2.0. Passage-aligned: T19n0945 fascicle 1, p108b04–14. Source: [C7.lean](../lean/Surangama/SevenLocations/C7.lean).
+Local addition, 2026-10-03, included in v0.2.0. Passage-aligned: T19n0945 fascicle 1, p108b04–14. Source: [C7_Unlocated.lean](../lean/Surangama/SevenLocations/C7_Unlocated.lean).
 
 ## Approved reading and scope
 

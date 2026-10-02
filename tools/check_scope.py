@@ -55,21 +55,21 @@ def c7(c, b, f, k, location):
 
 
 SPECS = [
-    ('C1', 'InsideConditional', 'Inside KnowsInside',
+    ('C1', 'C1_Inside', 'Inside KnowsInside',
      'inside_requires_inner_knowing no_inner_knowing', c1, []),
-    ('C2', 'C2', 'Outside BodyMindKnowTogether',
+    ('C2', 'C2_Outside', 'Outside BodyMindKnowTogether',
      'outside_prevents_knowing body_mind_know_together', c2, []),
-    ('C3', 'C3', 'InRoot SeesEye FollowsSeeing',
+    ('C3', 'C3_InRoot', 'InRoot SeesEye FollowsSeeing',
      'in_root_requires_seeing_eye in_root_requires_following seeing_eye_prevents_following', c3, []),
-    ('C4', 'C4', 'Claim Ordinary Inward SeesDark FacesEye InnerEvidence SeesFace Outside',
+    ('C4', 'C4_LightAndDarkness', 'Claim Ordinary Inward SeesDark FacesEye InnerEvidence SeesFace Outside',
      'claim_routes ordinary_content seeing_requires_facing facing_excludes_inner_evidence inward_requires_face face_requires_outside inward_requires_inside', c4, []),
-    ('C4_extended', 'C4', 'Inward SeesFace Outside ExternalRescue BodyAware TwoKnowers TwoBuddhas',
+    ('C4_extended', 'C4_LightAndDarkness', 'Inward SeesFace Outside ExternalRescue BodyAware TwoKnowers TwoBuddhas',
      'inward_requires_face face_requires_outside inward_outside_requires_rescue external_consequences body_aware two_knowers_entail_two_buddhas not_two_buddhas', c4_extended, []),
-    ('C5', 'C5', 'Claim HasBody CanContact FromInside FromOutside SeesInside SeesFace',
+    ('C5', 'C5_AtContact', 'Claim HasBody CanContact FromInside FromOutside SeesInside SeesFace',
      'claim_requires_contact no_body_no_contact embodied_contact_requires_arrival inside_requires_sight outside_requires_face no_inside_sight no_direct_face', c5, ['HasBody']),
-    ('C6', 'C6', 'Claim Root Dust Middle HasNature Opposed RootSide DustSide',
+    ('C6', 'C6_Middle', 'Claim Root Dust Middle HasNature Opposed RootSide DustSide',
      'claim_content both_opposed opposed_not_middle root_only_at_side root_side_not_middle dust_only_at_side dust_side_not_middle neither_no_nature', c6, ['Root', 'Dust']),
-    ('C7', 'C7', 'Claim HasBody HasForm Knower Located',
+    ('C7', 'C7_Unlocated', 'Claim HasBody HasForm Knower Located',
      'claim_content no_body_no_knower body_has_form form_has_location', c7, ['HasBody']),
 ]
 

@@ -10,7 +10,7 @@
 > 可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
 <!-- /project-principle -->
 
-2026-09-30 本地增补，不属于已发布的 v0.1.0。源码 [C4.lean](../lean/Surangama/SevenLocations/C4.lean)。来源状态 `passage_aligned`：T19n0945 卷一 p107c09–23，c23 的下一处不纳入。既有 `Core.L4` 与 `L4_of_forward` 保留原范围。
+2026-09-30 本地增补，不属于已发布的 v0.1.0。源码 [C4_LightAndDarkness.lean](../lean/Surangama/SevenLocations/C4_LightAndDarkness.lean)。来源状态 `passage_aligned`：T19n0945 卷一 p107c09–23，c23 的下一处不纳入。既有 `Core.L4` 与 `L4_of_forward` 保留原范围。
 
 ## 命题和主汇总
 

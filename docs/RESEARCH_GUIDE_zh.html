@@ -1,12 +1,12 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>七处征心 C1—C7 · v0.2.0</title><style>body{font:17px/1.8 system-ui,"Microsoft YaHei",sans-serif;margin:0;background:#fbfaf7;color:#172033}main{max-width:1040px;margin:auto;padding:36px 20px}h1,h2{line-height:1.3}h2{margin-top:2.5em}a{color:#2859a6}blockquote{border-left:4px solid #2859a6;padding:8px 20px;background:#f0f4fc}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #ddd;padding:10px;text-align:left}code{overflow-wrap:anywhere}pre{overflow:auto;background:#152035;color:#eef2ff;padding:20px}pre code{overflow-wrap:normal}details{margin:24px 0}summary{cursor:pointer;font-weight:bold}.table-wrap{overflow:auto}</style></head><body><main><!-- SPDX-License-Identifier: CC0-1.0 -->
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>七处征心 C1—C7 · v0.2.1</title><style>body{font:17px/1.8 system-ui,"Microsoft YaHei",sans-serif;margin:0;background:#fbfaf7;color:#172033}main{max-width:1040px;margin:auto;padding:36px 20px}h1,h2{line-height:1.3}h2{margin-top:2.5em}a{color:#2859a6}blockquote{border-left:4px solid #2859a6;padding:8px 20px;background:#f0f4fc}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #ddd;padding:10px;text-align:left}code{overflow-wrap:anywhere}pre{overflow:auto;background:#152035;color:#eef2ff;padding:20px}pre code{overflow-wrap:normal}details{margin:24px 0}summary{cursor:pointer;font-weight:bold}.table-wrap{overflow:auto}</style></head><body><main><!-- SPDX-License-Identifier: CC0-1.0 -->
 
 <h1>七处征心 C1—C7：公开研究说明与条件证明</h1>
 <blockquote>
 <p>经文提供指引，论证检查误认，Lean 核对明确前提下的推导；这些工作的完成，不等于修证的完成。</p>
 <p>可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。</p>
 </blockquote>
-<p>版本：v0.2.0，2026-10-03。本文件从研究工作区已确认的论证整理而来，供公开读者独立审查。解释属于项目重建；经文、注家解释、模型假设和机器验证不能互相替代。</p>
-<p><a href="../README.md">返回项目</a> · <a href="RESEARCH_GUIDE_zh.html">HTML 阅读版</a> · <a href="RELEASE_NOTES_v0.2.0.md">英文发布说明</a></p>
+<p>版本：v0.2.1，2026-10-03。本文件从研究工作区已确认的论证整理而来，供公开读者独立审查。解释属于项目重建；经文、注家解释、模型假设和机器验证不能互相替代。</p>
+<p><a href="../README.md">返回项目</a> · <a href="RESEARCH_GUIDE_zh.html">HTML 阅读版</a> · <a href="RELEASE_NOTES_v0.2.1.md">英文发布说明</a></p>
 <h2>原文、注疏与证明各承担什么？</h2>
 <p>经文提出主张与反诘；注疏帮助说明名词和连接；本项目把采用的连接明列为参数；Lean 检查这些参数能否推出否定结论。并未先把“真心是什么”写成定义，再据此否定其余解释。</p>
 <p>原文为《大佛頂首楞嚴經》卷一，T19n0945。<a href="https://cbetaonline.dila.edu.tw/zh/T0945">CBETA 公开入口</a>。下列页栏行来自研究工作区的核对快照，不代表另做了版本校勘。各节链接的说明列出圆瑛、宣化、成观注疏的采用位置及解释差异；P、X 是本地抽取本的段落号，不能当作通行版页码。原典快照和现代注疏不随软件再分发。</p>
@@ -69,31 +69,31 @@
 <h2>C1 · 心在内</h2>
 <p><strong>大白话：</strong>在内应知内；实际不知内。因此，按这两个条件，身内定位不能成立。</p>
 <p><strong>适用边界：</strong>“在内应知内”是本段明确保留的连接，不是所有认知理论的普遍规律。“知内”指这里要求的直接明了，不包含解剖、仪器或一般痛觉。</p>
-<p>原文定位：卷一 p107a12–b11；b24–29。详见<a href="INSIDE_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/InsideConditional.lean">实际 Lean 源码</a>。</p>
+<p>原文定位：卷一 p107a12–b11；b24–29。详见<a href="INSIDE_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C1_Inside.lean">实际 Lean 源码</a>。</p>
 <h2>C2 · 心在外</h2>
 <p><strong>大白话：</strong>按此模型，在外则身心不相知；对话却采用身心相知的事例，因此不能维持这种身外解释。</p>
 <p><strong>适用边界：</strong>不能把“身外”普遍等同于“不能交互”；这里仅反驳带有所列连接条件的解释。</p>
-<p>原文定位：卷一 p107b06–24。详见<a href="C2_OUTSIDE_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C2.lean">实际 Lean 源码</a>。</p>
+<p>原文定位：卷一 p107b06–24。详见<a href="C2_OUTSIDE_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C2_Outside.lean">实际 Lean 源码</a>。</p>
 <h2>C3 · 潜伏根里</h2>
 <p><strong>大白话：</strong>按琉璃比喻，潜根应见眼；原模型又要求随见随分别；接受见眼不成随的连接，便得到冲突。原不见眼路线也独立保留。</p>
 <p><strong>适用边界：</strong>琉璃对应眼根，比喻中的眼对应心。根境的角色区分限于同一认识关系，不是说眼睛一被观察就丧失生理功能。</p>
-<p>原文定位：卷一 p107b22–c08。详见<a href="C3_IN_ROOT_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C3.lean">实际 Lean 源码</a>。</p>
+<p>原文定位：卷一 p107b22–c08。详见<a href="C3_IN_ROOT_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C3_InRoot.lean">实际 Lean 源码</a>。</p>
 <h2>C4 · 见暗名见内</h2>
 <p><strong>大白话：</strong>你确实见暗，但凭什么把暗认作自身内部？若补说能返观自身，就检查能否见面；按直接相对观看模型，见面又把心眼安排在身外，与所要挽回的身内定位冲突。</p>
 <p><strong>适用边界：</strong>与眼相对不等于解剖位置必在体外；“相对所见暗不确证内身”“返观应见面”“见面须在外”分别保留为条件。自身归属、二知、暗室另立分支；暗室不是正文主线。</p>
-<p>原文定位：卷一 p107c09–23。详见<a href="C4_DARKNESS_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C4.lean">实际 Lean 源码</a>。</p>
+<p>原文定位：卷一 p107c09–23。详见<a href="C4_DARKNESS_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C4_LightAndDarkness.lean">实际 Lean 源码</a>。</p>
 <h2>C5 · 随所合处心则随有</h2>
 <p><strong>大白话：</strong>主张要求能合。全无相应所指，按条件不能合；暂许有体，才按接触到达模型分成内出或外入。内出应见身中，外入应见面，与本段采用的不见条件冲突。</p>
 <p><strong>适用边界：</strong>出入二分、知见连接均为明确前提，不是从“接触”一词自然推出的定律。未把一多、遍不遍全部形式化；没有否定一般认识活动依条件产生。</p>
-<p>原文定位：卷一 p107c23–108a14。详见<a href="C5_CONTACT_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C5.lean">实际 Lean 源码</a>。</p>
+<p>原文定位：卷一 p107c23–108a14。详见<a href="C5_CONTACT_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C5_AtContact.lean">实际 Lean 源码</a>。</p>
 <h2>C6 · 心在中间</h2>
 <p><strong>大白话：</strong>同一兼属关系分四类：兼两边、只兼根、只兼尘、全不兼。兼二按条件两立而不成中；只兼一经完全归属该边而不成中；全不兼则无此模型所要求的体性。</p>
 <p><strong>适用边界：</strong>两个只兼一分支是项目补全，不冒称经文另有两段原话。因果依赖不等于完全归属；不同部分有不同性质也不自动构成矛盾。身体中央与标杆方位未纳入。</p>
-<p>原文定位：卷一 p108a15–b03。详见<a href="C6_MIDDLE_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C6.lean">实际 Lean 源码</a>。</p>
+<p>原文定位：卷一 p108a15–b03。详见<a href="C6_MIDDLE_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C6_Middle.lean">实际 Lean 源码</a>。</p>
 <h2>C7 · 一切无著名之为心</h2>
 <p><strong>大白话：</strong>此处按阿难把无著理解为全无所在来重建。全无所指，不能担当原主张声称的觉知者；暂许有体，再接受有体相则有所在，便与全无所在冲突。</p>
 <p><strong>适用边界：</strong>无著在此不指修行中的不贪染。“有体相则有所在”是关键连接，不是存在者必占空间的普遍定律；不知道具体位置也不等于没有任何所在。</p>
-<p>原文定位：卷一 p108b04–14。详见<a href="C7_UNLOCATED_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C7.lean">实际 Lean 源码</a>。</p>
+<p>原文定位：卷一 p108b04–14。详见<a href="C7_UNLOCATED_CONDITIONAL.md">前提、注疏与范围说明</a>；<a href="../lean/Surangama/SevenLocations/C7_Unlocated.lean">实际 Lean 源码</a>。</p>
 <h2>不混用“体”</h2>
 <p>C5、C7 的无体指候选者全无相应所指，不等于分别活动依条件发生、离尘无自体。C6 的体性是所立中间模型要求的体性；C7 的体相到所在也是该定位模型的条件。不能把这些谓词直接代入后文真心体性，也不能用这些否定证明指认真心是什么。</p>
 <h2>怎样复现？</h2>
@@ -104,7 +104,7 @@
 </ol>
 <p>空公理依赖不等于没有定理前提。机器接受证明，不意味着条件真实、解释唯一、心理或物理假说成立，更不等于修证完成。</p>
 <h2>版本与研究材料的边界</h2>
-<p>本版本保留初稿的 <code>Core.L1–L7</code> 等历史模型；其条件组合不与当前独立模块混为一套。详见<a href="RELEASE_NOTES_v0.2.0.md">版本说明</a>。完整讨论过程、个人学习记录及原始资料保留在研究工作区；公开仓库提供必要的模型、参数、出处说明、代码和可复现审计。</p><h2>完整 Lean 源码（逐段展开）</h2><p>以下源码保留 Apache-2.0 许可；说明文字为 CC0-1.0。</p><details id="C1"><summary>C1 · 心在内</summary><pre><code>/- SPDX-License-Identifier: Apache-2.0 -/
+<p>本版本保留初稿的 <code>Core.L1–L7</code> 等历史模型；其条件组合不与当前独立模块混为一套。详见<a href="RELEASE_NOTES_v0.2.1.md">版本说明</a>。完整讨论过程、个人学习记录及原始资料保留在研究工作区；公开仓库提供必要的模型、参数、出处说明、代码和可复现审计。</p><h2>完整 Lean 源码（逐段展开）</h2><p>以下源码保留 Apache-2.0 许可；说明文字为 CC0-1.0。</p><details id="C1"><summary>C1 · 心在内</summary><pre><code>/- SPDX-License-Identifier: Apache-2.0 -/
 
 /-!
 # 心不在内：两个明确前提下的条件推导

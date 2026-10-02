@@ -2,13 +2,13 @@
 
 import Surangama.SevenLocations.Core
 import Surangama.SevenLocations.Countermodels
-import Surangama.SevenLocations.InsideConditional
-import Surangama.SevenLocations.C2
-import Surangama.SevenLocations.C3
-import Surangama.SevenLocations.C4
-import Surangama.SevenLocations.C5
-import Surangama.SevenLocations.C6
-import Surangama.SevenLocations.C7
+import Surangama.SevenLocations.C1_Inside
+import Surangama.SevenLocations.C2_Outside
+import Surangama.SevenLocations.C3_InRoot
+import Surangama.SevenLocations.C4_LightAndDarkness
+import Surangama.SevenLocations.C5_AtContact
+import Surangama.SevenLocations.C6_Middle
+import Surangama.SevenLocations.C7_Unlocated
 
 /-!
 # Surangama: aggregate import

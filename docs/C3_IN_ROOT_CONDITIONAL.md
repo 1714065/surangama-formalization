@@ -11,7 +11,7 @@
 <!-- /project-principle -->
 
 日期：2026-09-30。本地增补，不属于已发布的 v0.1.0。编号为七处征心第三处，不是旧项目绳蛇模型。
-源文件：[C3.lean](../lean/Surangama/SevenLocations/C3.lean)。
+源文件：[C3_InRoot.lean](../lean/Surangama/SevenLocations/C3_InRoot.lean)。
 
 ## 命题与条件
 

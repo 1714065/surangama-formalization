@@ -14,14 +14,14 @@ Machine-checked formalizations of arguments in the Śūraṅgama Sūtra
 (大佛頂首楞嚴經, Taishō T19 no. 945) in Lean 4: premise inventories, finite
 countermodels, and axiom-dependency reports.
 
-Lifecycle: `active` · Version: `0.2.0` · Lean: `v4.35.0-rc2`, no Mathlib.
+Lifecycle: `active` · Version: `0.2.1` · Lean: `v4.35.0-rc2`, no Mathlib.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22950552.svg)](https://doi.org/10.5281/zenodo.22950552)
 Concept DOI (all versions): `10.5281/zenodo.22950552`. Current release:
-[`v0.2.0`](https://github.com/1714065/surangama-formalization/releases/tag/v0.2.0),
-2026-10-03; version DOI [10.5281/zenodo.23107913](https://doi.org/10.5281/zenodo.23107913).
-[Verified publication record](docs/RELEASE_RECORD_v0.2.0.md).
-Initial release v0.1.0 has DOI `10.5281/zenodo.22950553`; it does not identify v0.2.0.
+[`v0.2.1`](https://github.com/1714065/surangama-formalization/releases/tag/v0.2.1),
+2026-10-03; its version DOI is assigned on Zenodo archival.
+Previous v0.2.0 DOI: `10.5281/zenodo.23107913`; initial v0.1.0 DOI:
+`10.5281/zenodo.22950553`. These identify their respective archived versions.
 
 > **Note on authorship.** This repository was developed with AI assistance
 > (Claude, Anthropic; Codex, OpenAI) under human direction. Every proof is accepted by the
@@ -51,19 +51,25 @@ reading is the only one. The wording rules in [`docs/STATUS.md`](docs/STATUS.md)
 govern what may be claimed. The adopted text locators are not a critical
 edition.
 
-## New in v0.2.0: C1–C7
+## v0.2.1 filename update
+
+All seven current modules use numbered English filenames. See the
+[filename migration table](docs/FILE_NAMING.md) and [v0.2.1 release notes](docs/RELEASE_NOTES_v0.2.1.md).
+The proof files are unchanged in content; only file/module paths and their references changed.
+
+## C1–C7 (introduced in v0.2.0)
 
 [Research guide in Chinese](docs/RESEARCH_GUIDE_zh.md) · [HTML reading copy](docs/RESEARCH_GUIDE_zh.html) · [Release notes](docs/RELEASE_NOTES_v0.2.0.md)
 
 | Module | Selected route | Theorem declarations |
 | --- | --- | ---: |
-| `InsideConditional` (C1) | [心在内](docs/INSIDE_CONDITIONAL.md) | 4 |
-| `C2` (C2) | [心在外](docs/C2_OUTSIDE_CONDITIONAL.md) | 4 |
-| `C3` (C3) | [潜伏根里](docs/C3_IN_ROOT_CONDITIONAL.md) | 10 |
-| `C4` (C4) | [见暗名见内](docs/C4_DARKNESS_CONDITIONAL.md) | 17 |
-| `C5` (C5) | [随所合处心则随有](docs/C5_CONTACT_CONDITIONAL.md) | 5 |
-| `C6` (C6) | [心在中间](docs/C6_MIDDLE_CONDITIONAL.md) | 6 |
-| `C7` (C7) | [一切无著名之为心](docs/C7_UNLOCATED_CONDITIONAL.md) | 3 |
+| `C1_Inside` (C1) | [心在内](docs/INSIDE_CONDITIONAL.md) | 4 |
+| `C2_Outside` (C2) | [心在外](docs/C2_OUTSIDE_CONDITIONAL.md) | 4 |
+| `C3_InRoot` (C3) | [潜伏根里](docs/C3_IN_ROOT_CONDITIONAL.md) | 10 |
+| `C4_LightAndDarkness` (C4) | [见暗名见内](docs/C4_DARKNESS_CONDITIONAL.md) | 17 |
+| `C5_AtContact` (C5) | [随所合处心则随有](docs/C5_CONTACT_CONDITIONAL.md) | 5 |
+| `C6_Middle` (C6) | [心在中间](docs/C6_MIDDLE_CONDITIONAL.md) | 6 |
+| `C7_Unlocated` (C7) | [一切无著名之为心](docs/C7_UNLOCATED_CONDITIONAL.md) | 3 |
 
 The 49 declarations include main proofs, branch lemmas and scope witnesses.
 They do not import the historical `SutraPremises` bundle. All have empty axiom

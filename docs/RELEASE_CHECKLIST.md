@@ -1,6 +1,6 @@
 <!-- SPDX-License-Identifier: CC0-1.0 -->
 
-# Release checklist (v0.2.0; initial-release history retained)
+# Release checklist (v0.2.1; previous release history retained)
 
 <!-- project-principle:2026-09-29 -->
 > **项目共同原则（2026-09-29）**
@@ -9,6 +9,14 @@
 >
 > 可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
 <!-- /project-principle -->
+
+## v0.2.1 publication checks
+
+- Compare all seven renamed file contents to v0.2.0: identical.
+- Build and audit using new imports; regenerate the finite scope report.
+- Verify public/private source copies, embedded code and active local links.
+- Require successful GitHub CI on the exact commit before publishing.
+- Verify the new Zenodo record and all archived files against the release tag.
 
 ## v0.2.0 publication checks
 

@@ -6,7 +6,7 @@
 >
 > 可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
 
-Local addition, 2026-10-02; included in v0.2.0. Passage-aligned: T19n0945 fascicle 1, p108a15–b03. Source: [C6.lean](../lean/Surangama/SevenLocations/C6.lean).
+Local addition, 2026-10-02; included in v0.2.0. Passage-aligned: T19n0945 fascicle 1, p108a15–b03. Source: [C6_Middle.lean](../lean/Surangama/SevenLocations/C6_Middle.lean).
 
 The user approved four cases under the same affiliation relation: both root and object, root only, object only, neither. The two single-side cases are project additions for exhaustive classification, not separate quoted arguments from the scripture. The relation is interpreted as affiliation of the claimed mind-body, not mere causal dependence.
 

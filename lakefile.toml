@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 name = "surangama-formalization"
-version = "0.2.0"
+version = "0.2.1"
 defaultTargets = ["Surangama"]
 
 # No Mathlib.  The library is pure logic so that anyone with the pinned Lean

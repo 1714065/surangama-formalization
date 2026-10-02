@@ -56,7 +56,7 @@
 
 ## Lean 代码
 
-源文件：[InsideConditional.lean](../lean/Surangama/SevenLocations/InsideConditional.lean)。
+源文件：[C1_Inside.lean](../lean/Surangama/SevenLocations/C1_Inside.lean)。
 
 ```lean
 theorem not_inside
