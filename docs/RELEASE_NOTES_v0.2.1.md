@@ -34,5 +34,5 @@ conditional-formalization software release; its interpretive claim boundaries
 are unchanged. Earlier published archives retain their own filenames.
 
 The concept DOI remains `10.5281/zenodo.22950552`. The v0.2.1 version DOI is
-assigned by Zenodo after publication; `10.5281/zenodo.23107913` identifies
+[10.5281/zenodo.23108188](https://doi.org/10.5281/zenodo.23108188); `10.5281/zenodo.23107913` identifies
 v0.2.0, not this update.

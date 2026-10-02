@@ -19,7 +19,8 @@ Lifecycle: `active` · Version: `0.2.1` · Lean: `v4.35.0-rc2`, no Mathlib.
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22950552.svg)](https://doi.org/10.5281/zenodo.22950552)
 Concept DOI (all versions): `10.5281/zenodo.22950552`. Current release:
 [`v0.2.1`](https://github.com/1714065/surangama-formalization/releases/tag/v0.2.1),
-2026-10-03; its version DOI is assigned on Zenodo archival.
+2026-10-03; version DOI: [10.5281/zenodo.23108188](https://doi.org/10.5281/zenodo.23108188).
+See the [verified publication record](docs/RELEASE_RECORD_v0.2.1.md).
 Previous v0.2.0 DOI: `10.5281/zenodo.23107913`; initial v0.1.0 DOI:
 `10.5281/zenodo.22950553`. These identify their respective archived versions.
 
