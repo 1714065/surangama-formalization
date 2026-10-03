@@ -21,5 +21,4 @@ manuscripts: separate author-copyright notice in manuscripts/RIGHTS.md.
 Private review backups and full dialogue records are excluded.
 
 Version tag: v1.0. The Lean package uses semantic version 1.0.0 for Lake.
-The concept DOI is 10.5281/zenodo.22950552. A new version DOI is assigned on
-automatic Zenodo archival; v0.2.1 DOI 10.5281/zenodo.23108188 remains historical.
+The concept DOI is 10.5281/zenodo.22950552. The verified v1.0 DOI is 10.5281/zenodo.23124517; v0.2.1 DOI 10.5281/zenodo.23108188 remains historical.
