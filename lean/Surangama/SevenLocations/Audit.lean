@@ -9,6 +9,7 @@ import Surangama.SevenLocations.C4_LightAndDarkness
 import Surangama.SevenLocations.C5_AtContact
 import Surangama.SevenLocations.C6_Middle
 import Surangama.SevenLocations.C7_Unlocated
+import Surangama.SevenLocations.SharedNonduality
 
 /-!
 # Axiom-dependency report
@@ -97,5 +98,14 @@ namespace Surangama.SevenLocations
 #print axioms C7.not_unlocated_without_body
 #print axioms C7.not_unlocated_with_body
 #print axioms C7.not_unlocated_all_cases
+
+#print axioms SharedNonduality.bridge_for_each
+#print axioms SharedNonduality.exclude_identification
+#print axioms SharedNonduality.seven_identifications_refuted
+#print axioms SharedNonduality.refute_contextual_claim
+#print axioms SharedNonduality.premises_have_model_with_descriptions
+#print axioms SharedNonduality.without_common_exclusion
+#print axioms SharedNonduality.without_one_bridge
+#print axioms SharedNonduality.description_can_remain
 
 end Surangama.SevenLocations

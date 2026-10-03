@@ -22,6 +22,7 @@ sh tools/print-axioms.sh
 
 echo "=== 4/4 propositional scope audit (Python 3)"
 python3 tools/check_scope.py
+python3 tools/check_shared_nonduality.py
 
 echo
 echo "verify OK on $(date +%F): surangama-formalization reproduces its claims"

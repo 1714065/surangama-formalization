@@ -119,3 +119,7 @@ Six theorems (classification, four refutations, summary) passed the full build a
 ## v0.2.1 filename migration
 
 See [FILE_NAMING.md](FILE_NAMING.md). All seven current proof files are unchanged in content. Imports, path references and the scope checker follow the numbered descriptive filenames. Declaration namespaces remain stable.
+
+## v1.0: SharedNonduality and public manuscripts
+
+See [SHARED_NONDUALITY.md](SHARED_NONDUALITY.md). User-approved interpretive direction; formal acceptance is conditional on an explicit nonduality exclusion schema and seven unproved passage bridges. No ontology or unique interpretation is certified. The v1.0 public manuscripts are listed in [the reading index](../manuscripts/index.md); their public release is not journal acceptance.

@@ -1,0 +1,31 @@
+{
+  "release": "v1.0",
+  "checked_at_utc": "2026-10-03T16:33:35.219735+00:00",
+  "toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "checks": {
+    "full_lean_build": true,
+    "sorry_gate": true,
+    "axiom_report": true,
+    "local_boolean_scope": true,
+    "shared_boolean_scope": true,
+    "original_seven_modules_unchanged": true
+  },
+  "current_local_and_shared_declarations": 57,
+  "source_sha256": {
+    "lean/Surangama/SevenLocations/C1_Inside.lean": "405c36fd305912548f6fc96799842262f897a18e233530268dbe808a709bfe3c",
+    "lean/Surangama/SevenLocations/C2_Outside.lean": "18370a0e539d922767691e00a5e4c0c9005b93d9172b6813de71ce99db6ccbdd",
+    "lean/Surangama/SevenLocations/C3_InRoot.lean": "532c2c37dfa19d273932d151a3154d54060b38c2441d856b8d00f3cbc91c2535",
+    "lean/Surangama/SevenLocations/C4_LightAndDarkness.lean": "caba80a2565562f33f494fadfb54fb8abb1fb5288ded6fa3267e71969641a07b",
+    "lean/Surangama/SevenLocations/C5_AtContact.lean": "151e40b8fcf7d984a5352b84acc93a88bf96613fe2cf74c69092748cf2779441",
+    "lean/Surangama/SevenLocations/C6_Middle.lean": "3123b72ea700196fd6776625e496f207708e364507496e0001475286ef9f460c",
+    "lean/Surangama/SevenLocations/C7_Unlocated.lean": "32bc14bb67097999e334c148def59586d547816cd81426dda532f83b508e9713",
+    "lean/Surangama/SevenLocations/SharedNonduality.lean": "9033520d5f85d3adb3bbaea2865def9ba97ac8b02a1614e6761deef288a3dcbf"
+  },
+  "commands": [
+    "lake build",
+    "lake env lean lean/Surangama/SevenLocations/Audit.lean",
+    "python tools/check_scope.py",
+    "python tools/check_shared_nonduality.py"
+  ],
+  "scope": "Explicit premises remain. Compilation does not certify interpretation or premise truth."
+}

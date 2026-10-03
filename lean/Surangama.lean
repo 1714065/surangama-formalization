@@ -9,6 +9,7 @@ import Surangama.SevenLocations.C4_LightAndDarkness
 import Surangama.SevenLocations.C5_AtContact
 import Surangama.SevenLocations.C6_Middle
 import Surangama.SevenLocations.C7_Unlocated
+import Surangama.SevenLocations.SharedNonduality
 
 /-!
 # Surangama: aggregate import

@@ -1,0 +1,172 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>From Scripture and Commentary to Machine-Checked Arguments</title><style>
+:root{color-scheme:light;--ink:#24312e;--muted:#64726c;--accent:#246451;--line:#dce4df}
+*{box-sizing:border-box}body{margin:0;background:#f2f4f0;color:var(--ink);font-family:Cambria,"Noto Serif SC","SimSun",serif;font-size:18px;line-height:1.85}
+nav{font-family:"Microsoft YaHei",sans-serif;max-width:1060px;margin:22px auto;display:flex;gap:18px;flex-wrap:wrap;padding:0 28px;font-size:14px}
+a{color:#246451;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
+main{max-width:1060px;margin:0 auto 50px;padding:64px 76px;background:#fff;border:1px solid var(--line);box-shadow:0 12px 40px #28352908}
+h1,h2,h3,h4{font-family:Cambria,"Microsoft YaHei",sans-serif;line-height:1.45;color:#173c30;break-after:avoid}
+h1{font-size:34px;margin:0 0 14px}h2{font-size:24px;margin:0 0 28px;font-weight:500}h3{font-size:24px;margin-top:42px;border-top:1px solid var(--line);padding-top:23px}h4{font-size:20px;margin-top:30px}
+p{margin:15px 0;text-wrap:pretty}blockquote{margin:24px 0;padding:12px 24px;border-left:3px solid #7ea493;background:#f3f7f3}blockquote p{margin:8px 0}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px;line-height:1.65;overflow-wrap:normal;word-break:normal}th,td{padding:10px 12px;border:1px solid var(--line);vertical-align:top}th{background:#edf3ed;text-align:left}tr{break-inside:avoid}.table-scroll{max-width:100%;overflow-x:auto}.module-table,.bridge-table,.audit-table,.notation-table{table-layout:fixed}.module-table th:nth-child(1){width:20%}.module-table th:nth-child(2){width:24%}.module-table th:nth-child(3){width:42%}.module-table th:nth-child(4){width:14%}.bridge-table th:nth-child(1){width:8%}.bridge-table th:nth-child(2){width:24%}.bridge-table th:nth-child(3){width:36%}.bridge-table th:nth-child(4){width:32%}.audit-table th:first-child{width:46%}.audit-table th:nth-child(2),.audit-table th:nth-child(3){width:27%}.notation-table th:first-child{width:28%}
+pre{padding:20px;background:#f2f5f2;border:1px solid var(--line);font-size:14px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;break-inside:avoid}code{font-family:Consolas,"Cambria Math","Microsoft YaHei",monospace;font-size:.95em}pre code{font-size:1em}blockquote code{font-size:1em}blockquote code,pre code{font-variant-ligatures:none}
+li{margin:8px 0}.foot{border-top:1px solid var(--line);margin-top:42px;padding-top:20px;color:var(--muted);font:13px/1.6 "Microsoft YaHei",sans-serif}.badge{color:var(--muted);letter-spacing:.08em;font:12px/1.6 "Microsoft YaHei",sans-serif;margin-bottom:26px}
+@media screen and (max-width:700px){code{overflow-wrap:anywhere}main{padding:32px 22px;border:0}body{font-size:17px}h1{font-size:27px}h2,h3{font-size:21px}table{font-size:13px;min-width:650px}th,td{padding:6px}.notation-table{min-width:560px}}
+@page{size:A4;margin:19mm 18mm 20mm}
+@media print{body{background:white;font-size:10.5pt;line-height:1.62}nav{display:none}main{max-width:none;margin:0;padding:0;border:0;box-shadow:none}h1{font-size:23pt}h2{font-size:16pt}h3{font-size:15pt;margin-top:18pt;padding-top:10pt}h4{font-size:12pt}p{margin:10px 0;orphans:3;widows:3}table{font-size:8.4pt;line-height:1.5;min-width:0}.notation-table{min-width:0}.table-scroll{overflow:visible}th,td{padding:5pt}pre{font-size:9pt;line-height:1.55;padding:10pt}blockquote{padding:7pt 12pt;margin:12pt 0}a{text-decoration:none;color:inherit}thead{display:table-header-group}.badge{font-size:8pt}.foot{display:none}}
+</style></head><body><nav><a href="index.html">阅读目录</a><a href="02_AI_Skill_Workflow.pdf">PDF</a><a href="02_AI_Skill_Workflow.docx">Word</a><a href="02_AI_Skill_Workflow.md">Markdown</a><a href="02_AI_Skill_Workflow_中文版.html">完整中文版</a></nav><main><div class="badge">ŚŪRAṄGAMA · PUBLIC MANUSCRIPTS · v1.0 · 2026 / 10 / 04</div><h1>From Scripture and Commentary to Machine-Checked Arguments</h1>
+<h2>An AI- and Skill-Assisted Workflow for Research in Religious Humanities</h2>
+<p><strong>Jason Wu</strong> · ORCID: <a href="https://orcid.org/0009-0003-1682-6165">0009-0003-1682-6165</a><br/>
+Methods preprint · v1.0 · 4 October 2026</p>
+<p><strong>中文题目：从经文与注疏到机器核验——一种 AI 与“skill”辅助的宗教人文经典论证研究流程</strong></p>
+<p><em>术语说明：本文的 skill 指提供给 AI 助手的书面研究指令及配套参考材料。</em></p>
+<h3>Abstract</h3>
+<p>AI assistants can help researchers organize sources and draft formal proofs, but a fluent explanation and a compiling proof are insufficient evidence of a faithful interpretation. This article describes a workflow developed in a Lean reconstruction of the seven locations of mind in the Śūraṅgama Sūtra. A written skill specifies source checking, separation of interpretive commitments, human review of bridging premises, conditional formalization, and synchronized research outputs. A documented dialogue about a shared nonduality reading illustrates the process: an initial framing in terms of independence was revised because some passages explicitly involve dependence on conditions. The resulting formalization concerns reified identification rather than causal independence. The case shows how a human correction can propagate into predicate design, theorem scope, countermodels, and publication claims. A timestamped record and a source snapshot make this sequence inspectable. This descriptive single-case methods report does not establish causal effects of AI assistance or the skill, or gains in accuracy or productivity. Its contribution is a practical allocation of responsibilities among textual evidence, human interpretation, AI assistance, and proof checking.</p>
+<p><strong>Keywords:</strong> AI-assisted humanities; research workflow; Lean; computational hermeneutics; auditability; Buddhist studies; research provenance</p>
+<h3>1. Why a workflow is needed</h3>
+<p>An AI assistant may generate a persuasive account of a religious argument while overlooking an ambiguous word or an unstated premise. It may also produce Lean code that compiles because the desired result has effectively been assumed. These are distinct problems: textual fidelity and inferential validity cannot be assessed by the same test.</p>
+<p>The case reported here concerns seven exchanges about the location of mind in the Chinese Śūraṅgama Sūtra, T19, no. 945, fascicle one. Earlier project work reconstructed selected arguments in seven local Lean modules. A subsequent dialogue asked whether they could be understood through one common principle. The difficulty was not long proof search. It was deciding what exactly a common principle would mean, whether each passage supported the proposed connection, and whether the resulting theorem answered the original question. [1, 2]</p>
+<p>Computational hermeneutics already provides a precedent for coordinating formal argument analysis with interpretive revision. [3] This report focuses on the operational details of such coordination when an AI assistant and a reusable written instruction package participate. Lean checks the formal terms; it does not adjudicate philology or religious authority. [4]</p>
+<h3>2. What “skill” means in this study</h3>
+<p>The skill used in the project is a local Markdown instruction document, <code>sutra-argument-lean/SKILL.md</code>, accompanied by project context and workflow references. The author retains a dated copy of these instructions in the private research archive. It tells an assistant what material to collect, how to distinguish evidence from reconstruction, and which checks and deliverables to produce. The instruction document is not a trained model or a proof checker: Lean and separate scripts perform the actual checks.</p>
+<p>Its central commitments are concrete. Continuous scriptural context should accompany excerpts. Quotations should preserve traditional characters and locators. Commentary should be attributed rather than blended into the scripture. Missing connections should be discussed with the researcher. Doctrinal assumptions should remain visible as theorem parameters rather than hidden global axioms. Compilation, dependency inspection, and scope checks should be reported accurately. Research notes, code, and teaching explanations should describe the same selected argument.</p>
+<p>The project's governing principle also limits the intended output: an argument may exclude a particular claim under stated conditions; the project does not attempt to define Buddha or tathāgatagarbha. Machine verification and the completion of religious practice are not identified.</p>
+<p>The skill's intended value is procedural: making omissions easier to notice and work easier to resume. Whether an assistant follows the instructions remains an observable question. This case does not compare research with and without the skill and therefore cannot quantify its effect.</p>
+<h3>3. A workflow with distinct responsibilities</h3>
+<p>The five steps below move from source selection to a reviewable artifact. Interpretive objections may send the researcher back to an earlier step; the sequence is not a one-pass automation pipeline.</p>
+<h4>3.1 Establish the textual unit</h4>
+<p>Begin with the complete exchange, not an isolated conclusion. Record the edition, fascicle, page-column-line location, and any normalization. In the present corpus, continuous passages were retained from a project-held CBETA transcription. Working commentary copies were indexed by physical PDF pages or document paragraphs. Such locators are useful for review but must not be mistaken for stable pagination in every edition.</p>
+<p>AI can help retrieve passages, align versions, and propose summaries. The researcher must decide whether the selected context is adequate and whether a quotation or attribution is faithful. Modern commentary files need not be redistributed merely because they were consulted.</p>
+<h4>3.2 Write the argument in ordinary language</h4>
+<p>Before introducing symbols, describe the proposed claim, the question directed against it, and the connection needed to reach a contradiction. Keep different senses of a word separate. In this case, “inside,” “contact,” “having a referent,” “form,” and “without attachment” could not be assigned one unexamined meaning across all seven exchanges.</p>
+<p>A useful output is a small premise ledger. Each entry names the premise, its source or interpretive reason, and its status: explicit wording, commentary-supported reading, or researcher-supplied bridge. A short explanation should also state what the premise does not claim. For example, a particular model connecting outside location to disconnected knowing is not a universal law against interaction at a distance.</p>
+<h4>3.3 Resolve objections before treating the code as evidence</h4>
+<p>The assistant proposes a reconstruction; the researcher tests it against the text and the intended question. A change in interpretation may require changing the theorem's target rather than merely repairing its proof. This is where human disagreement is productive: it determines whether the code represents the intended argument at all.</p>
+<p>The stopping point for this stage is a clearly stated conditional claim, not agreement about every metaphysical question. Unresolved alternatives should remain listed. A proof can then be developed for a selected route without claiming that other routes have been dismissed.</p>
+<h4>3.4 Encode and check the conditional</h4>
+<p>Translate the reviewed reconstruction into propositions and explicit hypotheses. Use descriptive names, but explain that names do not carry their intended semantics into the kernel. Avoid an assumption that simply restates the desired conclusion unless that is openly the object of study.</p>
+<p>Compile the actual file, inspect theorem dependencies, and check for incomplete proofs. If a theorem reports no extra axioms, separately inspect its parameters: an empty axiom list does not mean that the theorem has no assumptions. A reader should be able to see the same bridge in the ordinary-language explanation, the Lean signature, and the premise ledger.</p>
+<h4>3.5 Test scope and package the result</h4>
+<p>Attempt to satisfy the premises without contradiction. Remove a substantive premise and look for a countermodel. Check whether a stronger conclusion follows or remains unsupported. For finite propositional models, exhaustive enumeration is a modest and reproducible aid. It audits the formulas supplied to the script, so agreement between those formulas and the intended Lean model is another review obligation.</p>
+<p>Finally, publish the layers together: passage and commentary references, explanation, explicit premises, source code, toolchain, checks, and scope statement. A teaching page can simplify presentation while retaining a way to inspect the assumptions. Every displayed proof status should correspond to an actual run on an identifiable source version.</p>
+<h3>4. A recorded revision: from independence to reified identification</h3>
+<p>The selected case record contains 18 visible dialogue messages: 5 user messages, 8 assistant progress messages, and 5 assistant final messages. It covers 3 October 2026, 10:16:59.731–11:22:41.772 UTC+08:00. These are timestamps in local session records, not independently certified delivery times. Tool payloads and internal reasoning are outside this dialogue transcript.</p>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Recorded time, UTC+08:00</th>
+<th style="text-align: left;">Research event</th>
+<th style="text-align: left;">Consequence for the model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">10:16:59</td>
+<td style="text-align: left;">The researcher asks whether one preliminary principle could replace separate premise packages</td>
+<td style="text-align: left;">Introduces the shared-principle question</td>
+</tr>
+<tr>
+<td style="text-align: left;">10:22:02</td>
+<td style="text-align: left;">The assistant presents an independence-oriented proposal and bridge requirements</td>
+<td style="text-align: left;">Makes a first candidate available for criticism</td>
+</tr>
+<tr>
+<td style="text-align: left;">10:55:00</td>
+<td style="text-align: left;">The researcher emphasizes dependence on contact in C5, conditional arising in C6, and separate existence despite nonlocation in C7</td>
+<td style="text-align: left;">Shows why causal independence is an unsuitable common characterization</td>
+</tr>
+<tr>
+<td style="text-align: left;">10:55:50</td>
+<td style="text-align: left;">The assistant revises the focus toward a separately posited mind</td>
+<td style="text-align: left;">Changes the intended meaning of the shared predicate</td>
+</tr>
+<tr>
+<td style="text-align: left;">10:59:29–11:04:02</td>
+<td style="text-align: left;">Commentary evidence is requested and discussed</td>
+<td style="text-align: left;">Connects the proposal to named interpretive sources</td>
+</tr>
+<tr>
+<td style="text-align: left;">11:06:33–11:07:42</td>
+<td style="text-align: left;">The researcher endorses the subject–object formulation and authorizes implementation</td>
+<td style="text-align: left;">Establishes the selected reading for formal work</td>
+</tr>
+<tr>
+<td style="text-align: left;">11:22:41</td>
+<td style="text-align: left;">The assistant reports the proof and verification results</td>
+<td style="text-align: left;">Delivers an inspectable conditional result</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Table 1.</strong> Selected events from the archived dialogue; the intervals do not measure isolated task durations or productivity.</p>
+<p>This correction is substantive. A mind described as arising through conditions is not thereby causally independent of those conditions. The revised shared predicate concerns an act of reification: identifying a separately posited knower over against its objects as the mind-nature sought in the dialogue. The project then supplies one common exclusion and seven passage-specific bridges. A theorem proves that each description and its claimed identification cannot both hold under those assumptions.</p>
+<p>The theorem does not refute the description alone. Recognizing this required a second separation: the contextual identification targeted by the shared layer is not automatically the same proposition as the claim in each existing local module. The implementation supplies a transfer theorem with an explicit connection premise. It does not silently replace the seven earlier proofs.</p>
+<p>This sequence illustrates a feasible feedback path: textual objection → revised interpretation → revised predicates → precise conclusion → scope witnesses. It does not show that the AI independently discovered a Buddhist teaching. The recorded human contribution and the consulted commentaries are part of the explanation of how the formalization arose.</p>
+<h3>5. What the checks establish</h3>
+<p>The shared module contains 8 theorem declarations, including coverage, exclusion, transfer, and scope witnesses. For one chapter, <code>Description</code> means that the selected candidate account holds; <code>Separated</code> means that the account reifies a knower as separately subsisting over against its objects; and <code>Identifies</code> means that the candidate is correctly identified as the mind-nature sought in the dialogue. Ordinary functional distinctions alone do not establish <code>Separated</code>.</p>
+<p>The basic exclusion uses two explicit premises:</p>
+<pre><code class="language-text">U: Separated → ¬ Identifies
+B: Description → Separated
+</code></pre>
+<p>Together they imply <code>¬ (Description ∧ Identifies)</code>. Here <code>→</code> means implication, <code>¬</code> negation, and <code>∧</code> conjunction. Lean checks this conditional deduction; the textual interpretation still needs a defense.</p>
+<p>The independent Boolean audit examines 8 assignments to these three propositions. Exactly 4 satisfy both U and B; none of those 4 satisfies <code>Description ∧ Identifies</code>. One satisfying assignment is <code>Description = true</code>, <code>Separated = true</code>, and <code>Identifies = false</code>. It retains the description while rejecting the identification. Further tests remove the common exclusion or one bridge, allowing the previously excluded identification. Across the seven chapters, 7 indexed omission witnesses show why the seven bridges remain individually necessary in this formulation.</p>
+<p>To reproduce the enumeration, run <code>python tools/check_shared_nonduality.py</code> from the v1.0 repository root. The result is written to <code>audit/shared-nonduality-scope.json</code>. The accompanying verification guide maps the 8 declarations to their roles and lists the separate Lean build and dependency checks.</p>
+<p>These checks address internal consistency, consequence, and dependence on selected assumptions. They do not establish the truth of a commentary, the best translation of a term, or the correctness of a doctrine. Nor do they make the project “assumption-free.” The assumptions have been made inspectable.</p>
+<h3>6. Recurrent failure modes and practical controls</h3>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Failure mode</th>
+<th style="text-align: left;">Observable control in the workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">An AI paraphrase is treated as canonical wording</td>
+<td style="text-align: left;">Retain the continuous passage and CBETA locator; compare quoted characters with the source and record any normalization</td>
+</tr>
+<tr>
+<td style="text-align: left;">A commentary is presented as unanimous tradition</td>
+<td style="text-align: left;">Record the commentator, work, fascicle or section, and page or paragraph locator; retain different emphases</td>
+</tr>
+<tr>
+<td style="text-align: left;">An important premise is hidden in a predicate's label</td>
+<td style="text-align: left;">Add a plain-language definition and an explicit bridge</td>
+</tr>
+<tr>
+<td style="text-align: left;">A compilation result is mistaken for textual validation</td>
+<td style="text-align: left;">Report proof status separately from interpretive status</td>
+</tr>
+<tr>
+<td style="text-align: left;">A shared theorem silently changes the local target</td>
+<td style="text-align: left;">State a transfer condition and preserve both formal layers</td>
+</tr>
+<tr>
+<td style="text-align: left;">Inconsistent premises make a refutation trivial</td>
+<td style="text-align: left;">Supply a satisfying model of the premise package</td>
+</tr>
+<tr>
+<td style="text-align: left;">“No extra axioms” is reported as “no assumptions”</td>
+<td style="text-align: left;">Inspect theorem parameters as well as axiom dependencies</td>
+</tr>
+<tr>
+<td style="text-align: left;">A new extension is attributed to an older archive</td>
+<td style="text-align: left;">Identify the released baseline and the local snapshot separately</td>
+</tr>
+</tbody>
+</table></div>
+<p>The controls are useful even when the proof is elementary. Their purpose is to maintain traceability through revisions, especially when the assistant produces several plausible explanations in succession. A record of rejected interpretations can explain a design decision; it should not be presented as evidence that every alternative interpretation has been exhausted.</p>
+<h3>7. Limitations and a research agenda</h3>
+<p>This is one project and one selected dialogue, not a controlled evaluation. The researcher participated in generating and assessing the interpretation. No independent panel scored fidelity, no baseline measured time saved, and no ablation isolated the contribution of the skill. The archive supports reconstruction of the visible process, not causal claims about AI effectiveness.</p>
+<p>A subsequent study could give several readers the same scriptural unit, compare ordinary notes with a premise-ledger workflow, and ask whether they locate disagreements more precisely. Another study could compare different formalizations of the same passage without treating agreement as the only desirable outcome. These would require advance definitions of fidelity, usefulness, and adjudication procedures.</p>
+<p>The immediate methodological lesson is narrower and usable now. Assign source verification, interpretation, proof checking, and publication judgment to distinct steps, and preserve the transitions between them. AI can assist across those steps; a written skill can remind it of the requirements; Lean can check a specified inferential claim. The researcher remains responsible for whether that claim is worth making about the text.</p>
+<h3>Data availability and AI assistance</h3>
+<p>The <a href="https://github.com/1714065/surangama-formalization/releases/tag/v1.0">v1.0 release</a> provides the seven local modules, the shared extension and public manuscripts. The full dialogue and skill snapshot remain in the author-held research archive and are not included in this public package. Claims about the recorded process can be examined through the reported excerpts and counts; the complete underlying dialogue is not publicly available. Public distribution of the full dialogue should be decided separately after review.</p>
+<p>This report and its underlying workflow used AI assistance. Broader project records identify Claude and Codex; the selected dialogue and present drafting involve Codex. Exact model variants are not asserted from records that do not establish them. AI assisted in drafting; the author determines the interpretive framing and has reviewed and approved this public version.</p>
+<h3>References</h3>
+<ol>
+<li><em>Śūraṅgama Sūtra</em>, Chinese Taishō text T19, no. 945, fascicle 1, 0107a12–0108b14. <a href="https://cbetaonline.dila.edu.tw/zh/T0945_001">CBETA text</a>.</li>
+<li>Wu, Jason. 2026. <em>Śūraṅgama Sūtra Argument Formalizations (Lean 4)</em>, v0.2.1. <a href="https://doi.org/10.5281/zenodo.23108188">doi:10.5281/zenodo.23108188</a>; <a href="https://github.com/1714065/surangama-formalization">source repository</a>. The shared extension is included in <a href="https://github.com/1714065/surangama-formalization/releases/tag/v1.0">v1.0</a>.</li>
+<li>Fuenmayor, David, and Christoph Benzmüller. 2019. “A Computational-Hermeneutic Approach for Conceptual Explicitation.” <a href="https://arxiv.org/abs/1906.06582v2">arXiv:1906.06582v2</a>.</li>
+<li>de Moura, Leonardo, and Sebastian Ullrich. 2021. “The Lean 4 Theorem Prover and Programming Language.” <em>Automated Deduction—CADE 28</em>, 625–635. <a href="https://doi.org/10.1007/978-3-030-79876-5_37">doi:10.1007/978-3-030-79876-5_37</a>.</li>
+<li>Project research record. 2026. <em>七处征心：从共同前提探索到能所不二条件证明的对话实录</em>. Selected visible messages, 3 October, 10:16:59.731–11:22:41.772, UTC+08:00. Archive generated 3 October 2026, 03:54:16 UTC, as recorded in the JSON metadata. Author-held, non-public file: <code>dialogue.json</code>, with message hashes, source-line references, and a stated timestamp policy; not a public DOI archive.</li>
+<li>Project workflow document. <em>sutra-argument-lean</em>, <code>SKILL.md</code>, and project references. Snapshot retained in the author-held research archive; not included in the public release. The snapshot records instructions, not an empirical validation of their effectiveness.</li>
+</ol><div class="foot">v1.0 公开稿 · 经文解释与明确前提下的逻辑核验分别承担责任。</div></main></body></html>

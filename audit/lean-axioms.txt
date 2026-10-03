@@ -1,4 +1,4 @@
-# Axiom-dependency report - leanprover/lean4:v4.35.0-rc2 - 2026-10-03
+# Axiom-dependency report - leanprover/lean4:v4.35.0-rc2 - 2026-10-04
 # Regenerate: tools\print-axioms.ps1 (Windows) or sh tools/print-axioms.sh
 
 'Surangama.SevenLocations.L1' does not depend on any axioms
@@ -66,3 +66,11 @@
 'Surangama.SevenLocations.C7.not_unlocated_without_body' does not depend on any axioms
 'Surangama.SevenLocations.C7.not_unlocated_with_body' does not depend on any axioms
 'Surangama.SevenLocations.C7.not_unlocated_all_cases' does not depend on any axioms
+'Surangama.SevenLocations.SharedNonduality.bridge_for_each' does not depend on any axioms
+'Surangama.SevenLocations.SharedNonduality.exclude_identification' does not depend on any axioms
+'Surangama.SevenLocations.SharedNonduality.seven_identifications_refuted' does not depend on any axioms
+'Surangama.SevenLocations.SharedNonduality.refute_contextual_claim' does not depend on any axioms
+'Surangama.SevenLocations.SharedNonduality.premises_have_model_with_descriptions' does not depend on any axioms
+'Surangama.SevenLocations.SharedNonduality.without_common_exclusion' does not depend on any axioms
+'Surangama.SevenLocations.SharedNonduality.without_one_bridge' does not depend on any axioms
+'Surangama.SevenLocations.SharedNonduality.description_can_remain' does not depend on any axioms

@@ -14,13 +14,13 @@ Machine-checked formalizations of arguments in the Śūraṅgama Sūtra
 (大佛頂首楞嚴經, Taishō T19 no. 945) in Lean 4: premise inventories, finite
 countermodels, and axiom-dependency reports.
 
-Lifecycle: `active` · Version: `0.2.1` · Lean: `v4.35.0-rc2`, no Mathlib.
+Lifecycle: `active` · Version: `1.0` · Lean: `v4.35.0-rc2`, no Mathlib.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22950552.svg)](https://doi.org/10.5281/zenodo.22950552)
 Concept DOI (all versions): `10.5281/zenodo.22950552`. Current release:
-[`v0.2.1`](https://github.com/1714065/surangama-formalization/releases/tag/v0.2.1),
-2026-10-03; version DOI: [10.5281/zenodo.23108188](https://doi.org/10.5281/zenodo.23108188).
-See the [verified publication record](docs/RELEASE_RECORD_v0.2.1.md).
+[`v1.0`](https://github.com/1714065/surangama-formalization/releases/tag/v1.0),
+2026-10-04. Its version DOI is assigned by Zenodo on archival; see the release page.
+Previous v0.2.1 DOI: [10.5281/zenodo.23108188](https://doi.org/10.5281/zenodo.23108188).
 Previous v0.2.0 DOI: `10.5281/zenodo.23107913`; initial v0.1.0 DOI:
 `10.5281/zenodo.22950553`. These identify their respective archived versions.
 
@@ -158,7 +158,10 @@ vocabulary and wording discipline.
 Formalization code and scripts: Apache-2.0. Explanatory Markdown, catalogue,
 audit records, and source metadata: CC0-1.0. The ancient Chinese text is in the
 public domain; the project does not redistribute any modern edition,
-commentary, or CBETA file. See `REUSE.toml` and `CITATION.cff`.
+commentary, or complete CBETA file. See `REUSE.toml` and `CITATION.cff`.
+The separately identified manuscripts in `manuscripts/` retain author copyright;
+no open reuse licence is granted for their prose. Embedded source excerpts retain
+their original Apache-2.0 licence. See `manuscripts/RIGHTS.md`.
 
 ## Contact
 
@@ -174,3 +177,9 @@ responsibilities and are not certified by kernel checking.
 ## C5 integration and C1–C7 review · 2026-10-03
 
 [C5 contact conditional proof](docs/C5_CONTACT_CONDITIONAL.md) is now included in the aggregate build and axiom audit. The current C1–C7 modules contain 49 theorem declarations (including branch lemmas and scope witnesses), all with empty axiom dependencies; explicit premises remain. This does not replace the historical Core L1–L7 models.
+
+## New in v1.0: shared interpretation and manuscripts
+
+[Shared interpretive layer](docs/SHARED_NONDUALITY.md): eight additional declarations, with a common exclusion schema and seven explicit passage bridges. The C1-C7 proofs and their 49 declarations remain unchanged. This layer refutes contextual identifications, not bare location claims.
+
+Read the [public manuscript index](manuscripts/index.md): two preprints with full Chinese translations, plus a Chinese Buddhist-reader essay. PDF, HTML, Word and Markdown are supplied. These are author-approved public manuscripts, not peer-reviewed journal publications. [v1.0 release notes](docs/RELEASE_NOTES_v1.0.md).

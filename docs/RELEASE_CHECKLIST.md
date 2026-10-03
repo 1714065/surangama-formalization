@@ -1,6 +1,6 @@
 <!-- SPDX-License-Identifier: CC0-1.0 -->
 
-# Release checklist (v0.2.1; previous release history retained)
+# Release checklist (v1.0; previous release history retained)
 
 <!-- project-principle:2026-09-29 -->
 > **项目共同原则（2026-09-29）**
@@ -9,6 +9,15 @@
 >
 > 可以在明确前提与适用范围内否定某个论断；不指认“佛”“如来藏”是什么。
 <!-- /project-principle -->
+
+## v1.0 publication checks
+
+- Full build, axiom report, both Boolean scope audits and no proof placeholders.
+- The seven existing module contents must match v0.2.1; eight shared declarations are additional.
+- Public manuscripts must contain the approved text, matching bilingual code and working reading links.
+- Exclude private author-review backups, conversation archives and credentials; retain separate manuscript rights.
+- Require successful GitHub CI on the exact release commit before publication.
+- Verify the new Zenodo version, concept DOI and all archived files against the immutable v1.0 tag.
 
 ## v0.2.1 publication checks
 

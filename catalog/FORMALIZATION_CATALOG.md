@@ -127,3 +127,7 @@ Local addition (2026-10-03); not part of published v0.1.0.
 ## C5 integration and C1–C7 review · 2026-10-03
 
 [C5 contact conditional proof](../docs/C5_CONTACT_CONDITIONAL.md) is now included in the aggregate build and axiom audit. The current C1–C7 modules contain 49 theorem declarations (including branch lemmas and scope witnesses), all with empty axiom dependencies; explicit premises remain. This does not replace the historical Core L1–L7 models.
+
+## Additional interpretive layer (v1.0)
+
+`Surangama.SevenLocations.SharedNonduality` has eight declarations separate from C1-C7. See [conditions and textual mapping](../docs/SHARED_NONDUALITY.md). Main target: no conjunction of the contextual description and correct mind-nature identification, under a common exclusion schema and seven explicit bridges.

@@ -1,0 +1,449 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reconstructing Arguments in the Śūraṅgama Sūtra with Lean</title><style>
+:root{color-scheme:light;--ink:#24312e;--muted:#64726c;--accent:#246451;--line:#dce4df}
+*{box-sizing:border-box}body{margin:0;background:#f2f4f0;color:var(--ink);font-family:Cambria,"Noto Serif SC","SimSun",serif;font-size:18px;line-height:1.85}
+nav{font-family:"Microsoft YaHei",sans-serif;max-width:1060px;margin:22px auto;display:flex;gap:18px;flex-wrap:wrap;padding:0 28px;font-size:14px}
+a{color:#246451;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
+main{max-width:1060px;margin:0 auto 50px;padding:64px 76px;background:#fff;border:1px solid var(--line);box-shadow:0 12px 40px #28352908}
+h1,h2,h3,h4{font-family:Cambria,"Microsoft YaHei",sans-serif;line-height:1.45;color:#173c30;break-after:avoid}
+h1{font-size:34px;margin:0 0 14px}h2{font-size:24px;margin:0 0 28px;font-weight:500}h3{font-size:24px;margin-top:42px;border-top:1px solid var(--line);padding-top:23px}h4{font-size:20px;margin-top:30px}
+p{margin:15px 0;text-wrap:pretty}blockquote{margin:24px 0;padding:12px 24px;border-left:3px solid #7ea493;background:#f3f7f3}blockquote p{margin:8px 0}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px;line-height:1.65;overflow-wrap:normal;word-break:normal}th,td{padding:10px 12px;border:1px solid var(--line);vertical-align:top}th{background:#edf3ed;text-align:left}tr{break-inside:avoid}.table-scroll{max-width:100%;overflow-x:auto}.module-table,.bridge-table,.audit-table,.notation-table{table-layout:fixed}.module-table th:nth-child(1){width:20%}.module-table th:nth-child(2){width:24%}.module-table th:nth-child(3){width:42%}.module-table th:nth-child(4){width:14%}.bridge-table th:nth-child(1){width:8%}.bridge-table th:nth-child(2){width:24%}.bridge-table th:nth-child(3){width:36%}.bridge-table th:nth-child(4){width:32%}.audit-table th:first-child{width:46%}.audit-table th:nth-child(2),.audit-table th:nth-child(3){width:27%}.notation-table th:first-child{width:28%}
+pre{padding:20px;background:#f2f5f2;border:1px solid var(--line);font-size:14px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;break-inside:avoid}code{font-family:Consolas,"Cambria Math","Microsoft YaHei",monospace;font-size:.95em}pre code{font-size:1em}blockquote code{font-size:1em}blockquote code,pre code{font-variant-ligatures:none}
+li{margin:8px 0}.foot{border-top:1px solid var(--line);margin-top:42px;padding-top:20px;color:var(--muted);font:13px/1.6 "Microsoft YaHei",sans-serif}.badge{color:var(--muted);letter-spacing:.08em;font:12px/1.6 "Microsoft YaHei",sans-serif;margin-bottom:26px}
+@media screen and (max-width:700px){code{overflow-wrap:anywhere}main{padding:32px 22px;border:0}body{font-size:17px}h1{font-size:27px}h2,h3{font-size:21px}table{font-size:13px;min-width:650px}th,td{padding:6px}.notation-table{min-width:560px}}
+@page{size:A4;margin:19mm 18mm 20mm}
+@media print{body{background:white;font-size:10.5pt;line-height:1.62}nav{display:none}main{max-width:none;margin:0;padding:0;border:0;box-shadow:none}h1{font-size:23pt}h2{font-size:16pt}h3{font-size:15pt;margin-top:18pt;padding-top:10pt}h4{font-size:12pt}p{margin:10px 0;orphans:3;widows:3}table{font-size:8.4pt;line-height:1.5;min-width:0}.notation-table{min-width:0}.table-scroll{overflow:visible}th,td{padding:5pt}pre{font-size:9pt;line-height:1.55;padding:10pt}blockquote{padding:7pt 12pt;margin:12pt 0}a{text-decoration:none;color:inherit}thead{display:table-header-group}.badge{font-size:8pt}.foot{display:none}}
+</style></head><body><nav><a href="index.html">阅读目录</a><a href="01_Argument_Reconstruction.pdf">PDF</a><a href="01_Argument_Reconstruction.docx">Word</a><a href="01_Argument_Reconstruction.md">Markdown</a><a href="01_Argument_Reconstruction_中文版.html">完整中文版</a></nav><main><div class="badge">ŚŪRAṄGAMA · PUBLIC MANUSCRIPTS · v1.0 · 2026 / 10 / 04</div><h1>Reconstructing Arguments in the Śūraṅgama Sūtra with Lean</h1>
+<h2>Premises and an Interpretive Framework for the Seven Locations of Mind</h2>
+<p><strong>Jason Wu</strong> · ORCID: <a href="https://orcid.org/0009-0003-1682-6165">0009-0003-1682-6165</a><br/>
+Research preprint · v1.0 · 4 October 2026</p>
+<p><strong>中文题目：基于 Lean 的《楞严经》论证重建——七处征心的论证前提与解释框架</strong></p>
+<h3>Abstract</h3>
+<p>Religious arguments often distribute their reasoning across dialogue, analogy, and commentary. A reconstruction must therefore account for both inferential validity and the interpretive decisions that supply its premises. This article presents a Lean 4 case study of the seven proposed locations of mind in the Chinese Śūraṅgama Sūtra. Seven local modules reconstruct selected refutations as conditional proofs, with doctrinal and interpretive commitments supplied as explicit parameters. A second layer investigates a proposed shared reading: the proposals mistakenly identify a separately posited knower, opposed to its objects, as the mind-nature sought in the dialogue. This reading is represented by one common exclusion schema and seven passage-specific bridges. Lean verifies the resulting exclusion of each contextual identification; it does not establish the shared principle or the bridges as facts about the text. Consistency witnesses and premise-omission countermodels make the dependence on these assumptions inspectable. The local corpus contains 49 theorem declarations, and the shared layer adds eight, including scope witnesses. The principal contribution is a reproducible way to distinguish passage-level reconstruction, interpretive unification, and their respective proof obligations. The case demonstrates how a proof assistant can clarify the logical cost of a shared interpretation without turning a theological reading into an unqualified mathematical conclusion.</p>
+<p><strong>Keywords:</strong> Śūraṅgama Sūtra; Lean 4; argument reconstruction; computational hermeneutics; Chinese Buddhism; explicit premises; nonduality</p>
+<h3>1. The research problem</h3>
+<p>When several passages of a religious text are understood to express a common concern, what would count as a rigorous assessment of that interpretation? A thematic resemblance is insufficient. Conversely, a formal proof can be made trivial by assuming its intended conclusion. The methodological problem is to expose the steps between a proposed reading and the particular passages it claims to explain.</p>
+<p>The seven locations of mind, conventionally called 七處徵心, provide a compact case. In fascicle one of the Śūraṅgama Sūtra, Ānanda successively describes mind as inside the body, outside it, concealed in the sensory faculty, disclosed by seeing darkness within, present wherever contact occurs, in the middle, and unattached or without a location. The exchanges do not share a uniform surface form. They employ examples, questions, distinctions between sensory functions, and consequences drawn from proposed models. [1]</p>
+<p>This study asks two questions. First, which premises suffice for selected local refutations, and where does reconstruction supply an unstated connection? Second, can a proposed common interpretation support seven parallel conclusions without concealing passage-specific assumptions?</p>
+<p>This study approaches the seven inquiries through a common question: <strong>although Ānanda changes his account of mind, does he keep assuming a knower separate from its objects and identifying that knower as his true mind?</strong> The study examines whether this identification can stand. This interpretation needs support from scripture and commentary, as well as an explanation for each passage. It supplies neither an ontology of Buddha or tathāgatagarbha nor a formal account of realization. Its methodological commitment is that scriptural guidance, argumentative criticism, machine verification, and religious cultivation are distinct activities.</p>
+<h3>2. Position within computational hermeneutics</h3>
+<p>Using logic to clarify philosophical argument is an established research direction. Fuenmayor and Benzmüller describe computational hermeneutics as an iterative activity in which formal correctness and the dialectical role of an interpretation are assessed together. Their work provides a relevant precedent for revising formalizations in dialogue with interpretation. [2]</p>
+<p>Lean 4 combines a programming language with an interactive theorem prover. Here it is used to check proof terms for explicitly stated conditional propositions. [3] The logical content of the present proofs is elementary. The project does not introduce a new calculus or a difficult mathematical theorem. Its contribution is a documented application in which textual evidence, interpretive bridges, proof checking, and countermodels can be inspected separately.</p>
+<p>Three features distinguish the case design. The corpus is small enough for passage-by-passage accountability. Two formal layers preserve the difference between local refutation and thematic unification. Finally, successful proofs are accompanied by witnesses showing what the premises allow and what happens when selected premises are removed. These features support criticism of an interpretation instead of giving the interpreter a certificate of doctrinal correctness.</p>
+<h3>3. Corpus, commentaries, and evidence status</h3>
+<p>The primary text is the Chinese Taishō text, T19, no. 945, fascicle one. The seven exchanges occupy approximately 0107a12–0108b14. Traditional characters are preserved in quotations; English translations and paraphrases are the author's working renderings. Line references follow the project-held CBETA transcription. The study concerns the argument of this Chinese text and does not settle questions of its historical composition or attribution. [1]</p>
+<p>The opening question, 「將何所見？誰為愛樂？」, asks about seeing and loving before asking where mind and eyes are located (0107a04–11). The subsequent discussion of two roots and object-dependent discrimination supplies further interpretive context (0108b28–0108c08; 0109a07–15). Later passages may motivate a reading of the sequence, but they are not silently inserted as premises already accepted in every earlier exchange.</p>
+<p>The principal commentary evidence for the shared reading comes from Ouyi Zhixu and Taixu. In his treatment of C7, Ouyi explains that taking an object-dependent image as mind leaves a separately posited thing, even when no fixed place is assigned to it. Taixu characterizes the mistake in terms of taking an image arising through names as one's own mind. These are pertinent interpretive reasons for distinguishing nonlocation from freedom from reification. [4, 5]</p>
+<p>Other commentarial emphases remain visible. Hanshan Deqing relates the seven inquiries to attachment involving the aggregates and the body as a support. The project-held commentary by the modern master Chengguan discusses the opening seeing-and-loving exchange through subject–object attachment. These readings help situate the proposal, but do not establish unanimity about the exact formal schema used here. [6, 7]</p>
+<p>Evidence is recorded at four levels: scriptural wording; a named commentator's explanation; the researcher's reconstruction; and an explicit formal assumption. A sentence can move from one level to another only with an explanation. In particular, a commentary's support for a general theme does not establish every mathematical implication introduced under that theme.</p>
+<h3>4. Local conditional reconstruction</h3>
+<h4>4.1 Why premises are parameters</h4>
+<p>Each local module uses propositions for a selected claim and relevant consequences. A bridge such as “if this candidate mind is inside, it must know the body's interior” is supplied as a hypothesis. Lean then checks whether the proposed conclusion follows. The bridge is not declared as a global religious axiom.</p>
+<p>For C1 the logical form is especially simple. Let <code>Inside</code> represent the claim under investigation and <code>KnowsInside</code> the required inner knowing. From <code>Inside → KnowsInside</code> and <code>¬ KnowsInside</code>, infer <code>¬ Inside</code>. The crucial exegetical work lies in the first premise: why should the model under discussion require inner knowing? The hall analogy and the description of the knowing mind motivate that requirement in this reconstruction. A proof of the conditional does not establish that every possible inside-located cognitive process must inspect internal organs.</p>
+<p>The same distinction matters in C2. The chosen reading connects an outside mind to a failure of bodily and mental knowing together, then uses their acknowledged connection against that model. It does not establish a general physical law that spatially separate systems cannot interact.</p>
+<h4>4.2 Coverage of the seven modules</h4>
+<p>Table 1 summarizes selected main routes. A module can contain additional lemmas and alternative branches without including every sentence in its main theorem. The counts include scope witnesses as well as refutations.</p>
+<div class="table-scroll" tabindex="0"><table class="module-table">
+<thead>
+<tr>
+<th style="text-align: left;">Module</th>
+<th style="text-align: left;">Selected candidate or claim</th>
+<th style="text-align: left;">Main bridge or division requiring interpretation</th>
+<th style="text-align: right;">Declarations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">C1, Inside</td>
+<td style="text-align: left;">Knowing mind inside the body</td>
+<td style="text-align: left;">Being inside requires inner knowing</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;">C2, Outside</td>
+<td style="text-align: left;">Knowing mind outside the body</td>
+<td style="text-align: left;">Being outside in this model prevents connected bodily and mental knowing</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;">C3, InRoot</td>
+<td style="text-align: left;">Mind concealed in the sensory faculty</td>
+<td style="text-align: left;">The glass analogy requires seeing the eye; treating it as the seen conflicts with the proposed following relation</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">C4, LightAndDarkness</td>
+<td style="text-align: left;">Seeing darkness establishes inner sight</td>
+<td style="text-align: left;">Ordinary seeing and inward viewing are separated; inward viewing is tested by seeing one's face</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr>
+<td style="text-align: left;">C5, AtContact</td>
+<td style="text-align: left;">Mind exists wherever it makes contact</td>
+<td style="text-align: left;">A referent is required for contact; the embodied contact model is divided into inside-out and outside-in routes</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">C6, Middle</td>
+<td style="text-align: left;">Mind is an independently identified middle between faculty and object</td>
+<td style="text-align: left;">Both sides, either side alone, and neither side are distinguished</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">C7, Unlocated</td>
+<td style="text-align: left;">A knowing mind exists, but it has no location</td>
+<td style="text-align: left;">In this model, a determinate form implies a whereabouts</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Table 1.</strong> Selected local reconstructions; 49 declarations in total. These are not 49 independent discoveries about the scripture. Module labels abbreviate the source filenames: for example, “C4, LightAndDarkness” denotes <code>C4_LightAndDarkness.lean</code>.</p>
+<h4>4.3 Reading the Lean proofs: seven short examples</h4>
+<p>The excerpts below are taken from the checked C1–C7 files in <code>lean/Surangama/SevenLocations/</code>. Full-line comments are omitted; executable statements and names are unchanged. C1, C6, and C7 show complete declarations. C2–C5 show proof bodies in the context of the named source theorem, not standalone Lean files. The examples illustrate selected routes rather than seven complete reproductions of the modules.</p>
+<p><strong>C1: assuming the claim and applying two premises</strong></p>
+<p>The complete declaration <code>not_inside</code> from <code>C1_Inside.lean</code> makes the two premises visible. <code>Inside</code> names the proposed inner location, and <code>KnowsInside</code> names the inner knowing required by this reconstruction.</p>
+<pre><code class="language-lean">theorem not_inside
+    (Inside KnowsInside : Prop)
+    (inside_requires_inner_knowing : Inside → KnowsInside)
+    (no_inner_knowing : ¬ KnowsInside) :
+    ¬ Inside := by
+  intro inside
+  have knows_inside : KnowsInside := inside_requires_inner_knowing inside
+  exact no_inner_knowing knows_inside
+</code></pre>
+<p><code>Prop</code> marks a proposition. The parameter <code>inside_requires_inner_knowing</code> supplies the implication, and <code>no_inner_knowing</code> supplies its negated consequence. To prove <code>¬ Inside</code>, <code>intro inside</code> temporarily assumes a proof of <code>Inside</code>; it does not assert that <code>Inside</code> is false. The <code>have</code> line applies the implication to obtain a proof of <code>KnowsInside</code>. Finally, <code>exact no_inner_knowing knows_inside</code> applies the negation to that proof and produces a contradiction. In Lean, <code>¬ P</code> means <code>P → False</code>. The reasoning therefore discharges the temporary assumption while retaining both explicit premises.</p>
+<p><strong>C2: reversing which premise supplies the negation</strong></p>
+<p>In <code>C2_Outside.lean</code>, <code>not_outside</code> receives <code>outside_prevents_knowing : Outside → ¬ BodyMindKnowTogether</code> and <code>body_mind_know_together : BodyMindKnowTogether</code>. Its proof body is:</p>
+<pre><code class="language-lean">  intro outside
+  have not_knowing : ¬ BodyMindKnowTogether := outside_prevents_knowing outside
+  exact not_knowing body_mind_know_together
+</code></pre>
+<p>The outside assumption yields the negation of connected bodily and mental knowing. The last line supplies the acknowledged connection to that negation. C1 and C2 share a contradiction pattern, but the textual meaning of their bridging premises differs.</p>
+<p><strong>C3: using a previously proved branch</strong></p>
+<p>The proof body of <code>not_in_root_two_branches</code> in <code>C3_InRoot.lean</code> uses the three explicit bridges summarized above: the proposed concealment requires seeing the eye and the following relation, while seeing the eye excludes that relation.</p>
+<pre><code class="language-lean">  intro in_root
+  have sees_eye : SeesEye := in_root_requires_seeing_eye in_root
+  exact (not_in_root_of_seeing InRoot SeesEye FollowsSeeing
+    in_root_requires_following seeing_eye_prevents_following sees_eye) in_root
+</code></pre>
+<p>The candidate model itself supplies <code>SeesEye</code>. The final expression applies the already proved seeing-eye branch, <code>not_in_root_of_seeing</code>, to the temporary concealment assumption. That branch uses the incompatible requirements concerning <code>FollowsSeeing</code>. This combined route does not add a separate factual assumption that the eye is not seen.</p>
+<p><strong>C4: extracting what a claim commits one to</strong></p>
+<p>In <code>C4_LightAndDarkness.lean</code>, <code>not_ordinary_darkness_explanation</code> receives <code>ordinary_content : Ordinary → SeesDark ∧ InnerEvidence</code>, <code>seeing_requires_facing : SeesDark → FacesEye</code>, and <code>facing_excludes_inner_evidence : FacesEye → ¬ InnerEvidence</code>. The proof body reads:</p>
+<pre><code class="language-lean">  intro ordinary
+  obtain ⟨sees_dark, inner_evidence⟩ := ordinary_content ordinary
+  have faces_eye : FacesEye := seeing_requires_facing sees_dark
+  exact facing_excludes_inner_evidence faces_eye inner_evidence
+</code></pre>
+<p><code>obtain</code> extracts both commitments of the ordinary-darkness explanation: seeing darkness and taking it as sufficient evidence of inner sight. The proof derives the required facing relation, then applies the explicit bridge excluding that evidence. The conclusion rejects <code>Ordinary</code>, not <code>SeesDark</code>. This excerpt covers the ordinary branch; the inward-viewing and supplementary branches remain separate.</p>
+<p><strong>C5: dispatching the two contact cases</strong></p>
+<p>The proof body of <code>not_at_contact_all_cases</code> in <code>C5_AtContact.lean</code> receives the explicit division <code>body_cases : HasBody ∨ ¬ HasBody</code>, together with the contact and arrival premises described in Table 1. Here <code>HasBody</code> means that the proposed mind has the relevant referent; it does not mean a material body.</p>
+<pre><code class="language-lean">  rcases body_cases with body | no_body
+  · exact not_at_contact_with_body Claim HasBody FromInside FromOutside SeesInside SeesFace
+      body embodied_contact_requires_arrival inside_requires_sight
+      outside_requires_face no_inside_sight no_direct_face
+  · exact not_at_contact_without_body Claim HasBody CanContact
+      claim_requires_contact no_body_no_contact no_body
+</code></pre>
+<p><code>rcases</code> separates the two cases. The first call passes <code>body</code> and the inside-out/outside-in conditions to the proved having-a-referent branch. The second passes <code>no_body</code>, the requirement of contact, and the no-referent/no-contact condition to the other branch. The disjunction has not been inferred from the chapter title, and the arrival conditions are not imposed on the no-referent branch.</p>
+<p><strong>C6: making the root-only bridge visible</strong></p>
+<p>The C6 main theorem divides the same membership relation into both sides, the root alone, the object alone, and neither. The following complete branch declaration, <code>not_middle_of_root_only</code> in <code>C6_Middle.lean</code>, shows the root-only case. <code>Root</code> and <code>Dust</code> concern membership of the candidate, while <code>RootSide</code> records complete assignment to the root side.</p>
+<pre><code class="language-lean">theorem not_middle_of_root_only (Claim Root Dust Middle RootSide : Prop)
+    (claim_requires_middle : Claim → Middle)
+    (root_only_at_side : Root → ¬ Dust → RootSide)
+    (root_side_not_middle : RootSide → ¬ Middle)
+    (root : Root) (no_dust : ¬ Dust) : ¬ Claim := by
+  intro claim
+  have middle : Middle := claim_requires_middle claim
+  have root_side : RootSide := root_only_at_side root no_dust
+  exact root_side_not_middle root_side middle
+</code></pre>
+<p>The claim requires <code>Middle</code>. From <code>root</code> and <code>no_dust</code>, the named bridge supplies <code>RootSide</code>; another explicit bridge excludes <code>Middle</code>. Thus “root only, therefore not the proposed middle” is not obtained merely by comparing words. It uses two declared interpretive conditions. The combined theorem separately handles the other three cases.</p>
+<p><strong>C7: following the form-to-location chain</strong></p>
+<p>The complete having-a-referent branch, <code>not_unlocated_with_body</code> in <code>C7_Unlocated.lean</code>, exposes the location bridge. <code>HasBody</code> means that this candidate has the referent posited in the model; <code>HasForm</code> means the relevant determinate form, not merely visible shape.</p>
+<pre><code class="language-lean">theorem not_unlocated_with_body (Claim HasBody HasForm Located : Prop)
+    (claim_requires_no_location : Claim → ¬ Located)
+    (body_has_form : HasBody → HasForm)
+    (form_has_location : HasForm → Located)
+    (body : HasBody) : ¬ Claim := by
+  intro claim
+  have form : HasForm := body_has_form body
+  have located : Located := form_has_location form
+  exact claim_requires_no_location claim located
+</code></pre>
+<p>The supplied <code>body</code> yields <code>HasForm</code>, then <code>Located</code>. The temporary claim yields <code>¬ Located</code>, completing the contradiction. The location result depends on <code>form_has_location</code>; Lean has not established that every existent must have a spatial position. This is one branch: <code>not_unlocated_all_cases</code> also requires the no-referent branch and the explicit case division.</p>
+<h4>4.4 Three instructive reconstruction problems</h4>
+<p>C3 illustrates the difference between assigning functional roles and prohibiting their overlap by definition. The candidate must both see the eye and preserve the proposed immediate following of seeing by discrimination. The scriptural phrase 「若見眼者，眼即同境，不得成隨」 (0107c05) motivates a conflict. The reconstruction exposes three premises: concealment requires seeing the eye; concealment requires the following relation; and seeing the eye in the posited model prevents that relation. The third premise remains substantive. It does not become a universal theorem that a sensory organ can never also be an object of observation.</p>
+<p>C4 reveals why an attractive paraphrase may be too strong. The distinction between eye and dark object does not, by itself, prove that the object is anatomically outside the body. The reconstructive issue is whether seeing darkness establishes the claimed inner sight. A separate rescue introduces inward viewing. Connecting that rescue to direct viewing of one's own face requires the explicit assumption that the proposed ability extends across closing and opening the eyes. Without that connection, inability to see one's face does not refute every conceivable form of inward awareness. The dark-room comparison, ownership question, and two-knowers continuation are preserved as supplementary routes rather than all being forced into one main proof.</p>
+<p>C6 requires an explicit classification. Besides belonging to both faculty and object or to neither, a reconstructed model might belong only to the faculty or only to the object. The implementation includes these two cases and adds the bridges that belonging exclusively to one side fails to constitute the independently posited middle. This completes the selected logical division. It is an interpretive supplementation, not a claim that the scripture separately enumerates all four cases in those words.</p>
+<h4>4.5 Scope witnesses and premise removal</h4>
+<p>Compilation alone cannot reveal whether a bundle of premises is inconsistent and therefore trivially entails a refutation. The project accordingly supplies consistency witnesses and a separate Python enumeration of Boolean valuations for transcribed premise formulas. This audit also removes one substantive premise at a time and searches for an assignment in which the target remains true.</p>
+<p>For the selected formulas, every audited bundle has a satisfying assignment, and every single-premise omission permits a counterexample to the intended refutation. This establishes a precise, limited property: the selected propositional packages are satisfiable and irredundant under the tested individual omissions. It does not prove that these are the weakest possible premises in every language or the uniquely appropriate interpretations of the text.</p>
+<p>Some case divisions, including C5–C7, receive explicit excluded-middle hypotheses. Those logical inputs must be distinguished from the substantive bridges counted by the Boolean audit. Boolean enumeration itself uses two-valued assignments; it is not a completeness test for every possible interpretation of intuitionistic logic.</p>
+<h3>5. From separate verification of individual passages to finding an underlying shared interpretation</h3>
+<p>The preceding analysis treats the seven passages individually: it identifies the claim challenged in each exchange, states the premises needed for its refutation, and uses Lean to check whether the corresponding negative conclusion follows under those conditions. Each passage thereby receives a local conditional derivation.</p>
+<p>Building on these results, this study asks a further question: can an interpretation shared across the exchanges simplify the proof structure without invoking the seven original, separate premise packages one by one?</p>
+<p>Comparison of the scripture, commentaries, and individual arguments yielded one such shared interpretation: <strong>the seven inquiries challenge the separation of a knower from its objects and the identification of that knower as one's true mind.</strong> This reading was then expressed as one common exclusion principle and seven passage-specific bridges. The resulting unified conditional proof passed Lean verification.</p>
+<p>The simplification concerns repeated proof structure; it does not remove every premise. The shared proof no longer uses the seven original local premise packages, but it still adopts the common interpretation explicitly and requires an account of why each passage falls under it. Scripture and commentary motivate the search for that interpretation. Lean checks whether the seven corresponding identifications can all be excluded once the stated conditions are accepted. The original passage-level proofs are retained.</p>
+<h4>5.1 What does the shared interpretation examine?</h4>
+<p>The question can be stated directly: <strong>despite the differences between his seven answers, does Ānanda keep identifying a knower separate from its objects as his true mind?</strong> If each passage makes this identification, and the adopted nonduality interpretation is accepted, the same reason can exclude each identification. An occurrence of cognition and the identification of that activity as the sought mind-nature are different claims.</p>
+<p>C5 and C6 illustrate the distinction. C5 concerns a thinking mind present at contact, and C6 invokes consciousness arising through faculty and object. These proposals already involve conditions, so their common problem cannot be characterized as an absence of dependence on conditions. The question is whether condition-dependent cognition is nevertheless identified as a self-mind separate from its objects.</p>
+<p>C7 makes the same issue visible. Even a mind assigned no location can still be conceived as a separate thing. Ouyi's explanation suggests that simply describing all seven inquiries as denials of spatial location is insufficient for this exchange. The shared issue concerns how mind is separately posited and identified, rather than just where it is placed. [4]</p>
+<h4>5.2 An explicit schema</h4>
+<p>The following notation fixes the meaning of each expression before stating the conditional proof.</p>
+<div class="table-scroll" tabindex="0"><table class="notation-table">
+<thead>
+<tr>
+<th style="text-align: left;">Expression</th>
+<th style="text-align: left;">Meaning in this reconstruction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>i</code></td>
+<td style="text-align: left;">One of the seven chapter indices, C1–C7</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Description i</code></td>
+<td style="text-align: left;">The selected contextual account of a candidate holds</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Separated i</code></td>
+<td style="text-align: left;">The account reifies a knower as separately subsisting over against its objects</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Identifies i</code></td>
+<td style="text-align: left;">The candidate is correctly identified as the mind-nature sought in the dialogue</td>
+</tr>
+</tbody>
+</table></div>
+<p>Here <code>→</code> means implication, <code>¬</code> means negation, and <code>∧</code> means conjunction. <code>Separated</code> exceeds ordinary functional differentiation; <code>Identifies</code> supplies no positive definition of an ultimate reality. Introduce the common interpretive exclusion:</p>
+<blockquote>
+<p>U: for every <em>i</em>, <code>Separated i → ¬ Identifies i</code>.</p>
+</blockquote>
+<p>Introduce seven individually accountable bridges:</p>
+<blockquote>
+<p>Bᵢ: <code>Description i → Separated i</code>.</p>
+</blockquote>
+<p>The resulting conclusion is:</p>
+<blockquote>
+<p>For every <em>i</em>, <code>¬ (Description i ∧ Identifies i)</code>.</p>
+</blockquote>
+<p>U is a single repeated schema. B₁–B₇ retain the passage-specific interpretive burden. The construction therefore reduces repeated proof structure without eliminating the need to justify how each passage falls under the shared reading.</p>
+<p>The exact generic proof below occurs in the checked source:</p>
+<pre><code class="language-lean">theorem exclude_identification (Description Separated Identifies : Prop)
+    (common_exclusion : Separated → ¬ Identifies)
+    (bridge : Description → Separated) :
+    ¬ (Description ∧ Identifies) := by
+  intro claim
+  have separated : Separated := bridge claim.1
+  exact common_exclusion separated claim.2
+</code></pre>
+<p>Assume the description and the identification together. The bridge supplies separation, and the common exclusion then contradicts the identification. The kernel checks that this step is valid for arbitrary propositions of the stated form. It does not read the Chinese terms or determine whether the bridge fairly represents them.</p>
+<h4>5.3 Seven bridges, seven obligations</h4>
+<div class="table-scroll" tabindex="0"><table class="bridge-table">
+<thead>
+<tr>
+<th style="text-align: left;">Passage</th>
+<th style="text-align: left;">Selected claim</th>
+<th style="text-align: left;">Contextual basis for the proposed bridge</th>
+<th style="text-align: left;">What the bridge must not be confused with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">C1</td>
+<td style="text-align: left;">Knowing mind inside the body</td>
+<td style="text-align: left;">A knowing candidate is asserted to reside inside</td>
+<td style="text-align: left;">Mere bodily location entails reification</td>
+</tr>
+<tr>
+<td style="text-align: left;">C2</td>
+<td style="text-align: left;">Knowing mind outside the body</td>
+<td style="text-align: left;">The candidate is moved outside while retaining its identity as self-mind</td>
+<td style="text-align: left;">All external processes are disconnected</td>
+</tr>
+<tr>
+<td style="text-align: left;">C3</td>
+<td style="text-align: left;">Mind concealed in the sensory faculty</td>
+<td style="text-align: left;">Concealment and the glass analogy individuate a candidate knower</td>
+<td style="text-align: left;">Different sensory functions are inherently false</td>
+</tr>
+<tr>
+<td style="text-align: left;">C4</td>
+<td style="text-align: left;">Seeing darkness establishes inner sight</td>
+<td style="text-align: left;">Darkness is used to rescue the proposed inner mind</td>
+<td style="text-align: left;">Every experience of darkness implies a reified self</td>
+</tr>
+<tr>
+<td style="text-align: left;">C5</td>
+<td style="text-align: left;">Mind exists wherever it makes contact</td>
+<td style="text-align: left;">「即思惟體實我心性」 identifies the thinking candidate as one's mind-nature</td>
+<td style="text-align: left;">Conditional arising entails causal independence</td>
+</tr>
+<tr>
+<td style="text-align: left;">C6</td>
+<td style="text-align: left;">Mind is an independently identified middle between faculty and object</td>
+<td style="text-align: left;">「識生其中則為心在」 assigns the candidate a middle in this dialogue</td>
+<td style="text-align: left;">Dependent arising is itself refuted</td>
+</tr>
+<tr>
+<td style="text-align: left;">C7</td>
+<td style="text-align: left;">A knowing mind exists, but it has no location</td>
+<td style="text-align: left;">Nonlocation leaves, on Ouyi's reading, a separately posited thing</td>
+<td style="text-align: left;">Absence of location by itself implies separation</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Table 2.</strong> Interpretive bridge obligations. The right column identifies stronger claims that are not premises of the shared proof.</p>
+<p>A reader can accept the proof and reject a bridge. For example, a functional reading of C6 might understand consciousness arising between conditions without positing a separate self-mind. That reading need not satisfy B₆. The formalization identifies the disagreement rather than resolving it through the chapter label.</p>
+<p><strong>From one generic proof to seven passages.</strong> The preceding code shows why one pattern of refutation works. To cover all seven inquiries, the reconstruction must also explain why each account separates the knower from its objects. The source exposes these seven conditions in the following structure:</p>
+<pre><code class="language-lean">inductive Chapter where
+  | c1 | c2 | c3 | c4 | c5 | c6 | c7
+  deriving DecidableEq, Repr
+
+/-- Textual/interpretive commitments, not consequences of the chapter names. -/
+structure PassageBridges (Description Separated : Chapter → Prop) : Prop where
+  c1 : Description .c1 → Separated .c1
+  c2 : Description .c2 → Separated .c2
+  c3 : Description .c3 → Separated .c3
+  c4 : Description .c4 → Separated .c4
+  c5 : Description .c5 → Separated .c5
+  c6 : Description .c6 → Separated .c6
+  c7 : Description .c7 → Separated .c7
+</code></pre>
+<p><code>Chapter</code> has exactly seven cases, corresponding to C1–C7. Each field of <code>PassageBridges</code> is a connection requiring textual justification. The first field, for example, states that accepting this study's contextual reading of C1 yields the judgment that the account separates the knower from its objects. Researchers supply these connections; Lean does not derive them from the chapter labels.</p>
+<p><strong>Connecting each passage to the same reason.</strong> The following unchanged source code checks the seven cases in turn and selects the corresponding connection:</p>
+<pre><code class="language-lean">theorem bridge_for_each (Description Separated : Chapter → Prop)
+    (bridges : PassageBridges Description Separated) :
+    ∀ i, Description i → Separated i := by
+  intro i
+  cases i with
+  | c1 =&gt; exact bridges.c1
+  | c2 =&gt; exact bridges.c2
+  | c3 =&gt; exact bridges.c3
+  | c4 =&gt; exact bridges.c4
+  | c5 =&gt; exact bridges.c5
+  | c6 =&gt; exact bridges.c6
+  | c7 =&gt; exact bridges.c7
+</code></pre>
+<p><code>intro i</code> selects an arbitrary passage; <code>cases i</code> separates the seven possibilities; each instruction such as <code>exact bridges.c1</code> retrieves that passage's own connection. Covering every case establishes that the transition from description to separation is available for every passage. This proves coverage; the seven connections themselves remain explicit premises.</p>
+<p><strong>Combining the seven conditional results.</strong> The source then supplies an arbitrary passage's connection to the generic proof:</p>
+<pre><code class="language-lean">theorem seven_identifications_refuted
+    (Description Separated Identifies : Chapter → Prop)
+    (common_exclusion : ∀ i, Separated i → ¬ Identifies i)
+    (bridges : PassageBridges Description Separated) :
+    ∀ i, ¬ (Description i ∧ Identifies i) := by
+  intro i
+  exact exclude_identification (Description i) (Separated i) (Identifies i)
+    (common_exclusion i) (bridge_for_each Description Separated bridges i)
+</code></pre>
+<p><code>seven_identifications_refuted</code> takes both the common exclusion and the seven connections as parameters. <code>∀ i</code> means that the conclusion applies to every one of the seven passages. The final line obtains the relevant connection from <code>bridge_for_each</code> and uses <code>common_exclusion i</code> to exclude identifying that knower as the sought mind-nature. It need not invoke the seven local premise packages again: at this level, each case follows the same two steps, from its contextual description to separation, and from separation to exclusion of the identification.</p>
+<p><strong>Why can this reason apply to all seven?</strong> Although the accounts differ, the readings in Table 2 attribute a recurring identification to them. C1 identifies a knower residing inside the body as self-mind; C5 identifies the thinking mind present at contact as self-mind; C7 removes location but still separately posits a knowing thing and identifies it as self-mind. Each remaining passage requires its own justification of this connection; membership in the seven inquiries does not establish it. If all seven connections are accepted, the common exclusion applies to all seven. If a connection cannot be sustained for one passage, this shared proof cannot refute that passage on this basis.</p>
+<p>Thus, satisfying the proof obligation for seven passages has a precise meaning here: <strong>under the common principle and the seven connections, the corresponding self-mind identification is excluded in every case.</strong> The code shows how the passages share an inferential structure. It does not replay every challenge in the seven dialogues or automatically replace the targets of the original local proofs with the shared conclusion.</p>
+<h4>5.4 Why the target cannot be silently strengthened</h4>
+<p>The shared conclusion excludes the conjunction of description and identification. It does not establish <code>¬ Description i</code>. A satisfying assignment with description true, separation true, and identification false makes the distinction explicit: the described activity may be admitted while its elevation to the sought mind-nature is refused.</p>
+<p>Transferring this result to a separately named local <code>Claim</code> requires another premise, <code>Claim → Description ∧ Identifies</code>. The implementation includes a transfer theorem but does not silently instantiate the older C1–C7 predicates with this content. The shared module neither imports nor replaces their proofs. It provides an additional interpretive layer.</p>
+<p>The unchanged transfer theorem follows. Its <code>claim_content</code> parameter requires showing that the full claim being challenged includes both an account of the knower and its identification as the sought mind-nature:</p>
+<pre><code class="language-lean">theorem refute_contextual_claim (Claim Description Separated Identifies : Prop)
+    (claim_content : Claim → Description ∧ Identifies)
+    (common_exclusion : Separated → ¬ Identifies)
+    (bridge : Description → Separated) : ¬ Claim := by
+  intro claim
+  exact exclude_identification Description Separated Identifies
+    common_exclusion bridge (claim_content claim)
+</code></pre>
+<p>For example, within the shared reading of C1, the full claim “this knower residing inside the body is the self-mind sought” can be unpacked into those two components. Applying <code>claim_content</code> extracts them; the shared proof then refutes the full claim. Merely asserting that some cognitive activity occurs inside the body supplies no such identification and cannot be refuted by this step alone.</p>
+<p>This is also why the phrase “Lean discovered nonduality” would be inaccurate. The shared principle was proposed through human interpretation and commentarial study before being formalized. Lean verifies its conditional consequences. What the exercise brings into view is the logical form, required bridges, and exact limits of the proposed unity.</p>
+<h3>6. Verification results and reproducibility</h3>
+<p>The central verification result is a substantial simplification in how the premises and proofs for the seven passages are organized under the shared interpretation. Local reconstruction requires a separate premise package and a different sequence of challenges for each passage. C1, for example, needs a connection from being inside to knowing the interior; C3 examines concealment in the faculty and seeing the eye; C4 successively examines darkness, inward sight, and seeing one's face. The shared reconstruction no longer invokes these original premises individually. Instead, it organizes its conditions as <strong>one common exclusion principle plus seven connections from the passage-specific accounts to the shared interpretation.</strong> The combined code in Section 5 shows that, given these conditions, the corresponding self-mind identification in each passage is excluded by the same proof step.</p>
+<p>The simplification concerns the organization of inference: several separately developed routes can now reuse one short conditional proof, while passage-specific justification focuses on why the account falls under the shared interpretation. No percentage reduction in the number of premises is asserted, and the local challenges have not all been compressed into an unconditional theorem. Each connection retains its interpretive burden, and the shared conclusion concerns self-mind identification; transfer to an original local claim still requires an account of that claim's content. Verification therefore supports <strong>a simpler proof structure under the shared interpretation</strong>, while the local arguments remain independently reviewable research results.</p>
+<p>The project uses Lean 4 <code>v4.35.0-rc2</code>, pinned in <code>lean-toolchain</code>, without Mathlib. The reviewed local modules contain 49 theorem declarations; the shared module introduced in v1.0 adds eight. The additional declarations include seven-case coverage, the exclusion and transfer results, and witnesses documenting consistency and missing premises. Kernel dependency reports for these 57 declarations list no additional axioms. Explicit theorem parameters remain assumptions despite that empty dependency list. Historical <code>Core</code> models elsewhere in the repository are outside this 57-declaration claim.</p>
+<div class="table-scroll" tabindex="0"><table class="audit-table">
+<thead>
+<tr>
+<th style="text-align: left;">Audited formula package</th>
+<th style="text-align: right;">Boolean valuations examined</th>
+<th style="text-align: right;">Satisfying assignments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">C1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">C2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">C3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">C4 main</td>
+<td style="text-align: right;">256</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">C4 supplementary continuation</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">C5</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">C6</td>
+<td style="text-align: right;">256</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr>
+<td style="text-align: left;">C7</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shared three-variable schema</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Table 3.</strong> Exhaustive enumeration of the explicitly transcribed propositional formulas. The supplementary C4 row is not an eighth location. The last row reports <strong>8 assignments examined, of which 4 satisfy the premises</strong>.</p>
+<p>For the shared schema, all four compatible assignments exclude the conjunction of description and identification. Removing U allows all three propositions to be true. Removing a bridge allows description and identification to hold while separation is false. Additional witnesses show that omitting any one of the seven bridges leaves that chapter's identification possible while retaining the common exclusion and the other six bridges. The Lean source separately proves corresponding witness results; the Python audit checks its own formula transcription.</p>
+<p>This v1.0 release includes both the seven local modules and the shared extension. The <a href="https://github.com/1714065/surangama-formalization/releases/tag/v1.0">versioned release</a> provides the source, manuscripts and verification materials. Earlier v0.2.1 archives remain separate and do not contain the extension. [8]</p>
+<p>From the repository root of the v1.0 source archive, run the following commands with the pinned Lean toolchain and Python:</p>
+<pre><code class="language-text">lake build
+lake env lean lean/Surangama/SevenLocations/Audit.lean
+python tools/check_scope.py
+python tools/check_shared_nonduality.py
+</code></pre>
+<p>The two Python commands regenerate <code>audit/propositional-scope.json</code> and <code>audit/shared-nonduality-scope.json</code>, which supply the counts in Table 3. The manuscript <code>MANIFEST.sha256</code> records public manuscript file hashes; <code>supplement/verification.json</code> records the release checks. The supplementary verification guide maps the eight shared-module declarations to their roles.</p>
+<h3>7. Implications and limitations</h3>
+<p>The case suggests a practical criterion for evaluating shared interpretations. A proposed unity becomes more accountable when it names a common exclusion, demonstrates coverage through separately reviewable bridges, preserves the original local arguments, and exhibits the difference between its conclusion and stronger claims readers might infer. These are procedural achievements, not a numerical measure of theological truth.</p>
+<p>The principal limitation is semantic. A proposition named <code>Separated</code> can be introduced easily; establishing that a specific exchange satisfies it requires exegesis. The common schema might also become circular if “correct identification” were defined simply as “not separated.” Here these are independent propositional parameters and U is openly assumed. This prevents a hidden definition from masquerading as a discovery, but it does not prove the substantive principle.</p>
+<p>The reconstruction is selective. It does not formalize every analogy, every sentence, or every commentator's reading. Atomic propositions suppress temporal, perceptual, and semantic detail. Some bridges that suffice at this level might require revision in a richer model. Equally, one valid interpretation does not exclude another valid reconstruction with different premises.</p>
+<p>The method supports interdisciplinary work by exposing where a new discipline would need additional evidence. A psychological theory, for instance, would require operational definitions connecting the textual predicates to measured processes. A physical theory would require independently justified correspondences, not shared vocabulary such as “field” or “observer.” No such empirical or physical identification is established here.</p>
+<p>Further work can compare alternative C3, C4, or C6 bridges, record disagreements among qualified readers, and test whether the formal structure helps them identify the precise point at issue. Such studies would assess usability and interpretive accountability. The present single corpus does not demonstrate improved accuracy, reduced research time, or a uniquely correct Buddhist reading.</p>
+<h3>8. Conclusion</h3>
+<p>The seven locations can be reconstructed as local conditional arguments and, separately, examined through a shared interpretation concerning the reification of a knower. Lean verifies the local deductions and the common exclusion schema once their premises are explicit. Scope witnesses show both the consistency of the selected assumptions and the conclusions they do not support.</p>
+<p>The methodological result is a division of responsibilities that remains visible in the artifact: sources motivate an interpretation, researchers defend its bridges, and the proof assistant checks the resulting inference. A common theme becomes a set of reviewable obligations rather than an impression or an unqualified theorem about religious truth.</p>
+<h3>Data, authorship, and AI assistance</h3>
+<p>The published software is available from the <a href="https://github.com/1714065/surangama-formalization">project repository</a> and its version-specific archive [8]. The v1.0 archive includes the shared layer and verification materials. Full modern commentaries are not redistributed in the manuscript package. Bibliographic descriptions of project-held editions should be completed from their title and copyright pages before submission.</p>
+<p>AI systems assisted the research dialogue, source organization, and code development. AI assisted in drafting; the author determines the interpretive framing and reviews the manuscript. AI assistance is not a substitute for the recorded proof checks or a claim of independent scholarly endorsement.</p>
+<h3>References</h3>
+<ol>
+<li><em>Da foding rulai miyin xiuzheng liaoyi zhu pusa wanxing shoulengyan jing</em> 大佛頂如來密因修證了義諸菩薩萬行首楞嚴經. Taishō, vol. 19, no. 945, fascicle 1, 0106c21–0109a15. CBETA transcription; <a href="https://cbetaonline.dila.edu.tw/zh/T0945_001">online text</a>. Local transcription and locator extracts retained in the project.</li>
+<li>Fuenmayor, David, and Christoph Benzmüller. 2019. “A Computational-Hermeneutic Approach for Conceptual Explicitation.” <a href="https://arxiv.org/abs/1906.06582v2">arXiv:1906.06582v2</a>. Related publication DOI: <a href="https://doi.org/10.1007/978-3-030-32722-4_25">10.1007/978-3-030-32722-4_25</a>.</li>
+<li>de Moura, Leonardo, and Sebastian Ullrich. 2021. “The Lean 4 Theorem Prover and Programming Language.” <em>Automated Deduction—CADE 28</em>, 625–635. <a href="https://doi.org/10.1007/978-3-030-79876-5_37">doi:10.1007/978-3-030-79876-5_37</a>. <a href="https://lean-lang.org/papers/lean4.pdf">Author-hosted paper</a>.</li>
+<li>Ouyi Zhixu 蕅益智旭. <em>Lengyan jing wenju</em> 楞嚴經文句, fascicle 1, commentary on the seventh location and following two roots. Project-held PDF, physical pp. 49–50; <a href="https://zh.wikisource.org/zh-hant/楞嚴經文句/卷第1">online transcription</a>. Punctuation varies by transcription.</li>
+<li>Taixu 太虛. <em>Da foding shoulengyan jing shelun</em> 大佛頂首楞嚴經攝論, section 「破處計以無在顯」. <a href="https://book.bfnn.org/books2/1066.htm">Online text</a>.</li>
+<li>Hanshan Deqing 憨山德清. <em>Lengyan jing tongyi</em> 楞嚴經通議, fascicle 1, commentary on the seven inquiries. Xuzangjing X12, no. 279; <a href="https://hermit.place/zh-TW/canon/x/x12n0279/juan-01/">online transcription</a>.</li>
+<li>Chengguan 成觀. <em>Da foding shoulengyan jing yiguan</em> 大佛頂首楞嚴經義貫. Project-held simplified-Chinese PDF, physical p. 52 for the opening exchange. “Chengguan” here denotes the modern commentator 成觀, not the Tang Huayan master 澄觀. Edition metadata pending bibliographic completion.</li>
+<li>Wu, Jason. 2026. <em>Śūraṅgama Sūtra Argument Formalizations (Lean 4)</em>, v1.0. <a href="https://github.com/1714065/surangama-formalization/releases/tag/v1.0">GitHub versioned archive</a>; <a href="https://doi.org/10.5281/zenodo.22950552">all-versions DOI</a>. See the release page for its version DOI.</li>
+</ol><div class="foot">v1.0 公开稿 · 经文解释与明确前提下的逻辑核验分别承担责任。</div></main></body></html>

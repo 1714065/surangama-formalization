@@ -30,3 +30,9 @@ path = [
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Jason Wu"
 SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = ["manuscripts/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Jason Wu"
+SPDX-License-Identifier = "LicenseRef-Manuscript-All-Rights-Reserved"

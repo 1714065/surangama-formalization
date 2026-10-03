@@ -1,0 +1,86 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>形式化复核指南</title><style>
+:root{color-scheme:light;--ink:#24312e;--muted:#64726c;--accent:#246451;--line:#dce4df}
+*{box-sizing:border-box}body{margin:0;background:#f2f4f0;color:var(--ink);font-family:Cambria,"Noto Serif SC","SimSun",serif;font-size:18px;line-height:1.85}
+nav{font-family:"Microsoft YaHei",sans-serif;max-width:1060px;margin:22px auto;display:flex;gap:18px;flex-wrap:wrap;padding:0 28px;font-size:14px}
+a{color:#246451;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
+main{max-width:1060px;margin:0 auto 50px;padding:64px 76px;background:#fff;border:1px solid var(--line);box-shadow:0 12px 40px #28352908}
+h1,h2,h3,h4{font-family:Cambria,"Microsoft YaHei",sans-serif;line-height:1.45;color:#173c30;break-after:avoid}
+h1{font-size:34px;margin:0 0 14px}h2{font-size:24px;margin:0 0 28px;font-weight:500}h3{font-size:24px;margin-top:42px;border-top:1px solid var(--line);padding-top:23px}h4{font-size:20px;margin-top:30px}
+p{margin:15px 0;text-wrap:pretty}blockquote{margin:24px 0;padding:12px 24px;border-left:3px solid #7ea493;background:#f3f7f3}blockquote p{margin:8px 0}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px;line-height:1.65;overflow-wrap:normal;word-break:normal}th,td{padding:10px 12px;border:1px solid var(--line);vertical-align:top}th{background:#edf3ed;text-align:left}tr{break-inside:avoid}.table-scroll{max-width:100%;overflow-x:auto}.module-table,.bridge-table,.audit-table,.notation-table{table-layout:fixed}.module-table th:nth-child(1){width:20%}.module-table th:nth-child(2){width:24%}.module-table th:nth-child(3){width:42%}.module-table th:nth-child(4){width:14%}.bridge-table th:nth-child(1){width:8%}.bridge-table th:nth-child(2){width:24%}.bridge-table th:nth-child(3){width:36%}.bridge-table th:nth-child(4){width:32%}.audit-table th:first-child{width:46%}.audit-table th:nth-child(2),.audit-table th:nth-child(3){width:27%}.notation-table th:first-child{width:28%}
+pre{padding:20px;background:#f2f5f2;border:1px solid var(--line);font-size:14px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;break-inside:avoid}code{font-family:Consolas,"Cambria Math","Microsoft YaHei",monospace;font-size:.95em}pre code{font-size:1em}blockquote code{font-size:1em}blockquote code,pre code{font-variant-ligatures:none}
+li{margin:8px 0}.foot{border-top:1px solid var(--line);margin-top:42px;padding-top:20px;color:var(--muted);font:13px/1.6 "Microsoft YaHei",sans-serif}.badge{color:var(--muted);letter-spacing:.08em;font:12px/1.6 "Microsoft YaHei",sans-serif;margin-bottom:26px}
+@media screen and (max-width:700px){code{overflow-wrap:anywhere}main{padding:32px 22px;border:0}body{font-size:17px}h1{font-size:27px}h2,h3{font-size:21px}table{font-size:13px;min-width:650px}th,td{padding:6px}.notation-table{min-width:560px}}
+@page{size:A4;margin:19mm 18mm 20mm}
+@media print{body{background:white;font-size:10.5pt;line-height:1.62}nav{display:none}main{max-width:none;margin:0;padding:0;border:0;box-shadow:none}h1{font-size:23pt}h2{font-size:16pt}h3{font-size:15pt;margin-top:18pt;padding-top:10pt}h4{font-size:12pt}p{margin:10px 0;orphans:3;widows:3}table{font-size:8.4pt;line-height:1.5;min-width:0}.notation-table{min-width:0}.table-scroll{overflow:visible}th,td{padding:5pt}pre{font-size:9pt;line-height:1.55;padding:10pt}blockquote{padding:7pt 12pt;margin:12pt 0}a{text-decoration:none;color:inherit}thead{display:table-header-group}.badge{font-size:8pt}.foot{display:none}}
+</style></head><body><nav><a href="../index.html">阅读目录</a></nav><main><div class="badge">ŚŪRAṄGAMA · PUBLIC MANUSCRIPTS · v1.0 · 2026 / 10 / 04</div><h1>形式化复核指南</h1>
+<p>本附件对应第一篇研究论文的第6节。复核对象是v1.0 源码归档，不是根据文章中的名称重新编写的一套证明。</p>
+<h2>1. 运行位置与命令</h2>
+<p>进入 v1.0 源码归档的仓库根目录，使用 <code>lean-toolchain</code> 指定的 Lean <code>v4.35.0-rc2</code>。项目不依赖 Mathlib。</p>
+<pre><code class="language-text">lake build
+lake env lean lean/Surangama/SevenLocations/Audit.lean
+python tools/check_scope.py
+python tools/check_shared_nonduality.py
+</code></pre>
+<p>第一项构建项目，第二项输出所列定理的公理依赖，后两项分别核查原有逐段模型与共同模型的布尔赋值。Python 枚举的是脚本中明确转写的公式，不是直接运行 Lean 的语义；二者是否对应也需要检查。</p>
+<p><code>audit/propositional-scope.json</code> 与 <code>audit/shared-nonduality-scope.json</code> 对应正文表3。当前共同三变量模型一共有8种赋值，其中4种满足前提；不是84种赋值。七个省略连接条件的检查是另外列出的七个见证，不能混进“8种赋值”的计数。</p>
+<h2>2. 共同模块的八个声明</h2>
+<p>命名空间：<code>Surangama.SevenLocations.SharedNonduality</code>。</p>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th style="text-align: left;">定理名</th>
+<th style="text-align: left;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>bridge_for_each</code></td>
+<td style="text-align: left;">用七个章节构造子逐项取出已提供的连接条件；不证明连接的文本真实性</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>exclude_identification</code></td>
+<td style="text-align: left;">从共同排除和单个连接推出描述与认定不能同时成立</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>seven_identifications_refuted</code></td>
+<td style="text-align: left;">将该条件推导应用于全部七个索引</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>refute_contextual_claim</code></td>
+<td style="text-align: left;">在补充 <code>Claim → Description ∧ Identifies</code> 后，转到另行命名的主张</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>premises_have_model_with_descriptions</code></td>
+<td style="text-align: left;">给出前提可同时满足、且描述都成立的见证</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>without_common_exclusion</code></td>
+<td style="text-align: left;">删除共同排除后，七条连接并不能单独排除七个认定</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>without_one_bridge</code></td>
+<td style="text-align: left;">对任一索引，删除该处连接即可保留该处认定，即使其他连接仍在</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>description_can_remain</code></td>
+<td style="text-align: left;">说明排除“描述且认定”不等于排除描述本身</td>
+</tr>
+</tbody>
+</table></div>
+<p>这八个声明包含辅助证明与范围见证，不能写成八项独立佛学发现。论文摘录的 <code>exclude_identification</code> 代码保持与源文件一致。</p>
+<h2>3. 三个符号与两类前提</h2>
+<p><code>Description i</code> 表示选定的候选描述成立；<code>Separated i</code> 特指将能知者实体化为与对象分立的自存者；<code>Identifies i</code> 表示该候选被正确认定为对话所求的心性。</p>
+<p>共同排除条件是：</p>
+<pre><code class="language-text">Separated i → ¬ Identifies i
+</code></pre>
+<p>逐段连接条件是：</p>
+<pre><code class="language-text">Description i → Separated i
+</code></pre>
+<p>结论是：</p>
+<pre><code class="language-text">¬ (Description i ∧ Identifies i)
+</code></pre>
+<p><code>¬</code> 表示否定，<code>→</code> 表示蕴含，<code>∧</code> 表示合取。<code>Separated</code> 不是单指空间分离、功能区分或依缘而生；不能缩略成“凡有能所分别就错误”。</p>
+<h2>4. 证据与版本</h2>
+<p><code>verification.json</code> 保存实际构建和检查的结果，相关日志在同目录。论文目录的 <code>MANIFEST.sha256</code> 保存公开稿件文件散列；源码以 v1.0 标签标识。</p>
+<p>v1.0 包含共同模块，旧 v0.2.1 归档保持不变。共同模块不能追溯归入旧版 DOI；本次公开排版不改变证明的假设。</p><div class="foot">v1.0 公开稿 · 经文解释与明确前提下的逻辑核验分别承担责任。</div></main></body></html>
